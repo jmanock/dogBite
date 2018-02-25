@@ -1,8 +1,17 @@
 body{
-  padding-left:100px;
   /* background-color:#009E9B; */
   background-color:#DBDCD3;
+  padding-left:25px;
+}
+.grid-container{
+  display:grid;
+  grid-template-columns:auto auto auto;
+  padding:10px;
 }
 #intro{
-  background-color:white;
+
+}
+.review{
+  
+  padding:10px;
 }
