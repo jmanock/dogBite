@@ -8,10 +8,10 @@ body{
   grid-template-columns:auto auto auto;
   padding:10px;
 }
-#intro{
-
-}
 .review{
-  
   padding:10px;
+}
+#intro{
+  background-color:#fff;
+  padding-left:10px;
 }
