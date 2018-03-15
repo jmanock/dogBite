@@ -1,7 +1,16 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300');
 body{
   font-family:'Roboto';
+  
+}
+h3{
+  text-align:center;
+}
+input{
+
 }
 label{
-  
+  display:inline-block;
+  width:400px;
+  text-align:right;
 }
