@@ -31,7 +31,7 @@
       <h3>Tell Me About Your Dog</h3>
       <div class='question'>
         <label>Your Email:</label>
-        <input type="email" name="Email" value="">
+        <input type="email" name="Email" value="" autofocus>
       </div>
 
       <div class='question'>
@@ -562,92 +562,190 @@
 
       <div class='question'>
         <label>What Age is this DOG?</label>
-        <input type="number" name="Age" value="">
+        <input type="number" name="Age" value="age">
       </div>
 
       <div class='question'>
         <label>What is the WEIGHT of this Dog?</label>
-        <input type='number' name='Weight'>
+        <input type='number' name='Weight' value='weight'>
       </div>
 
       <div class='question'>
         <label>What COLOR is this Dog?</label>
+        <input type='text' name='color'>
       </div>
 
       <div class='question'>
         <label>Where does your dog go for relief/potty most of the time?</label>
+        <select name="potty" id="potty">
+          <option value='' disabled selected>Please choose...</option>
+          <option value='inside'>Inside a completely fenced yard or kennel</option>
+          <option value='underground'>Undergroud electric dog containment system</option>
+          <option value='outside'>Outside loose in unfenced yard</option>
+          <option value='permanently'>Permanently Tied/tethered outside</option>
+          <option value='on tie'>On tie line for 1 hour or less at a time</option>
+          <option value='leash'>Leash Walked</option>
+        </select>
       </div>
 
       <div class='question'>
         <label>Are there children, under the age of 16, live with you the majority of the time?</label>
+        <select name='childrenHome' id='childrenHome'>
+          <option value='' disabled selected>Please choose...</option>
+          <option value='yes'>Yes</option>
+          <option value='no'>No</option>
+          <option value='daycare'>Daycare or baby sitting service in the home</option>
+          <option value='foster'>Foster Children in home</option>
+        </select>
       </div>
 
       <div class='question'>
         <label>Have any residents of your household been convicted of animal or domestic abuse in the last 5 years?</label>
+        <input type='radio' name='abuse' value='No'>No
+        <input type='radio' name='abuse' value='Yes'>Yes
       </div>
 
       <div class='question'>
         <label>Do you BREED this Dog?</label>
+        <select name='breed' id='breed'>
+          <option value='' disabled selected>Please choose...</option>
+          <option value='No'>No</option>
+          <option value='Stud'>Stud only</option>
+          <option value='1 litter'>1 litter annually</option>
+          <option value='2 litters'>2 litters annually</option>
+        </select>
       </div>
 
       <div class='question'>
         <label>Where does this Dog SLEEP?</label>
+        <select name='sleep' id='sleep'>
+          <option value='' disabled selected>Please choose... </option>
+          <option value='Inside'>Inside Home</option>
+          <option value='garage'>Garage</option>
+          <option value='loose'>Ouside loose in fenced yard</option>
+          <option value='without'>Outside without any restraints</option>
+          <option value='permanent'>Permanent outside kennel</option>
+          <option value='tied'>Tied Out</option>
+        </select>
       </div>
 
       <div class='question'>
         <label>What type of AREA do you live in?</label>
+        <input type='radio' name='area' value='country'>Country and/or your dog travels with you
+        <input type='radio' name='area' value='city'>City, Town, Suburb, Campus
       </div>
 
       <div class='question'>
         <label>Total number of Dogs in your home:</label>
+        <select name='numDogs' id='numDogs'>
+          <option value='' disabled selected>Please choose...</option>
+          <option value='1'>1</option>
+          <option value='2-4'>2 to 4</option>
+          <option value='5+'>5 or more</option>
+        </select>
       </div>
 
       <div class='question'>
         <label>How often do you take this dog to a VETERINARIAN?</label>
+        <select name='vet' id='vet'>
+          <option value='' disabled selected>Please choose...</option>
+          <option value='annually'>Annually and would treat for illness or injury</option>
+          <option value='law'>Only as required by law</option>
+          <option value='never'>Never</option>
+        </select>
       </div>
 
       <div class='question'>
         <label>Is this Dog current on licenses, vaccinations and other such requirements in your area?</label>
+        <input type='radio' name='licenses' value='yes'>Yes
+        <input type='radio' name='licenses' value='no'>No
       </div>
 
       <div class='question'>
         <label>Gender:</label>
+        <input type='radio' value='Male' name='gender'>Male
+        <input type='radio' value='Female' name='gender'>Female
       </div>
 
       <div class='question'>
         <label>Reproductive Status:</label>
+        <select name='reproductive' id='reproductive'>
+          <option value='' disabled selected>Please choose...</option>
+          <option value='intact'>Intact</option>
+          <option value='neutered'>Neutered Male</option>
+          <option value='spayed'>Spayed Female</option>
+        </select>
       </div>
 
       <div class='question'>
         <label>What type of training or work does this dog have?</label>
+        <select name='training' id='training'>
+          <option value='' disabled selected>Please choose...</option>
+          <option value='none'>None or Basic</option>
+          <option value='intermediate'>Intermediate</option>
+          <option value='advanced'>Advanced</option>
+          <option value='therapy'>Therapy Dog</option>
+          <option value='hunting'>Hunting, Gun, Sporting off leash, Farm, Hearding</option>
+          <option value='war'>War or Police Service dog, Professionally trained Personal Protection or Professional Trained Guard Dog</option>
+        </select>
       </div>
 
       <div class='question'>
         <label>Do you take this dog to work regularly?</label>
+        <input type='radio' name='work' value='yes'>Yes
+        <input type='radio' name='work' value='no'>No
       </div>
 
       <div class='question'>
         <label>Is this Dog involved or integral in your work as a Therapist, Teacher, Counselor, or other similar?</label>
+        <input type='radio' name='involved' value='yes'>Yes
+        <input type='radio' name='involved' value='no'>No
       </div>
 
       <div class='question'>
         <label>Do you take this Dog to off leash dog parks?</label>
+        <input type='radio' name='leash' value='yes'>Yes
+        <input type='radio' name='leash' value='no'>No
       </div>
 
       <div class='question'>
         <label>Human Injury:</label>
+        <select name='Human injury' id='hInjury'>
+          <option value='' disabled selected>Please choose...</option>
+          <option value='none'>None</option>
+          <option value='child scratch'>Injured a child - leaving minor bruising, scratch but no broken skin - one time</option>
+          <option value='adult scratch'>Injured an adult - leaving minor bruising, scratch but no broken skin - one time</option>
+          <option value='child breaking skin'>Injured a child - breaking skin, no permanent scarring</option>
+          <option value='adult breaking skin'>Injured an adult - breaking skin, no permanent scarring</option>
+          <option value='child stitches'>Injured a child requiring medical attention and/or stitches</option>
+          <option value='adult stitches'>Injured an adult requiring medical attention and/or stitches</option>
+          <option value='child more than once'>Injured a child more than once</option>
+          <option value='adult more than once'>Injured an adult more than once</option>
+        </select>
       </div>
 
       <div class='question'>
         <label>Has this Dog ever injured another animal?</label>
+        <select name='injuredAnimal' id='injuredAnimal'>
+          <option value='' disabled selected>Please choose...</option>
+          <option value='none'>None</option>
+          <option value='injured animal'>Injured another animal</option>
+          <option value='killed animal'>Killed another animal</option>
+          <option value='injured more'>Injured more than one animal</option>
+          <option value='killed more'>Killed more than one animal</option>
+        </select>
       </div>
 
       <div class='question'>
         <label>Is this dog in a foster arrangement where the owner has been deployed?</label>
+        <input type='radio' name='deployed' value='no'>No
+        <input type='radio' name='deployed' value='yes'>Yes
       </div>
 
       <div class='question'>
         <label>Is this dog in your home with the intent that he/she will be adopted?</label>
+        <input type='radio' name='homeAdopted' value='no'>No
+        <input type='radio' name='homeAdopted' value='yes'>Yes
       </div>
     </form>
 
