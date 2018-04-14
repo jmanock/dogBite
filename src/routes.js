@@ -11,5 +11,17 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
     .state('app', {
       url: '/',
       component: 'app'
+    })
+    .state('about', {
+      url: '/about',
+      templateUrl: '/app/helpers/about.html'
+    })
+    .state('questions', {
+      url: '/questions',
+      templateUrl: 'app/helpers/questions.html'
+    })
+    .state('quote', {
+      url: '/quote',
+      templateUrl: 'app/helpers/form.html'
     });
 }
