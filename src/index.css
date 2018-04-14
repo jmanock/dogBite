@@ -10,7 +10,6 @@ body{
   /* background-color:#98eefb !important; */
   background-color:#d8eefb !important;
 }
-
 .navbar-brand{
   color:#333 !important;
 }
@@ -22,4 +21,24 @@ span{
 }
 input[type='radio']{
   cursor:pointer;
+}
+.blueLine{
+  display:block;
+  margin-top:.5em;
+  margin-bottom:.5em;
+  margin-left:auto;
+  margin-right:auto;
+  border-style:inset;
+  border-width:2px;
+  border-color:blue;
+}
+.blackLine{
+  display:block;
+  margin-top:.5em;
+  margin-bottom:.5em;
+  margin-left:auto;
+  margin-right:auto;
+  border-style:inset;
+  border-width:2px;
+  border-color:#333;
 }
