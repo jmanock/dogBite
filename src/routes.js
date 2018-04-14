@@ -23,5 +23,9 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
     .state('quote', {
       url: '/quote',
       templateUrl: 'app/helpers/form.html'
+    })
+    .state('home', {
+      url: '/home',
+      templateUrl: 'app/title.html'
     });
 }
