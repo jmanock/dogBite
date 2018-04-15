@@ -33,6 +33,7 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
       templateUrl: 'app/helpers/terms.html'
     })
     .state('privacy', {
+      url: '/privacy',
       templateUrl: 'app/helpers/privacy.html'
     });
 }
