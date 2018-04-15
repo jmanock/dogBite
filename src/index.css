@@ -8,13 +8,19 @@ body{
 }
 .navbar{
   /* background-color:#98eefb !important; */
-  background-color:#d8eefb !important;
+  /* background-color:#d8eefb !important; */
+  background-color:#33b5e5 !important;
 }
 .navbar-brand{
-  color:#333 !important;
+  /* color:#333 !important; */
+  color:#fff !important;
 }
 .nav-item{
-  color:#333 !important;
+  /* color:#333 !important; */
+  color:#fff !important;
+}
+header .fa{
+  color:#333;
 }
 .title{
   height:100vh;
@@ -36,8 +42,6 @@ footer  h5{
   color:darkblue;
 }
 footer{
-
-  bottom:0;
   width:100%;
   background-color:#33b5e5;
   color:#fff;
