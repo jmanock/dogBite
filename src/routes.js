@@ -27,5 +27,12 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
     .state('home', {
       url: '/home',
       templateUrl: 'app/title.html'
+    })
+    .state('terms', {
+      url: '/terms',
+      templateUrl: 'app/helpers/terms.html'
+    })
+    .state('privacy', {
+      templateUrl: 'app/helpers/privacy.html'
     });
 }
