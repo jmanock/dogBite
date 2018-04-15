@@ -28,5 +28,26 @@ ul{
 .boldText{
   color:#777;
   font-weight:bold;
-
 }
+footer  h5{
+  color:darkblue;
+}
+footer{
+  background-color:#33b5e5;
+  color:#fff;
+  padding-top:20px;
+}
+.bottomSection{
+  background-color:#0099cc;
+}
+footer h6{
+  font-weight:bold;
+}
+/* .topSection{
+  background-color:#33b5e5;
+  color:#fff;
+}
+.bottomSection{
+  background-color:#0099cc;
+  color:#fff;
+} */
