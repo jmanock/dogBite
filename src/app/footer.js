@@ -5,7 +5,10 @@ angular
     controller: footerCtrl
   });
 
-function footerCtrl($scope, $log) {
+function footerCtrl($scope, $log, $window) {
   $scope.$log = $log;
-  $log.log('Fuck yeah I found it');
+
+  $scope.top = function () {
+    $window.scrollTo(0, 0);
+  };
 }
