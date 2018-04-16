@@ -15,7 +15,7 @@
         <span title='All Dogs must reside in the same state. If you have dogs that reside in different states please complete seprate quotes' class='fa fa-question'></span>
       </div>
 
-      <input type='button' id='next' value='Next' ng-click='' ng-disabled=''>
+      <input type='button' id='next' value='Next' ng-click='dogName()' ng-disabled=''>
     </section>
 
     <section class='dogInfo'>
@@ -118,7 +118,7 @@
       <div class='question'>
         <label>Repriductive Status:</label>
         <input type='radio' value='Intact' ng-model='DogName.reproductive' name='reproductive' required>Intact
-        <input type='radio' value='' ng-model='DogName.reproductive' required>
+        <input type='radio' ng-model='DogName.reproductive'value='' required>
       </div>
 
       <div class='question'>

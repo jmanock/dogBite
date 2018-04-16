@@ -3,8 +3,3 @@ angular
   .component('fountainForm', {
     templateUrl: 'app/helpers/form.html'
   });
-
-function formCtrl($scope, $log) {
-  $scope.$log = $log;
-  
-}
