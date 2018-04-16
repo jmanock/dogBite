@@ -6,6 +6,13 @@ body{
   font-weight:300;
   min-height:100%;
 }
+h1{
+  color:#0099cc;
+}
+h2{
+  font-weight:bold;
+  font-size:1.5em;
+}
 .navbar{
   /* background-color:#98eefb !important; */
   /* background-color:#d8eefb !important; */
@@ -46,10 +53,6 @@ footer{
   color:#fff;
   padding-top:20px;
 }
-/* .container-fluid{
-  padding-top:50px;
-  padding-bottom:50px;
-} */
 .bottomSection{
   background-color:#0099cc;
 }
