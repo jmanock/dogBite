@@ -22,7 +22,8 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
     })
     .state('quote', {
       url: '/quote',
-      templateUrl: 'app/helpers/form.html'
+      templateUrl: 'app/helpers/form.html',
+      controller: formCtrl
     })
     .state('home', {
       url: '/home',
