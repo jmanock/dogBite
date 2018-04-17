@@ -1,6 +1,6 @@
 <fountain-header></fountain-header>
-<div class='container'>
-  <form name='DogForm' nonvalidate>
+<div class='container' nonvalidate>
+  <form name='DogForm'>
     <section class='personInfo'>
       <div class='question'>
         <input type='text' class='dogname' name='dName' placeholder="What's your Dogs name?" ng-model='DogName.name' required autofocus>
@@ -10,12 +10,14 @@
         <input type='email' class='email' name='email' placeholder="What's your Email?" ng-model='DogName.email' required>
       </div>
 
-      <div class='question'>
+      <!-- <div class='question'>
         <fountain-states></fountain-states>
         <span title='All Dogs must reside in the same state. If you have dogs that reside in different states please complete seprate quotes' class='fa fa-question'></span>
-      </div>
+      </div> -->
 
-      <input type='button' id='next' value='Next' ng-click='dogName()' ng-disabled=''>
+      <fountain-states></fountain-states>
+
+      <input type='button' id='next' value='Next' ng-click='dogName(DogName)' ng-disabled=''>
     </section>
 
     <section class='dogInfo'>
