@@ -1,24 +1,15 @@
+var angular = require('angular');
+require('angular-mocks');
+var main = require('./main');
+
 describe('main component', function () {
-  beforeEach(module('app', function ($provide) {
-    $provide.factory('fountainHeaderDirective', function () {
-      return {};
-    });
-  }));
-  beforeEach(module('app', function ($provide) {
-    $provide.factory('fountainTitleDirective', function () {
-      return {};
-    });
-  }));
-  beforeEach(module('app', function ($provide) {
-    $provide.factory('fountainTechsDirective', function () {
-      return {};
-    });
-  }));
-  beforeEach(module('app', function ($provide) {
-    $provide.factory('fountainFooterDirective', function () {
-      return {};
-    });
-  }));
+  beforeEach(function () {
+    angular
+      .module('app', ['app/main.html'])
+      .component('app', main);
+    angular.mock.module('app');
+  });
+
   it('should render the header, title, techs and footer', angular.mock.inject(function ($rootScope, $compile) {
     var element = $compile('<app>Loading...</app>')($rootScope);
     $rootScope.$digest();

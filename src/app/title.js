@@ -1,5 +1,3 @@
-angular
-  .module('app')
-  .component('fountainTitle', {
-    templateUrl: 'app/title.html'
-  });
+module.exports = {
+  template: require('./title.html')
+};

@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "props": {
       "framework": "angular1",
-      "modules": "inject",
+      "modules": "webpack",
       "js": "js",
       "ci": "",
       "css": "css",

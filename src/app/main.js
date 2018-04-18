@@ -1,5 +1,3 @@
-angular
-  .module('app')
-  .component('app', {
-    templateUrl: 'app/main.html'
-  });
+module.exports = {
+  template: require('./main.html')
+};

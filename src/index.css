@@ -1,64 +1,112 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,700');
+html, body, #root {
+  margin: 0;
+  height: 100%;
+  font-family: 'Open Sans', sans-serif;
+}
 
-body{
-  font-family:'Montserrat';
-  margin:0;
-  font-weight:300;
-  min-height:100%;
+body, h1, h2, h3 {
+  font-weight: 300
 }
-h1{
-  color:#0099cc;
+
+a {
+  color: white;
+  text-decoration: none;
 }
-h2{
-  font-weight:bold;
-  font-size:1.5em;
+
+a:hover {
+  color: #5aadbb;
 }
-.navbar{
-  /* background-color:#98eefb !important; */
-  /* background-color:#d8eefb !important; */
-  background-color:#33b5e5 !important;
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
 }
-.navbar-brand{
-  /* color:#333 !important; */
-  color:#fff !important;
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
-.nav-item{
-  /* color:#333 !important; */
-  color:#fff !important;
+
+.header {
+  display: flex;
+  align-items: center;
+  background-color: #1f1f1f;
 }
-header .fa{
-  color:#333;
+.header-title {
+  flex: 1;
+  font-size: 1.5rem;
+  margin: 1rem;
 }
-.title{
-  height:100vh;
+.header-date {
+  flex: 1;
+  text-align: right;
+  margin: 1rem;
+  color: white;
 }
-span{
-  cursor:pointer;
+
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  background-color: #cf4646;
+  color: white;
 }
-input[type='radio']{
-  cursor:pointer;
+.title-h1 {
+  font-weight: 300;
+  font-size: 4rem;
+  margin: 1rem;
 }
-ul{
-  list-style-type:none;
+.title-logo {
+  height: 12rem;
+  background-color: white;
+  border-radius: 1rem;
+  margin: 1rem;
 }
-.boldText{
-  color:#777;
-  font-weight:bold;
+.title-h2 {
+  font-weight: 300;
+  font-size: 2rem;
+  margin: .5rem;
 }
-footer  h5{
-  color:darkblue;
+
+.footer {
+  padding: 0.5rem;
+  font-size: 1rem;
+  background-color: #1f1f1f;
+  text-align: center;
+  color: white;
 }
-footer{
-  background-color:#33b5e5;
-  color:#fff;
-  padding-top:20px;
+
+.techs-container {
+  margin: 1rem;
 }
-.bottomSection{
-  background-color:#0099cc;
+.techs-h2 {
+  font-weight: 300;
+  font-size: 1.5rem;
 }
-footer h6{
-  font-weight:bold;
+.techs {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
-h5{
-  text-align:center;
+
+.tech {
+  height: 15rem;
+  width: 15rem;
+  border: 1px solid lightgray;
+  border-radius: 1rem;
+  margin: 1rem;
+  padding: 1rem;
+}
+.tech-logo {
+  width: 5rem;
+  height: 5rem;
+  float: right;
+  margin: 0 0 .5rem .5rem;
+}
+.tech-h3 {
+  font-size: 1.5rem;
+  margin: 0 0 2rem 0;
 }
