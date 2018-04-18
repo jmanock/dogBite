@@ -9,25 +9,5 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
     .state('app', {
       url: '/',
       component: 'app'
-    })
-    .state('about', {
-      url: '/about',
-      templateUrl: '/app/routs/about.html'
-    })
-    .state('questions', {
-      url: '/questions',
-      templateUrl: '/app/routs/questions.html'
-    })
-    .state('home', {
-      url: '/home',
-      templateUrl: 'app/title.html'
-    })
-    .state('terms', {
-      url: '/terms',
-      templateUrl: 'app/routs/terms.html'
-    })
-    .state('privacy', {
-      url: '/privacy',
-      templateUrl: 'app/routs/privacy.html'
     });
 }
