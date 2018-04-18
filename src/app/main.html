@@ -16,7 +16,11 @@
     </nav>
   </header>
   <main class="main">
-    <fountain-title ng-hide='home'></fountain-title>
+    <div class='container' ng-hide='home'>
+      <h1>Welcome</h1>
+      <p>Every year in the United States more than 4.7 million people are bitten by dogs. Now you can protect yourself and your best friend with a Canine Liability Insurance Policy.</p>
+      <input type='button' value="Let's Get Started" ng-click="click('quote')">
+    </div>
     <fountain-form ng-show='quote'></fountain-form>
     <fountain-terms ng-show='terms'></fountain-terms>
     <fountain-questions ng-show='questions'></fountain-questions>
