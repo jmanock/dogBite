@@ -12,6 +12,7 @@ var about = require('./app/routs/about');
 var questions = require('./app/routs/questions');
 var privacy = require('./app/routs/privacy');
 var terms = require('./app/routs/terms');
+var form = require('./app/routs/form');
 
 require('./index.css');
 
@@ -25,4 +26,5 @@ angular
   .component('fountainAbout', about)
   .component('fountainQuestions', questions)
   .component('fountainPrivacy', privacy)
-  .component('fountainTerms', terms);
+  .component('fountainTerms', terms)
+  .component('fountainForm', form);

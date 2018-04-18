@@ -3,6 +3,5 @@ module.exports = {
   controller: MainCtrl
 };
 
-function MainCtrl($log) {
-  
+function MainCtrl() {
 }
