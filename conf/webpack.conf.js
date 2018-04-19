@@ -41,6 +41,10 @@ module.exports = {
         loaders: [
           'html-loader'
         ]
+      },
+      {
+        test: /\.(eot|woof|woff2|svg|ttf|png)([\?]?.*)$/,
+        loader: 'file-loader'
       }
     ]
   },

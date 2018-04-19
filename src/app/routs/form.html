@@ -75,7 +75,7 @@
 
       <div class='question'>
         <label>Is {{DogName.name | uppercase}} current on licenses, vaccinations and other such requirments in your area: <span title="These are laws where you live that require certain vaccinations, tags, or registration. If compliance depends on this insurance check yes." class='fa fa-question'></span></label>
-        <input type='raido' name='vaccinations' value='Yes' ng-model='DogName.vaccinations' required>Yes
+        <input type='radio' name='vaccinations' value='Yes' ng-model='DogName.vaccinations' required>Yes
         <input type='radio' name='vaccinations' value='No' ng-model='DogName.vaccinations' required>No
       </div>
 
@@ -115,7 +115,7 @@
         <div class='question'>
           <label>What area do you live in:</label>
           <input type='radio' name='area' value='Country' ng-model='DogName.area' required>Country and/or your dog travels with you
-          <input type='raido' name='area' value='City' ng-model='DogName.area' required>City, Town, Suburb, Campus
+          <input type='radio' name='area' value='City' ng-model='DogName.area' required>City, Town, Suburb, Campus
         </div>
 
         <div class='question'>
