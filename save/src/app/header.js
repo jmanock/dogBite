@@ -1,5 +1,3 @@
-angular
-  .module('app')
-  .component('fountainHeader', {
-    templateUrl: 'app/header.html'
-  });
+module.exports = {
+  template: require('./header.html')
+};

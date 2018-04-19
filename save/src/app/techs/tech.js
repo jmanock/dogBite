@@ -1,8 +1,6 @@
-angular
-  .module('app')
-  .component('fountainTech', {
-    templateUrl: 'app/techs/tech.html',
-    bindings: {
-      tech: '<'
-    }
-  });
+module.exports = {
+  template: require('./tech.html'),
+  bindings: {
+    tech: '<'
+  }
+};

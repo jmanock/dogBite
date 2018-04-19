@@ -1,12 +1,9 @@
-angular
-  .module('app')
-  .component('fountainFooter', {
-    templateUrl: 'app/footer.html',
-    controller: footerCtrl
-  });
+module.exports = {
+  template: require('./footer.html'),
+  controller: footerCtrl
+};
 
-function footerCtrl($scope, $log, $window) {
-  $scope.$log = $log;
+function footerCtrl($scope, $window) {
   $scope.top = function () {
     $window.scrollTo(0, 0);
   };
