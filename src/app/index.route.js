@@ -28,7 +28,9 @@
       })
       .state('questions', {
         url: '/questions',
-        templateUrl: 'app/main/questions.html'
+        templateUrl: 'app/main/questions.html',
+        controller: 'QuestionsController',
+        controllerAs: 'question'
       })
       .state('terms', {
         url: '/terms',
