@@ -20,7 +20,9 @@
       })
       .state('form', {
         url: '/form',
-        templateUrl: 'app/main/form.html'
+        templateUrl: 'app/main/form.html',
+        controller: 'FormController',
+        controllerAs: 'form'
       })
       .state('privacy', {
         url: '/privacy',
