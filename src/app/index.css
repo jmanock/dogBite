@@ -31,7 +31,7 @@ header .fa{
 span{
   cursor:pointer;
 }
-input[type='radio']{
+input[type='radio'], input[type='button']{
   cursor:pointer;
 }
 .boldText{

@@ -6,10 +6,14 @@
     .controller('FormController', FormController);
 
   /** @ngInject */
-  function FormController() {
+  function FormController($log) {
     var vm = this;
     vm.states = states;
     vm.breeds = breeds;
+
+    vm.Answers = function(Dog){
+      $log.log(Dog);
+    }
   }
 })();
 

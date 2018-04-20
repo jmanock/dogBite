@@ -17,7 +17,7 @@
           <option value='' selected disabled>Please Choose...</option>
         </select>
       </div>
-      <input type='button' value='Next' ng-click='' ng-disabled=''>
+      <input type='button' value='Next' ng-click='form.Answers(Dog)' ng-disabled=''>
     </section>
 
     <section class='dogInfo'>
@@ -234,7 +234,7 @@
       </div>
 
       <div class='formQuestion'>
-        <label>Is {{Dog.name | uppercase}} in your home with the intent that {{Dog.he/she}} will be adopted:<span title="When you foster, you agree to take a homeless dog into your home and give {{Dog.he/she}} love, care, and attention, eirther for a predetermined period of time or until the dog is adopted." class='fa fa-question'></span></label>
+        <label>Is {{Dog.name | uppercase}} in your home with the intent that {{Dog}} will be adopted:<span title="When you foster, you agree to take a homeless dog into your home and give {{Dog.he/she}} love, care, and attention, eirther for a predetermined period of time or until the dog is adopted." class='fa fa-question'></span></label>
         <input type='radio' name='adopted' ng-model='Dog.adopted' value='No' required>No
         <input type='radio' name='adopted' ng-model='Dog.adopted' value='Yes' required>Yes
       </div>
