@@ -8,18 +8,30 @@
   /** @ngInject */
   function FormController($log) {
     var vm = this;
+
     vm.states = states;
     vm.breeds = breeds;
 
-    vm.Answers = function(Dog){
+    vm.PersonInfo = function(Dog) {
       $log.log(Dog);
-      if(Dog.gender === 'Male'){
-        Dog.hisHers = 'Him';
-      }else{
-        Dog.hisHers = 'Her';
-      }
+      vm.personInfo = true;
+      vm.dogInfo = true;
+    };
+    vm.DogInfo = function(Dog) {
       $log.log(Dog);
-    }
+      vm.dogInfo = false;
+      vm.homeInfo = true;
+    };
+    vm.HomeInfo = function(Dog) {
+      $log.log(Dog);
+      vm.homeInfo = false;
+      vm.summaryDog = true;
+    };
+    vm.SummaryDog = function(Dog) {
+      $log.log(Dog);
+
+    };
+
   }
 })();
 
