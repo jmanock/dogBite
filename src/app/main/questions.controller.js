@@ -6,16 +6,12 @@
     .controller('QuestionsController', QuestionsController);
 
   /** @ngInject */
-  function QuestionsController($scope, $location, $anchorScroll, $log) {
+  function QuestionsController($scope, $location, $anchorScroll) {
     var vm = this;
-    
-    // m.scrollTo = function(id){
-    //   // $location.hash(id);
-    //   // $anchorScroll();
-    //   $log.log(id);
-    // };
+
     vm.scrollTo = function(id){
-      $log.log(id);
+      $location.hash(id);
+      $anchorScroll();
     }
   }
 })();
