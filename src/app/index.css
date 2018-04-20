@@ -38,6 +38,11 @@ input[type='radio'], input[type='button']{
   color:#777;
   font-weight:bold;
 }
+.shortFooter{
+  position:absolute;
+  bottom:0;
+  width:100%;
+}
 footer h5{
   color:darkblue;
 }
@@ -55,11 +60,11 @@ footer h6{
 h5{
   text-align:center;
 }
-.ng-hide-add{
+.ng-hide{
   -webkit-animation:0.5s lightSpeedOut ease;
   animation:.5s lightSpeedOut ease;
 }
-.ng-hide-remove{
+.ng-hide{
   -webkit-animation:.5s flipInX ease;
   animation:.5s flipInX ease;
 }
