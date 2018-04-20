@@ -13,6 +13,12 @@
 
     vm.Answers = function(Dog){
       $log.log(Dog);
+      if(Dog.gender === 'Male'){
+        Dog.hisHers = 'Him';
+      }else{
+        Dog.hisHers = 'Her';
+      }
+      $log.log(Dog);
     }
   }
 })();
