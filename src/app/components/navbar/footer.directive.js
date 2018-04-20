@@ -21,8 +21,11 @@
     return directive;
 
     /** @ngInject */
-    function FooterController() {
-
+    function FooterController($window) {
+      var vm = this;
+      vm.top = function() {
+        $window.scrollTo(0,0);
+      }
     }
   }
 
