@@ -60,6 +60,9 @@ footer h6{
 h5{
   text-align:center;
 }
+.personInfo{
+  margin-top:100px;
+}
 .ng-hide{
   -webkit-animation:0.5s lightSpeedOut ease;
   animation:.5s lightSpeedOut ease;
