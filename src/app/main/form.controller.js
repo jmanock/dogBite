@@ -25,17 +25,18 @@
         vm.summaryDog = true;
       }
     }
-
+    // Maybe add all this to fb or store local then submit at the end?
     vm.RemoveDog = function(Dog) {
-
+      // Should delete all dog data either dog1 or dog2
     };
 
     vm.AddDog = function(Dog) {
-
+      // Should go add another dog to the dog var
+      // Show another page with new dog var??
     };
 
     vm.EditDog = function(Dog) {
-
+      // Should show all dog info
     };
 
   }
