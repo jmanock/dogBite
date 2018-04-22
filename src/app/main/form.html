@@ -311,7 +311,7 @@
 <section class='summaryDogs' ng-show='form.summaryDog'>
   <h2>Summary Dogs</h2>
   <div class='container'>
-    <button><i class='fa fa-plus-circle'></i> Add Another Dog</button>
+    <button type='button' value='Add' class='btn btn-default' ng-click='form.AddDog(Dog)'><i class='fa fa-plus-circle'></i> Add Another Dog</button>
     <table class='table'>
       <thead>
         <tr>
@@ -324,11 +324,11 @@
       </thead>
       <tbody>
         <tr>
-          <td><input type='button' value='Edit' ng-click=''></td>
+          <td><button type='button' class='btn btn-default' ng-click='form.EditDog(Dog)' value='Edit'>Edit</button</td>
           <td>{{Dog.name | uppercase}}</td>
           <td>{{Dog.breed | uppercase}}</td>
           <td>Please calculate to determin eligibility.</td>
-          <td><input type='button' value='Remove' ng-click=''></td>
+          <td><button type='button' class='btn btn-default' ng-click='form.RemoveDog(Dog)' value='Remove'>Remove</button> </td>
         </tr>
       </tbody>
     </table>
