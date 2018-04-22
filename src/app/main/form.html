@@ -194,11 +194,11 @@
       <div class='form-group'>
         <p>Do you take {{Dog.name | uppercase}} to work regularly:</p>
         <div class='form-check form-check-inline'>
-          <input class='form-check-input' type='radio' name='work' id='yWork' ng-model='Dog.work' value='Yes' required>
+          <input class='form-check-input' type='radio' name='work' id='yWork' value='Yes' ng-model='Dog.work' required>
           <label class='form-check-label' for='yWork'>Yes</label>
         </div>
-        <div class='form-group'>
-          <input class='form-check form-check-inline' type='radio' name='work' id='nWork' value='No' ng-model='Dog.work' required>
+        <div class='form-check form-check-inline'>
+          <input class='form-check-input' type='radio' name='work' id='nWork' value='No' ng-model='Dog.work' required>
           <label class='form-check-label' for='nWork'>No</label>
         </div>
       </div>
@@ -281,13 +281,13 @@
       </div>
 
       <div class='form-group'>
-        <p>Is {{Dog.name | uppercase}} in a foster arrangement where the owner has been deployed:</p>
+        <p>Is {{Dog.name | uppercase}} in a forster arrangement where the owner has been deployed:</p>
         <div class='form-check form-check-inline'>
-          <input class='form-check-input' type='radio' name='deployed' ng-model='Dog.deployed' value='No' id='nDeployed' required>
+          <input class='form-check-input' type='radio' name='deployed' ng-model='Dog.deployed' id='nDeployed' value='No' required>
           <label class='form-check-label' for='nDeployed'>No</label>
         </div>
-        <div class='form-group'>
-          <input class='form-check-input' type='radio' name='deploayed' ng-model='Dog.deployed' value='Yes' id='yDeployed' required>
+        <div class='form-check form-check-inline'>
+          <input class='form-check-input' type='radio' name='deployed' ng-model='Dog.deployed' id='yDeployed' value='Yes' required>
           <label class='form-check-label' for='yDeployed'>Yes</label>
         </div>
       </div>
