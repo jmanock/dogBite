@@ -6,29 +6,35 @@
     .controller('FormController', FormController);
 
   /** @ngInject */
-  function FormController($log) {
+  function FormController($log, $window) {
     var vm = this;
 
     vm.states = states;
     vm.breeds = breeds;
 
-    vm.PersonInfo = function(Dog) {
-      $log.log(Dog);
-      vm.personInfo = true;
-      vm.dogInfo = true;
+    vm.Next = function(Dog, x){
+      if (x === 'dg') {
+        vm.personInfo = true;
+        vm.dogInfo = true;
+      } else if (x === 'hi') {
+        vm.dogInfo = false;
+        vm.homeInfo = true;
+        $window.scrollTo(0,0);
+      } else {
+        vm.homeInfo = false;
+        vm.summaryDog = true;
+      }
+    }
+
+    vm.RemoveDog = function(Dog) {
+
     };
-    vm.DogInfo = function(Dog) {
-      $log.log(Dog);
-      vm.dogInfo = false;
-      vm.homeInfo = true;
+
+    vm.AddDog = function(Dog) {
+
     };
-    vm.HomeInfo = function(Dog) {
-      $log.log(Dog);
-      vm.homeInfo = false;
-      vm.summaryDog = true;
-    };
-    vm.SummaryDog = function(Dog) {
-      $log.log(Dog);
+
+    vm.EditDog = function(Dog) {
 
     };
 

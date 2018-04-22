@@ -19,7 +19,7 @@
           <option value='' selected disabled>Please Choose...</option>
         </select>
       </div>
-      <button type='button' class='btn btn-default' ng-click='form.PersonInfo(Dog)'>Next</button>
+      <button type='button' class='btn btn-default' ng-click='form.Next(Dog,"dg")'>Next</button>
     </section>
 
     <section class='dogInfo' ng-show='form.dogInfo'>
@@ -130,7 +130,7 @@
           <option value='War'>War or Police service dog, Professionally trained Personal Protection or Professional Trained Guard Dog</option>
         </select>
       </div>
-      <button type='button' class='btn btn-default' ng-click='form.DogInfo(dog)' ng-disabled=''>Next</button>
+      <button type='button' class='btn btn-default' ng-click='form.Next(Dog,"hi")' ng-disabled=''>Next</button>
     </section>
 
     <section class='homeInfo' ng-show='form.homeInfo'>
@@ -303,14 +303,14 @@
           <label class='form-check-label' for='yAdopted'>Yes</label>
         </div>
       </div>
-      <button type='button' value='Next' ng-click='form.HomeInfo(Dog)' class='btn btn-default'>Next</button>
+      <button type='button' value='Next' ng-click='form.Next(Dog,"summary")' class='btn btn-default'>Next</button>
     </section>
   </form>
 </div>
 
 <section class='summaryDogs' ng-show='form.summaryDog'>
-  <h2>Summary Dogs</h2>
   <div class='container'>
+    <h2>Summary Dogs</h2>
     <button type='button' value='Add' class='btn btn-default' ng-click='form.AddDog(Dog)'><i class='fa fa-plus-circle'></i> Add Another Dog</button>
     <table class='table'>
       <thead>
