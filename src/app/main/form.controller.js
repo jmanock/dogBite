@@ -32,8 +32,7 @@
     };
 
     vm.AddDog = function(Dog) {
-      vm.NewDog = true;
-      vm.summaryDog = false;
+      // Just have to add to the dog var somehow
     };
 
     vm.EditDog = function(Dog) {
