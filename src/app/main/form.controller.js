@@ -32,8 +32,8 @@
     };
 
     vm.AddDog = function(Dog) {
-      // Should go add another dog to the dog var
-      // Show another page with new dog var??
+      vm.NewDog = true;
+      vm.summaryDog = false;
     };
 
     vm.EditDog = function(Dog) {
