@@ -23,6 +23,7 @@
       } else {
         vm.homeInfo = false;
         vm.summaryDog = true;
+        vm.progressMenu = true;
       }
     }
     // Maybe add all this to fb or store local then submit at the end?
