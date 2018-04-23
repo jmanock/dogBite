@@ -30,7 +30,7 @@
         <button class='btn btn-default' type='button' ng-click='form.Next(Dog, "dg")'>Next</button>
       </section>
 
-      <section class='dogInfo' ng-show='form.dogInfo'>
+      <section class='dogInfo col-9' ng-show='form.dogInfo'>
         <div class='form-group'>
           <label class='form-control-label'>What BREED is {{Dog.name | uppercase}}:</label>
           <select class='form-control' ng-model='Dog.breed' ng-options='item for item in form.breeds' required>
@@ -110,7 +110,119 @@
         </div>
 
         <div class='form-group'>
-          
+          <label class='form-control-label'>Do you take {{Dog.name | uppercase}} to a Veterinarian:</label>
+          <select class='form-control' ng-model='Dog.veterinarian' required>
+            <option value='' selected disabled>Please Choose...</option>
+            <option value='Annually'>Annually and would treat for illness</option>
+            <option value='Only Required'>Only as required by law</option>
+            <option value='Never'>Never</option>
+          </select>
+        </div>
+
+        <div class='form-group'>
+          <label class='form-control-label'>What type of training or work does {{Dog.name | uppercase}} have: <span title='Therapy Dogs, are dogs that do volunteer visits at hospitals, class rooms or other facilities. The handler is not paid and does not work at the facility.' class='fa fa-question'></span></label>
+          <select class='form-control' ng-model='Dog.training' required>
+            <option value='' selected disabled>Please Choose...</option>
+            <option value='None'>None</option>
+            <option value='Intermediate'>Intermediate</option>
+            <option value='Advanced'>Advanced</option>
+            <option value='Therapy'>Therapy</option>
+            <option value='Hunting'>Hunting, Gun, Sporting off leash, Farm, Hearding</option>
+            <option value='War'>War or Police service dog, Professionally trained Personal Protection or Professional Trained Guard Dog</option>
+          </select>
+        </div>
+        <button type='button' class='btn btn-default' ng-click='form.Next(Dog, "hi")'>Next</button>
+      </section>
+      <section class='homeInfo col-9' ng-show='form.homeInfo'>
+        <div class='form-group'>
+          <p>What area do you live in:</p>
+          <div class='form-check form-check-inline'>
+            <input class='form-check-input' type='radio' name='area' value='Country' id='Country' ng-model='Dog.area' required>
+            <label class='form-check-label' for='Country'>Country and/or your dog travels with you</label>
+          </div>
+          <div class='form-check form-check-inline'>
+            <input class='form-check-input' type='radio' name='area' value='City' id='City' ng-model='Dog.area' required>
+            <label class='form-check-label' for='City'>City, Town, Suburb, Campus</label>
+          </div>
+        </div>
+
+        <div class='form-group'>
+          <label class='form-control-label'>Do you Breed {{Dog.name | uppercase}}:</label>
+          <select class='form-control' ng-model='Dog.doesBreed' required>
+            <option value='' selected disabled>Please Choose...</option>
+            <option value='No'>No</option>
+            <option value='Stud Only'>Stud Only</option>
+            <option value='1 Annually'>1 litter annually</option>
+            <option value='2 Annually'>2 litters annually</option>
+          </select>
+        </div>
+
+        <div class='form-group'>
+          <label class='form-control-label'>Are there children, under the age of 16, living with you the majority of the time:</label>
+          <select class='form-control' ng-model='Dog.children' required>
+            <option value='' selected disabled>Please Choose...</option>
+            <option value='No'>No</option>
+            <option value='Yes'>Yes</option>
+            <option value='Daycare'>Daycare or babysitting service in the home</option>
+            <option value='Foster'>Foster Children in the home</option>
+          </select>
+        </div>
+
+        <div class='form-group'>
+          <p>Have any residents of your household been convicted of animal or domestic abuse in the last 5 years:</p>
+          <div class='form-check form-check-inline'>
+            <input class='form-check-input' type='radio' name='abuse' id='nAbuse' ng-model='Dog.abuse' value='No' required>
+            <label class='form-check-label' for='nAbuse'>No</label>
+          </div>
+          <div class='form-check form-check-inline'>
+            <input class='form-check-input' type='radio' name='abuse' id='yAbuse' ng-model='Dog.abuse' value='Yes' required>
+            <label class='form-check-label' for='yAbuse'>Yes</label>
+          </div>
+        </div>
+
+        <div class='form-group'>
+          <label class='form-control-label'>Total number of dogs in your home:</label>
+          <select class='form-control' ng-model='Dog.dogsHome' required>
+            <option value='' selected disabled>Please Choose...</option>
+            <option value='1'>1</option>
+            <option value='2 to 4'>2 to 4</option>
+            <option value='5 or more'>5 or more</option>
+          </select>
+        </div>
+
+        <div class='form-group'>
+          <p>Do you take {{Dog.name | uppercase}} to work regularly:</p>
+          <div class='form-check form-check-inline'>
+            <input class='form-check-input' type='radio' name='work' id='yWork' value='Yes' ng-model='Dog.work' required>
+            <label class='form-check-label' for='yWork'>Yes</label>
+          </div>
+          <div class='form-check form-check-inline'>
+            <input class='form-check-input' type='radio' name='work' id='nWork' value='No' ng-model='Dog.work' required>
+            <label class='form-check-label' for='nWork'>No</label>
+          </div>
+        </div>
+
+        <div class='form-group'>
+          <p>Is {{Dog.name | uppercase}} involved or integral in your work as a Therapist, Teacher, Counselor, or other similar:</p>
+          <div class='form-check form-check-inline'>
+            <input class='form-check-input' type='radio' name='involvedWork' value='Yes' id='yInvolvedWork' ng-model='Dog.involvedWork' required>
+            <label class='form-check-label' for='yInvolvedWork'>Yes</label>
+          </div>
+          <div class='form-check form-check-inline'>
+            <input class='form-check-input' type='radio' name='involvedWork' value='No' id='nInvolvedWork' ng-model='Dog.involvedWork' required>
+            <label class='form-check-label' for='nInvolvedWork'>No</label>
+          </div>
+          <div ng-if='Dog.involvedWork === "Yes" ? true : false'>
+            <label class='form-control-label'>What is your occupation:</label>
+            <input class='form-control' type='text' ng-model='Dog.occupation' required>
+          </div>
+        </div>
+
+        <div class='form-group'>
+          <label class='form-control-label'>Has {{Dog.name | uppercase}} ever injured another animal:</label>
+          <select class='form-control' ng-model='Dog.animalInjury' required>
+            <option value='' selected disabled>Please Choose...</option>
+            <option value=''
       </section>
     </div>
   </form>
