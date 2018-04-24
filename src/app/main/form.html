@@ -1,12 +1,12 @@
 <acme-navbar></acme-navbar>
 <div class='container'>
   <h1>New Quote</h1>
-  <form name='DogForm' class='form-horizontal' nonvalidate>
+  <form name='DogForm' class='form-horizontal' id='DogForm' nonvalidate>
     <div class='row'>
       <section class='personInfo col-9' ng-hide='form.personInfo'>
         <div class='form-group'>
           <label class='form-control-label'>Dogs Name:</label>
-          <input class='form-control' type='text' placeholder='Dogs Name' ng-model='Dog.name' required>
+          <input class='form-control' type='text' placeholder='Dogs Name' ng-model='Dog.name' required autofocus>
         </div>
         <div class='form-group'>
           <label class='form-control-label'>Email:</label>
@@ -18,9 +18,8 @@
             <option value='' selected disabled>Please Choose...</option>
           </select>
         </div>
-        <h1 ng-repeat='x in form.doggie'>{{x.name}} | {{x.email}} | {{x.state}}</h1>
-        <button class='btn btn-default' type='button' ng-click='form.Next(Dog, "dg")'>Next</button>
 
+        <button class='btn btn-default' type='button' ng-click='form.Next(Dog, "dg")'>Next</button>
       </section>
 
       <section class='dogInfo col-9' ng-show='form.dogInfo'>
@@ -329,10 +328,10 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
+        <tr ng-repeat='x in form.doggie'>
           <td><button type='button' class='btn btn-success' ng-click='form.EditDog(Dog)' value='Edit'>Edit</button></td>
-          <td>{{Dog.name | uppercase}}</td>
-          <td>{{Dog.breed | uppercase}}</td>
+          <td>{{x.name | uppercase}}</td>
+          <td>{{x.breed | uppercase}}</td>
           <td>Please calculate to determin eligibility</td>
           <td><button type='button' class='btn btn-danger' ng-click='form.RemoveDog(Dog)' value='Remove'>Remove</button></td>
         </tr>

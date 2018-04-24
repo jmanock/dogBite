@@ -14,12 +14,9 @@
     var doggie = [];
     vm.Next = function(Dog, x){
       if (x === 'dg') {
-        // vm.personInfo = true;
-        // vm.dogInfo = true;
-        var dogs = angular.copy(Dog);
-        doggie.push(dogs);
-        vm.doggie = doggie;
-        $log.log(doggie);
+        vm.personInfo = true;
+        vm.dogInfo = true;
+
       } else if (x === 'hi') {
         vm.dogInfo = false;
         vm.homeInfo = true;
@@ -27,7 +24,10 @@
       } else {
         vm.homeInfo = false;
         vm.summaryDog = true;
-        vm.progressMenu = true;
+        var dogs = angular.copy(Dog);
+        doggie.push(dogs);
+        vm.doggie = doggie;
+        $log.log(doggie);
       }
     }
     // Maybe add all this to fb or store local then submit at the end?
@@ -36,11 +36,17 @@
     };
 
     vm.AddDog = function(Dog) {
-      // New intance of Dog
+      // Need to clear the form
+      
+      document.getElementById('DogForm').reset();
+      vm.personInfo = false;
+      vm.summaryDog = false;
     };
 
     vm.EditDog = function(Dog) {
-      // Should show all dog info
+      // This might save another object with the edits
+      vm.personInfor = false;
+      vm.summaryDog = false;
     };
 
   }
