@@ -11,11 +11,14 @@
 
     vm.states = states;
     vm.breeds = breeds;
+    var Dogs = [];
 
     vm.Next = function(Dog, x){
       if (x === 'dg') {
-        vm.personInfo = true;
-        vm.dogInfo = true;
+        // vm.personInfo = true;
+        // vm.dogInfo = true;
+        Dogs.push(Dog);
+        $log.log(Dogs);
       } else if (x === 'hi') {
         vm.dogInfo = false;
         vm.homeInfo = true;
@@ -32,7 +35,7 @@
     };
 
     vm.AddDog = function(Dog) {
-      // Just have to add to the dog var somehow
+      // New intance of Dog
     };
 
     vm.EditDog = function(Dog) {
