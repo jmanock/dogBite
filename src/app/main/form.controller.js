@@ -36,9 +36,8 @@
     };
 
     vm.AddDog = function(Dog) {
-      // Need to clear the form
-      
-      document.getElementById('DogForm').reset();
+      angular.element(document.getElementById('DogForm').reset());
+      //document.getElementById('DogForm').reset();
       vm.personInfo = false;
       vm.summaryDog = false;
     };
