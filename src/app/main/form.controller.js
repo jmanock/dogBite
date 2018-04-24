@@ -21,6 +21,13 @@
         vm.dogInfo = false;
         vm.homeInfo = true;
         $window.scrollTo(0,0);
+        if(Dog.gender === 'Male'){
+          Dog.hisHers = 'him';
+          Dog.heShe = 'he';
+        } else{
+          Dog.hisHers = 'her';
+          Dog.heShe = 'she';
+        }
       } else {
         vm.homeInfo = false;
         vm.summaryDog = true;

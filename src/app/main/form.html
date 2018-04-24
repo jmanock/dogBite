@@ -27,6 +27,7 @@
           <label class='form-control-label'>What BREED is {{Dog.name | uppercase}}:</label>
           <select class='form-control' ng-model='Dog.breed' ng-options='item for item in form.breeds' required>
             <option value='' selected disabled>Please Choose...</option>
+            
           </select>
         </div>
 
@@ -56,7 +57,7 @@
           <p>Is {{Dog.name | uppercase}}:</p>
           <div class='form-check form-check-inline'>
             <input class='form-check-input' type='radio' name='gender' id='female' value='Female' ng-model='Dog.gender' required>
-            <label class='form-check-label' for='female'>Femail</label>
+            <label class='form-check-label' for='female'>Female</label>
           </div>
           <div class='form-check form-check-inline'>
             <input class='form-check-input' type='radio' name='gender' id='male' value='Male' ng-model='Dog.gender' required>
@@ -65,7 +66,7 @@
         </div>
 
         <div class='form-group'>
-          <label class='form-control-label'>Where does {{Dog.name | uppercase}} SLEEP:</label>
+          <label class='form-control-label'>Where does {{Dog.name | uppercase}} Sleep:</label>
           <select class='form-control' ng-model='Dog.sleep' required>
             <option value='' selected disabled>Please Choose...</option>
             <option value='Inside'>Inside</option>
@@ -130,12 +131,12 @@
         <div class='form-group'>
           <p>What area do you live in:</p>
           <div class='form-check form-check-inline'>
-            <input class='form-check-input' type='radio' name='area' value='Country' id='Country' ng-model='Dog.area' required>
-            <label class='form-check-label' for='Country'>Country and/or your dog travels with you</label>
-          </div>
-          <div class='form-check form-check-inline'>
             <input class='form-check-input' type='radio' name='area' value='City' id='City' ng-model='Dog.area' required>
             <label class='form-check-label' for='City'>City, Town, Suburb, Campus</label>
+          </div>
+          <div class='form-check form-check-inline'>
+            <input class='form-check-input' type='radio' name='area' value='Country' id='Country' ng-model='Dog.area' required>
+            <label class='form-check-label' for='Country'>Country and/or your dog travels with you</label>
           </div>
         </div>
 
@@ -164,12 +165,12 @@
         <div class='form-group'>
           <p>Have any residents of your household been convicted of animal or domestic abuse in the last 5 years:</p>
           <div class='form-check form-check-inline'>
-            <input class='form-check-input' type='radio' name='abuse' id='nAbuse' ng-model='Dog.abuse' value='No' required>
-            <label class='form-check-label' for='nAbuse'>No</label>
-          </div>
-          <div class='form-check form-check-inline'>
             <input class='form-check-input' type='radio' name='abuse' id='yAbuse' ng-model='Dog.abuse' value='Yes' required>
             <label class='form-check-label' for='yAbuse'>Yes</label>
+          </div>
+          <div class='form-check form-check-inline'>
+            <input class='form-check-input' type='radio' name='abuse' id='nAbuse' ng-model='Dog.abuse' value='No' required>
+            <label class='form-check-label' for='nAbuse'>No</label>
           </div>
         </div>
 
@@ -215,7 +216,7 @@
           <label class='form-control-label'>Has {{Dog.name | uppercase}} ever injured another animal:</label>
           <select class='form-control' ng-model='Dog.animalInjury' required>
             <option value='' selected disabled>Please Choose...</option>
-            <option value='None'>None</option>
+            <option value='Never'>Never</option>
             <option value='Injured Animal'>Injured another animal</option>
             <option value='Killed Animal'>Killed another animal</option>
             <option value='Injured More'>Injured more than one animal</option>
@@ -241,6 +242,7 @@
           <label class='form-control-label'>Human Injury:</label>
           <select class='form-control' ng-model='Dog.humanInjury' required>
             <option value='' selected disabled>Please Choose...</option>
+            <option value='Never'>Never</option>
             <option value='Injured Child'>Injured a child - leaving minor brusing, scratching but no broken skin - one time</option>
             <option value='Injured Adult'>Injured an adult - leaving minor brusing, scratching but no broken skin - one time</option>
             <option value='Child Breaking Skin'>Injured a child - breaking skin, no permanent scarring</option>
@@ -278,17 +280,17 @@
         <div class='form-group'>
           <p>Is {{Dog.name | uppercase}} in a foster arrangement where the owner has been deployed:</p>
           <div class='form-check form-check-inline'>
-            <input class='form-check-input' type='radio' name='deployed' ng-model='Dog.deployed' id='nDeployed' value='No' required>
-            <label class='form-check-label' for='nDeployed'>No</label>
-          </div>
-          <div class='form-check form-check-inline'>
             <input class='form-check-input' type='radio' name='deployed' ng-model='Dog.deployed' id='yDeployed' value='Yes' required>
             <label class='form-check-label' for='yDeployed'>Yes</label>
+          </div>
+          <div class='form-check form-check-inline'>
+            <input class='form-check-input' type='radio' name='deployed' ng-model='Dog.deployed' id='nDeployed' value='No' required>
+            <label class='form-check-label' for='nDeployed'>No</label>
           </div>
         </div>
 
         <div class='form-group'>
-          <p>Is {{Dog.name | uppercase}} in your home with the intent that {{Dog.hisHer}} will be adopted: <span title='When you foster, you agree to take a homeless dog into your home and give {{Dog.hisHers}} love, care, and attention, either for a predetermined period of time or until the dog is adopted.' class='fa fa-question'></span></p>
+          <p>Is {{Dog.name | uppercase}} in your home with the intent that {{Dog.heShe}} will be adopted: <span title='When you foster, you agree to take a homeless dog into your home and give {{Dog.hisHers}} love, care, and attention, either for a predetermined period of time or until the dog is adopted.' class='fa fa-question'></span></p>
           <div class='form-check form-check-inline'>
             <input class='form-check-input' type='radio' name='adopted' value='No' ng-model='Dog.adopted' id='nAdopted' required>
             <label class='form-check-label' for='nAdopted'>No</label>
