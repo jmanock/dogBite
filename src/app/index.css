@@ -60,3 +60,9 @@ footer h6{
 h5{
   text-align:center;
 }
+.something input{
+  padding-right:15px;
+}
+.something:after{
+  content:'LBS';
+}

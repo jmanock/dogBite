@@ -1,5 +1,5 @@
 {
-  "name": "dogBite",
+  "name": "dog-bite",
   "version": "1.0.0",
   "dependencies": {
     "angular-touch": "~1.5.3",
