@@ -11,14 +11,15 @@
 
     vm.states = states;
     vm.breeds = breeds;
-    var Dogs = [];
-
+    var doggie = [];
     vm.Next = function(Dog, x){
       if (x === 'dg') {
         // vm.personInfo = true;
         // vm.dogInfo = true;
-        Dogs.push(Dog);
-        $log.log(Dogs);
+        var dogs = angular.copy(Dog);
+        doggie.push(dogs);
+        vm.doggie = doggie;
+        $log.log(doggie);
       } else if (x === 'hi') {
         vm.dogInfo = false;
         vm.homeInfo = true;

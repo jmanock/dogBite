@@ -18,7 +18,9 @@
             <option value='' selected disabled>Please Choose...</option>
           </select>
         </div>
+        <h1 ng-repeat='x in form.doggie'>{{x.name}} | {{x.email}} | {{x.state}}</h1>
         <button class='btn btn-default' type='button' ng-click='form.Next(Dog, "dg")'>Next</button>
+
       </section>
 
       <section class='dogInfo col-9' ng-show='form.dogInfo'>
