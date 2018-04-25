@@ -34,7 +34,7 @@
         var dogs = angular.copy(Dog);
         doggie.push(dogs);
         vm.doggie = doggie;
-        $log.log(doggie);
+        //$log.log(doggie);
       }
     }
     // Maybe add all this to fb or store local then submit at the end?
@@ -49,10 +49,9 @@
       vm.summaryDog = false;
     };
 
-    vm.EditDog = function(Dog) {
+    vm.EditDog = function(x) {
       // This might save another object with the edits
-      vm.personInfor = false;
-      vm.summaryDog = false;
+      $log.log(x);
     };
 
   }

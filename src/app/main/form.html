@@ -341,11 +341,11 @@
       </thead>
       <tbody>
         <tr ng-repeat='x in form.doggie'>
-          <td><button type='button' class='btn btn-success' ng-click='form.EditDog(Dog)' value='Edit'>Edit</button></td>
+          <td><button type='button' class='btn btn-success' ng-click='form.EditDog(x)' value='Edit'>Edit</button></td>
           <td>{{x.name | uppercase}}</td>
           <td>{{x.breed | uppercase}}</td>
           <td>Please calculate to determin eligibility</td>
-          <td><button type='button' class='btn btn-danger' ng-click='form.RemoveDog(Dog)' value='Remove' >Remove</button></td>
+          <td><button type='button' class='btn btn-danger' ng-click='form.RemoveDog(x)' value='Remove' >Remove</button></td>
         </tr>
       </tbody>
     </table>
@@ -371,5 +371,8 @@
 
     <button class='btn btn-default' type='button' ng-click='' value='Calculate'>Calculate</button>
   </div>
+</section>
+<section ng-hide='form.editDogInfo()'>
+  
 </section>
 <acme-footer></acme-footer>
