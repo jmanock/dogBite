@@ -6,7 +6,7 @@
     .controller('FormController', FormController);
 
   /** @ngInject */
-  function FormController($log, $window) {
+  function FormController($log, $window, $q, $timeout) {
     var vm = this;
 
     vm.states = states;

@@ -23,7 +23,7 @@
 
           <!-- <li type='button' ng-click='myFunction' role='presentation'
           <p ng-repeat='b in form.breeds track by $index'>{{b}}</li> -->
-        
+
 
         <button class='btn btn-default' type='button' ng-click='form.Next(Dog, "dg")'>Next</button>
       </section>
@@ -374,9 +374,3 @@
   </div>
 </section>
 <acme-footer></acme-footer>
-<script>
-$(document).ready(function(){
-  $('.dropdown-menu').find('input').click(function (e){
-    e.stopPropagation();
-  });
-});
