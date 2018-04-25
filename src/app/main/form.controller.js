@@ -6,7 +6,7 @@
     .controller('FormController', FormController);
 
   /** @ngInject */
-  function FormController($log, $window, $q, $timeout) {
+  function FormController($log, $window, $scope) {
     var vm = this;
 
     vm.states = states;
@@ -50,10 +50,30 @@
     };
 
     vm.EditDog = function(x) {
-      // This might save another object with the edits
+      // Should open small form to have edits
+      vm.editDogInfo = true;
       $log.log(x);
     };
 
+    /*
+      ~ Edit Button
+        - if value is the same, select that value
+    */
+    vm.F=[{
+      name:'Shane',
+      job:'teacher',
+      radio:'No'
+    },{
+      name:'Steve',
+      job:'student',
+      radio:'Yes'
+    }];
+    vm.something = angular.copy(vm.F);
+    vm.EditMe = function(x){
+      // var tem = {name:x.name,job:x.job,radio:x.radio};
+      // vm.something.push(tem);
+      $log.log(x);
+    }
   }
 })();
 
