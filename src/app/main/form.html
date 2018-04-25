@@ -25,32 +25,31 @@
           <p ng-repeat='b in form.breeds track by $index'>{{b}}</li> -->
 
 
-        <button class='btn btn-default' type='button' ng-click='form.Next(Dog, "dg")'>Next</button>
+        <button class='btn btn-default' type='button' ng-click='form.Next(Dog, "dg")' ng-disabled='Dog.name === $invalid || Dog.email === $invalid || Dog.state === $invalid'>Next</button>
       </section>
 
       <section class='dogInfo col-9' ng-show='form.dogInfo'>
         <div class='form-group'>
-          <label class='form-control-label'>What BREED is {{Dog.name | uppercase}}:</label>
+          <label class='form-control-label'>What Breed is {{Dog.name | uppercase}}:</label>
           <select class='form-control' ng-model='Dog.breed' ng-options='item for item in form.breeds' required>
             <option value='' selected disabled>Please Choose...</option>
           </select>
         </div>
 
         <div class='form-group'>
-          <label class='form-control-label'>What COLOR is {{Dog.name | uppercase}}:</label>
+          <label class='form-control-label'>What Color is {{Dog.name | uppercase}}:</label>
           <input class='form-control' type='text' ng-model='Dog.color' required>
         </div>
 
         <div class='form-group'>
-          <label class='form-control-label'>What is {{Dog.name}}'s Weight:</label>
+          <label class='form-control-label'>What is {{Dog.name | uppercase}}'s Weight:</label>
           <div class='input-group'>
-            <input type='number' class='form-control' aria-label='Dogs Weight' aria-describeby='basic-addon2'>
+            <input type='number' class='form-control' aria-label='Dogs Weight' aria-describeby='basic-addon2' ng-model='Dog.weight' required>
             <div class='input-group-append'>
               <span class='input-group-text' id='basic-addon2'>LBs</span>
             </div>
           </div>
         </div>
-
 
         <div class='form-group'>
           <label class='form-control-label'>Where does {{Dog.name | uppercase}} go for relef/potty most of the time:</label>
@@ -135,7 +134,7 @@
             <option value='War'>War or Police service dog, Professionally trained Personal Protection or Professional Trained Guard Dog</option>
           </select>
         </div>
-        <button type='button' class='btn btn-default' ng-click='form.Next(Dog, "hi")'>Next</button>
+        <button type='button' class='btn btn-default' ng-click='form.Next(Dog, "hi")' ng-disabled='Dog.breed === $invalid || Dog.color === $invalid || Dog.weight === $invalid || Dog.bathroom === $invalid || Dog.gender === $invalid || Dog.sleep === $invalid || Dog.vaccinations === $invalid || Dog.parks === $invalid || Dog.veterinarian === $invalid || Dog.training === $invalid'>Next</button>
       </section>
 
       <section class='homeInfo col-9' ng-show='form.homeInfo'>
@@ -311,7 +310,7 @@
             <label class='form-check-label' for='yAdopted'>Yes</label>
           </div>
         </div>
-        <button type='button' value='Next' class='btn btn-default' ng-click='form.Next(Dog, "summary")'>Next</button>
+        <button type='button' value='Next' class='btn btn-default' ng-click='form.Next(Dog, "summary")' ng-disabled='Dog.adopted === $invalid || Dog.deployed === $invalid || Dog.animalServices === $invalid || Dog.humanInjury === $invalid || Dog.animalInjury === $invalid || Dog.involvedWork === $invalid || Dog.work === $invalid || Dog.dogsHome === $invalid || Dog.abuse === $invalid || Dog.children === $invalid || Dog.area === $invalid || Dog.doesBreed === $invalid'>Next</button>
       </section>
 
       <div class='col-3' ng-hide='form.progressMenu'>
@@ -346,7 +345,7 @@
           <td>{{x.name | uppercase}}</td>
           <td>{{x.breed | uppercase}}</td>
           <td>Please calculate to determin eligibility</td>
-          <td><button type='button' class='btn btn-danger' ng-click='form.RemoveDog(Dog)' value='Remove'>Remove</button></td>
+          <td><button type='button' class='btn btn-danger' ng-click='form.RemoveDog(Dog)' value='Remove' >Remove</button></td>
         </tr>
       </tbody>
     </table>
