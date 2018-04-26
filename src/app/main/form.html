@@ -372,20 +372,5 @@
     <button class='btn btn-default' type='button' ng-click='' value='Calculate'>Calculate</button>
   </div>
 </section> -->
-<section>
-  <select ng-model='F.name'>
-    <option value='' selected disabled>Choose</option>
-    <option value='Steve'>Steve</option>
-    <option value='Shane'>Shane</option>
-    <option value='Peez'>Peez</option>
-    <option value='beez'>beez</option>
-  </select>
-  <input type='radio' ng-model='F.radio' name='ttp' value='Yes'>Yes
-  <input type='radio' ng-model='F.radio' name='ttp' value='No'>No
-  <input type='text' ng-model='F.job' placeholder='Gob'>
-  <button type='button' ng-click='form.notMe()'> Me</button>
-  <!-- <h3 ng-repeat='a in form.F'>{{a.name | a.job | a.radio}}</h3> -->
-  <h3 ng-repeat='a in form.F'>{{a.name}} | {{a.job}} | {{a.radio}} <button type='button' ng-click='form.EditMe($index)'>Edit Me</button></h3>
 
-</section>
 <acme-footer></acme-footer>

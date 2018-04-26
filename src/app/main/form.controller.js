@@ -54,26 +54,6 @@
       vm.editDogInfo = true;
       $log.log(x);
     };
-
-    /*
-      ~ Edit Button
-        - if value is the same, select that value
-    */
-    vm.F=[{
-      name:'Shane',
-      job:'teacher',
-      radio:'No'
-    },{
-      name:'Steve',
-      job:'student',
-      radio:'Yes'
-    }];
-    vm.something = angular.copy(vm.F);
-    vm.EditMe = function(x){
-      // var tem = {name:x.name,job:x.job,radio:x.radio};
-      // vm.something.push(tem);
-      $log.log(x);
-    }
   }
 })();
 
