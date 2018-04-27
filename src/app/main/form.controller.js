@@ -11,7 +11,63 @@
 
     vm.states = states;
     vm.breeds = breeds;
-    var doggie = [];
+    var doggie = [
+      {
+        name:'Sam',
+        email:'sam@test.com',
+        state:'Florida',
+        breed:'Mix',
+        color:'Brown',
+        weight:'9',
+        bathroom:'Leash',
+        gender:'Female',
+        sleep:'Inside',
+        vaccinations:'Yes',
+        parks:'No',
+        veterinarian:'Annually',
+        training:'None',
+        area:'City',
+        doesBreed:'No',
+        children:'None',
+        abuse:'No',
+        dogsHome:'1',
+        work:'No',
+        involvedWork:'No',
+        animalInjury:'Never',
+        humanInjury:'Never',
+        animalServices:'No',
+        deployed:'No',
+        adopted:'No'
+      },
+      {
+        name:'Boggie',
+        email:'Boggie@test.com',
+        state:'Illinois',
+        breed:'Mix',
+        color:'Black',
+        weight:'10',
+        bathroom:'Inside',
+        gender:'Male',
+        sleep:'Inside',
+        vaccinations:'Yes',
+        parks:'No',
+        veterinarian:'Annually',
+        training:'None',
+        area:'City',
+        doesBreed:'No',
+        children:'None',
+        abuse:'No',
+        dogsHome:'1',
+        work:'No',
+        involvedWork:'No',
+        animalInjury:'Never',
+        humanInjury:'Never',
+        animalServices:'No',
+        deployed:'No',
+        adopted:'No'
+      }
+    ];
+    vm.doggie = doggie;
     vm.Next = function(Dog, x){
       if (x === 'dg') {
         vm.personInfo = true;
@@ -37,10 +93,7 @@
         //$log.log(doggie);
       }
     }
-    // Maybe add all this to fb or store local then submit at the end?
-    vm.RemoveDog = function(Dog) {
-      // Should delete all dog data either dog1 or dog2
-    };
+
 
     vm.AddDog = function(Dog) {
       angular.element(document.getElementById('DogForm').reset());
@@ -49,11 +102,6 @@
       vm.summaryDog = false;
     };
 
-    vm.EditDog = function(x) {
-      // Should open small form to have edits
-      vm.editDogInfo = true;
-      $log.log(x);
-    };
   }
 })();
 
