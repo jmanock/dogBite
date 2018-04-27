@@ -11,93 +11,93 @@
 
     vm.states = states;
     vm.breeds = breeds;
-    var doggie = [
-      {
-        id:1,
-        name:'Sam',
-        email:'sam@test.com',
-        state:'Florida',
-        breed:'Mix',
-        color:'Brown',
-        weight:'9',
-        bathroom:'Leash',
-        gender:'Female',
-        sleep:'Inside',
-        vaccinations:'Yes',
-        parks:'No',
-        veterinarian:'Annually',
-        training:'None',
-        area:'City',
-        doesBreed:'No',
-        children:'None',
-        abuse:'No',
-        dogsHome:'1',
-        work:'No',
-        involvedWork:'No',
-        animalInjury:'Never',
-        humanInjury:'Never',
-        animalServices:'No',
-        deployed:'No',
-        adopted:'No'
-      },
-      {
-        id:2,
-        name:'Boggie',
-        email:'Boggie@test.com',
-        state:'Illinois',
-        breed:'Mix',
-        color:'Black',
-        weight:'10',
-        bathroom:'Inside',
-        gender:'Male',
-        sleep:'Inside',
-        vaccinations:'Yes',
-        parks:'No',
-        veterinarian:'Annually',
-        training:'None',
-        area:'City',
-        doesBreed:'No',
-        children:'None',
-        abuse:'No',
-        dogsHome:'1',
-        work:'No',
-        involvedWork:'No',
-        animalInjury:'Never',
-        humanInjury:'Never',
-        animalServices:'No',
-        deployed:'No',
-        adopted:'No'
-      },
-      {
-        id:3,
-        name:'Woody',
-        email:'woody@test.com',
-        state:'New York',
-        breed:'Mix',
-        color:'Brown',
-        weight:'7',
-        bathroom:'Leash',
-        gender:'Male',
-        sleep:'Inside',
-        vaccinations:'Yes',
-        parks:'No',
-        veterinarian:'Annually',
-        training:'None',
-        area:'City',
-        doesBreed:'No',
-        children:'None',
-        abuse:'No',
-        dogsHome:'1',
-        work:'No',
-        involvedWork:'No',
-        animalInjury:'Never',
-        humanInjury:'Never',
-        animalServices:'None',
-        deployed:'No',
-        adopted:'No'
-      }
-    ];
-    vm.doggie = doggie;
+    vm.doggie = {
+      dogs:[
+        {
+          id:1,
+          name:'Sam',
+          state:'Florida',
+          breed:'Mix',
+          color:'Brown',
+          weight:'9',
+          bathroom:'Leash',
+          gender:'Female',
+          sleep:'Inside',
+          vaccinations:'Yes',
+          parks:'No',
+          veterinarian:'Annually',
+          training:'None',
+          area:'City',
+          doesBreed:'No',
+          children:'None',
+          abuse:'No',
+          dogsHome:'1',
+          work:'No',
+          involvedWork:'No',
+          animalInjury:'Never',
+          humanInjury:'Never',
+          animalServices:'No',
+          deployed:'No',
+          adopted:'No'
+        },
+        {
+          id:2,
+          name:'Boggie',
+          state:'Georiga',
+          breed:'Mix',
+          color:'Black',
+          weight:'7',
+          bathroom:'Inside',
+          gender:'Male',
+          sleep:'Inside',
+          vaccinations:'Yes',
+          parks:'No',
+          veterinarian:'Annually',
+          training:'None',
+          area:'City',
+          doesBreed:'No',
+          children:'None',
+          abuse:'No',
+          dogsHome:'1',
+          work:'No',
+          involvedWork:'No',
+          animalInjury:'Never',
+          humanInjury:'Never',
+          animalServices:'No',
+          deployed:'No',
+          adopted:'No'
+        },
+        {
+          id:3,
+          name:'Woodie',
+          state:'Iowa',
+          breed:'Mix',
+          color:'Red',
+          weight:'7',
+          bathroom:'Leash',
+          gender:'Male',
+          sleep:'Inside',
+          vaccinations:'Yes',
+          parks:'No',
+          veterinarian:'Annually',
+          training:'None',
+          area:'City',
+          doesBreed:'No',
+          children:'None',
+          abuse:'No',
+          dogsHome:'1',
+          work:'No',
+          involvedWork:'No',
+          animalInjury:'Never',
+          humanInjury:'Never',
+          animalServices:'No',
+          deployed:'No',
+          adopted:'No'
+        }
+      ],
+      selected:{}
+    };
+
     vm.Next = function(Dog, x){
       if (x === 'dg') {
         vm.personInfo = true;
@@ -124,7 +124,7 @@
       }
     }
     vm.getTemplate = function(dog){
-      if(dog.id === vm.doggie.id){
+      if(dog.id === vm.doggie.selected.id){
         return 'edit';
       }else{
         return 'display';
@@ -137,8 +137,9 @@
     vm.RemoveDog = function() {
 
     };
-    vm.EditDog = function() {
-
+    vm.EditDog = function(dog) {
+      vm.doggie.selected = angular.copy(dog);
+      //$log.log(dog);
     };
 
   }

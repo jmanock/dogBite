@@ -383,7 +383,7 @@
       <th></th>
     </thead>
     <tbody>
-      <tr ng-repeat='dog in form.doggie' ng-include='form.getTemplate(dog)'></tr>
+      <tr ng-repeat='dog in form.doggie.dogs' ng-include='form.getTemplate(dog)'></tr>
     </tbody>
   </table>
   <script type='text/ng-template' id='display'>
@@ -403,4 +403,5 @@
       <button type='button' ng-click='form.delete(form.dog.selected.name)'>Delete</button>
     </td>
   </script>
+</div>
 <acme-footer></acme-footer>
