@@ -398,9 +398,9 @@
     <td><input type='text' placeholder="Dog's Name" ng-model='dog.name'></td>
     <td><input type='email' placeholder='Email' ng-model='dog.email'></td>
     <td>
-      <button type='button' ng-click='form.SaveContact($index)'>Save</button>
-      <button type='button' ng-click='form.reset()'>Cancle</button>
-      <button type='button' ng-click='form.delete(form.dog.selected.name)'>Delete</button>
+      <button type='button' ng-click='form.SaveContact($index)' class='btn btn-default'>Save</button>
+      <button type='button' ng-click='form.reset()' class='btn btn-secondary'>Cancle</button>
+      <button type='button' ng-click='form.delete(form.dog.selected.name)' class='btn btn-danger'>Delete</button>
     </td>
   </script>
 </div>
