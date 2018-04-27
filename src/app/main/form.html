@@ -376,22 +376,31 @@
   <button type='button' value='Add' class='btn btn-secondary' ng-click='form.AddDog()'><i class='fa fa-plus-circle'></i> Add Another Dog</button>
   <table class='table'>
     <thead>
-      <tr>
-        <th>Edit</th>
-        <th>Dog's Name</th>
-        <th>Eligaible</th>
-        <th>Remove</th>
-      </tr>
+      <th>Name</th>
+      <th>Breed</th>
+      <th>Email</th>
+      <th>Eligaible</th>
+      <th></th>
     </thead>
     <tbody>
-      <tr ng-repeat='x in form.doggie'>
-        <td><button type='button' class='btn btn-success' ng-click='form.EditDog()' value='Edit'>Edit</button></td>
-        <td>{{x.name | uppercase}}</td>
-        <td>{{x.breed | uppercase}}</td>
-        <td>Please calculate to determin eligibility</td>
-        <td><button type='button' class='btn btn-danger' ng-click='form.RemoveDog()' value='Remove'>Remove</button></td>
-      </tr>
+      <tr ng-repeat='dog in form.doggie' ng-include='form.getTemplate(dog)'></tr>
     </tbody>
   </table>
-
+  <script type='text/ng-template' id='display'>
+    <td>{{dog.name | uppercase}}</td>
+    <td>{{dog.breed | uppercase}}</td>
+    <td>Please calculate to determin eligibility</td>
+    <td>
+      <button type='button' class='btn btn-success' ng-click='form.EditDog(dog)'>Edit</button>
+    </td>
+  </script>
+  <script type='text/ng-template' id='edit'>
+    <td><input type='text' placeholder="Dog's Name" ng-model='dog.name'></td>
+    <td><input type='email' placeholder='Email' ng-model='dog.email'></td>
+    <td>
+      <button type='button' ng-click='form.SaveContact($index)'>Save</button>
+      <button type='button' ng-click='form.reset()'>Cancle</button>
+      <button type='button' ng-click='form.delete(form.dog.selected.name)'>Delete</button>
+    </td>
+  </script>
 <acme-footer></acme-footer>

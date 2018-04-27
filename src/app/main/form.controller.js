@@ -13,6 +13,7 @@
     vm.breeds = breeds;
     var doggie = [
       {
+        id:1,
         name:'Sam',
         email:'sam@test.com',
         state:'Florida',
@@ -40,6 +41,7 @@
         adopted:'No'
       },
       {
+        id:2,
         name:'Boggie',
         email:'Boggie@test.com',
         state:'Illinois',
@@ -63,6 +65,34 @@
         animalInjury:'Never',
         humanInjury:'Never',
         animalServices:'No',
+        deployed:'No',
+        adopted:'No'
+      },
+      {
+        id:3,
+        name:'Woody',
+        email:'woody@test.com',
+        state:'New York',
+        breed:'Mix',
+        color:'Brown',
+        weight:'7',
+        bathroom:'Leash',
+        gender:'Male',
+        sleep:'Inside',
+        vaccinations:'Yes',
+        parks:'No',
+        veterinarian:'Annually',
+        training:'None',
+        area:'City',
+        doesBreed:'No',
+        children:'None',
+        abuse:'No',
+        dogsHome:'1',
+        work:'No',
+        involvedWork:'No',
+        animalInjury:'Never',
+        humanInjury:'Never',
+        animalServices:'None',
         deployed:'No',
         adopted:'No'
       }
@@ -93,13 +123,22 @@
         //$log.log(doggie);
       }
     }
+    vm.getTemplate = function(dog){
+      if(dog.id === vm.doggie.id){
+        return 'edit';
+      }else{
+        return 'display';
+      }
+    };
 
+    vm.AddDog = function() {
 
-    vm.AddDog = function(Dog) {
-      angular.element(document.getElementById('DogForm').reset());
-      //document.getElementById('DogForm').reset();
-      vm.personInfo = false;
-      vm.summaryDog = false;
+    };
+    vm.RemoveDog = function() {
+
+    };
+    vm.EditDog = function() {
+
     };
 
   }
