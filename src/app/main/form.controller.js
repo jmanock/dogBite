@@ -44,7 +44,7 @@
         {
           id:2,
           name:'Boggie',
-          state:'Georiga',
+          state:'Illinois',
           email:'Boggie@test.com',
           breed:'Mix',
           color:'Black',
