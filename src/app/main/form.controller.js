@@ -135,7 +135,10 @@
     };
 
     vm.AddDog = function() {
-
+      var id = vm.doggie.dogs.id;
+      id = vm.doggie.dogs.length + 1;
+      $log.log(id);
+      vm.doggie.dogs.push({id:id, name:'', state:'',email:'', breed:'',color:'', weight:'',bathroom:'',gender:'',sleep:'',vaccinations:'',parks:'',veterinarian:'', training:'', area:'',doesBreed:'',children:'', abuse:'',dogsHome:'',work:'',involvedWork:'',animalInjury:'',humanInjury:'',animalServices:'', deployed:'',adopted:''});
     };
     vm.RemoveDog = function() {
 
@@ -144,7 +147,7 @@
       vm.doggie.selected = angular.copy(dog);
       //$log.log(dog);
     };
-    vm.Cancle = function(){
+    vm.Cancel = function(){
       vm.doggie.selected = {};
     }
 
