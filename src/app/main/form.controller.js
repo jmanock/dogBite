@@ -144,6 +144,9 @@
       vm.doggie.selected = angular.copy(dog);
       //$log.log(dog);
     };
+    vm.Cancle = function(){
+      vm.doggie.selected = {};
+    }
 
   }
 })();
