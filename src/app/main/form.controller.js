@@ -20,7 +20,7 @@
           email:'Sam@test.com',
           breed:'Mix',
           color:'Brown',
-          weight:'9',
+          weight:9,
           bathroom:'Leash',
           gender:'Female',
           sleep:'Inside',
@@ -48,7 +48,7 @@
           email:'Boggie@test.com',
           breed:'Mix',
           color:'Black',
-          weight:'7',
+          weight:8,
           bathroom:'Inside',
           gender:'Male',
           sleep:'Inside',
@@ -76,7 +76,7 @@
           email:'Woodie@test.com',
           breed:'Mix',
           color:'Red',
-          weight:'7',
+          weight:7,
           bathroom:'Leash',
           gender:'Male',
           sleep:'Inside',
@@ -145,7 +145,6 @@
     };
     vm.EditDog = function(dog) {
       vm.doggie.selected = angular.copy(dog);
-      //$log.log(dog);
     };
     vm.Cancel = function(){
       vm.doggie.selected = {};
