@@ -127,11 +127,7 @@
       }
     }
     vm.getTemplate = function(dog){
-      if(dog.id === vm.doggie.selected.id){
-        return 'edit';
-      }else{
-        return 'display';
-      }
+      return 'display';
     };
 
     vm.AddDog = function() {
@@ -145,6 +141,7 @@
     };
     vm.EditDog = function(dog) {
       vm.doggie.selected = angular.copy(dog);
+      vm.getTemplate(dog);
     };
     vm.Cancel = function(){
       vm.doggie.selected = {};

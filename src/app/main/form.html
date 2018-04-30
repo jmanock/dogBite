@@ -381,18 +381,52 @@
       <th>Eligaible</th>
       <th>Email</th>
     </tr>
-    <tbody>
-      <tr ng-repeat='dog in form.doggie.dogs' ng-include='form.getTemplate(dog)'></tr>
+    <tbody ng-include='form.getTemplate()'>
+
     </tbody>
   </table>
 </div>
 <script type='text/ng-template' id='display'>
-  <td>{{dog.name | uppercase}}</td>
-  <td>{{dog.breed | uppercase}}</td>
-  <td>Please calculate to determin eligibility</td>
-  <td>{{dog.email}}</td>
-  <td>
-    <button type='button' class='btn btn-success' ng-click='form.EditDog(dog)'>Edit</button>
-  </td>
+  <tr ng-repeat='dog in form.doggie.dogs'>
+    <td>{{dog.name | uppercase}}</td>
+    <td>{{dog.breed | uppercase}}</td>
+    <td>Please calculate to determin eligibility</td>
+    <td>{{dog.email}}</td>
+    <td>
+      <button type='button' class='btn btn-success' ng-click='form.EditDog(dog)'>Edit</button>
+    </td>
+  </tr>
+</script>
+<script type='text/ng-template' id='edit'>
+  <tr ng-repeat='dog in form.doggie.dogs'>
+    <td>
+      <label class='form-control-label'>Dogs Name:</label>
+      <input type='text' placeholder='Dogs Name' ng-model='dog.name' class='form-control'>
+    </td>
+    <td>
+      <label class='form-control-label'>Email:</label>
+      <input type='email' placeholder='Email' ng-model='dog.email' class='form-control'>
+    </td>
+    <td>
+      <label class='form-control-label'>State:</label>
+      <select ng-model='dog.state' class='form-control' ng-options='items for items in form.states'>
+        <option value='' selected disabled>Please Choose...</option>
+      </select>
+    </td>
+    <td>
+      <label class='form-control-label'>What Breed is your Dog:</label>
+      <select ng-model='dog.breed' class='form-control' ng-options='item for item in form.breeds'>
+        <option value='' selected disabled>Please Choose...</option>
+      </select>
+    </td>
+    <td>
+      <label class='form-control-label'>What Color is your Dog:</label>
+      <input class='form-control' placeholder='Color' ng-model='dog.color' type='text'>
+    </td>
+    <td>
+      <label class='form-control-label'>What is the Weight of your Dog:</label>
+      <input type='number' min='1' placeholder='Weight' ng-model='dog.weight' class='form-control'>
+    </td>
+  </tr>
 </script>
 <acme-footer></acme-footer>
