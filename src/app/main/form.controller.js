@@ -140,13 +140,16 @@
       $log.log(id);
       vm.doggie.dogs.push({id:id, name:'', state:'',email:'', breed:'',color:'', weight:'',bathroom:'',gender:'',sleep:'',vaccinations:'',parks:'',veterinarian:'', training:'', area:'',doesBreed:'',children:'', abuse:'',dogsHome:'',work:'',involvedWork:'',animalInjury:'',humanInjury:'',animalServices:'', deployed:'',adopted:''});
     };
-    vm.RemoveDog = function() {
 
+    vm.RemoveDog = function(name) {
+      
     };
+
     vm.EditDog = function(dog) {
       vm.doggie.selected = angular.copy(dog);
       vm.getTemplate(dog);
     };
+
     vm.Cancel = function(){
       vm.doggie.selected = {};
     }

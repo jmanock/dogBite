@@ -510,6 +510,24 @@
         <textarea class='form-control' cols='30' rows='10' ng-model='dog.humanInjury.changes'></textarea>
       </div>
     </div>
+    <div class='form-group'>
+      <label class='form-control-label'>Has your Dog ever been involved with Animal Services:</label>
+      <select ng-model='dog.animalServices' class='form-control'>
+        <option value='' selected disabled>Please Choose...</option>
+        <option value='Never'>Never</option>
+        <option value='Once'>Once for breaking the law no injuries</option>
+        <option value='Confiscated'>Confiscated and/or fines were issued</option>
+        <option value='Labled'>Been labeled dangerous or vicious</option>
+      </select>
+    </div>
+    <div class='form-group'>
+      <label class='form-control-label'>Is your Dog in a foster arrangement where the owner has been Deployed:</label>
+      <select ng-model='dog.deployed' class='form-control'>
+        <option value='' selected disabled>Please Choose...</option>
+        <option value='Yes'>Yes</option>
+        <option value='No'>No</option>
+      </select>
+    </div>
   </td>
 
   <td>
@@ -622,6 +640,19 @@
         <label class='form-control-label'>What changes have you made to prevent similar events:</label>
         <textarea cols='30' rows='10' ng-model='dog.animalInjury.changes' class='form-control'></textarea>
       </div>
+    </div>
+    <div class='form-group'>
+      <label class='form-control-label'>Is your Dog in your home with the intent that he/she will be adopted:</label>
+      <select class='form-control' ng-model='dog.adopted'>
+        <option value='' selected disabled>Please Choose...</option>
+        <option value='Yes'>Yes</option>
+        <option value='No'>No</option>
+      </select>
+    </div>
+    <div class='form-group'>
+      <button type='button' ng-click='form.SaveContact($index)' class='btn btn-default'>Save</button>
+      <button type='button' ng-click='form.Cancel()' class='btn btn-secondary'>Cancle</button>
+      <button type='button' ng-click='form.RemoveDog(form.dog.selected.name)' class='btn btn-danger'>Delete</button>
     </div>
   </td>
 </script>
