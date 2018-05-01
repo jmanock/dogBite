@@ -127,7 +127,11 @@
       }
     }
     vm.getTemplate = function(dog){
-      return 'display';
+      if(dog.id === vm.doggie.selected.id){
+        return 'edit';
+      }else{
+        return 'display';
+      }
     };
 
     vm.AddDog = function() {
