@@ -142,7 +142,16 @@
     };
 
     vm.RemoveDog = function(name) {
-      
+      var index = -1;
+      var comArr = eval(vm.doggie.dogs);
+      for(var i = 0; i < comArr.length; i++){
+        if(comArr[i].name === name){
+          index = i;
+          break;
+        }
+      }
+      vm.doggie.dogs.splice(index, 1);
+      vm.doggie.selected = {};
     };
 
     vm.EditDog = function(dog) {
