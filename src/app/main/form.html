@@ -392,7 +392,6 @@
   <td>{{dog.name | uppercase}}</td>
   <td>{{dog.breed | uppercase}}</td>
   <td>Please calculate to determin eligibility</td>
-  <td>{{dog.email}}</td>
   <td>
     <button type='button' class='btn btn-success' ng-click='form.EditDog(dog)'>Edit</button>
     <button type='button' ng-click='form.RemoveDog(form.dog.selected.name)' class='btn btn-danger'>Delete</button>
@@ -522,12 +521,8 @@
       </select>
     </div>
     <div class='form-group'>
-      <label class='form-control-label'>Is your Dog in a foster arrangement where the owner has been Deployed:</label>
-      <select ng-model='dog.deployed' class='form-control'>
-        <option value='' selected disabled>Please Choose...</option>
-        <option value='Yes'>Yes</option>
-        <option value='No'>No</option>
-      </select>
+      <button type='button' ng-click='form.Save($index)' class='btn btn-default'>Save</button>
+      <button type='button' ng-click='form.Cancel()' class='btn btn-secondary'>Cancle</button>
     </div>
   </td>
 
@@ -651,10 +646,14 @@
       </select>
     </div>
     <div class='form-group'>
-      <button type='button' ng-click='form.Save($index)' class='btn btn-default'>Save</button>
-      <button type='button' ng-click='form.Cancel()' class='btn btn-secondary'>Cancle</button>
-
+      <label class='form-control-label'>Is your Dog in a foster arrangement where the owner has been Deployed:</label>
+      <select ng-model='dog.deployed' class='form-control'>
+        <option value='' selected disabled>Please Choose...</option>
+        <option value='Yes'>Yes</option>
+        <option value='No'>No</option>
+      </select>
     </div>
+
   </td>
 </script>
 <acme-footer></acme-footer>
