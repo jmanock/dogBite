@@ -372,7 +372,7 @@
     <button class='btn btn-default' type='button' ng-click='' value='Calculate'>Calculate</button>
   </div>
 </section> -->
-<div class='container'>
+<!-- <div class='container'>
   <button type='button' value='Add' class='btn btn-secondary' ng-click='form.AddDog()'><i class='fa fa-plus-circle'></i> Add Another Dog</button>
   <table class='table'>
     <thead>
@@ -521,7 +521,7 @@
       </select>
     </div>
     <div class='form-group'>
-      <button type='button' ng-click='form.Save($index)' class='btn btn-default'>Save</button>
+      <button type='button' ng-click='form.Save(dog)' class='btn btn-default'>Save</button>
       <button type='button' ng-click='form.Cancel()' class='btn btn-secondary'>Cancle</button>
     </div>
   </td>
@@ -655,5 +655,60 @@
     </div>
 
   </td>
-</script>
+</script> -->
+
+<div class='container'>
+  <table class='table'>
+    <thead>
+      <tr>
+        <th>Dogs Name</th>
+        <th>Breed</th>
+        <th>Eligaible</th>
+      </tr>
+    </thead>
+    <tbody ng-repeat='dog in form.doggie.dogs'>
+      <tr>
+        <td>{{dog.name}}</td>
+        <td>{{dog.breed}}</td>
+        <td>Please calculate to determin eligibility</td>
+        <td>
+          <span ng-hide='dog.editing'>
+            <button ng-click='form.EditDog(dog)' class='btn btn-success' type='button'>Edit</button>
+          </span>
+          <!-- <input type='text' ng-show='dog.editing' placeholder='Name'> -->
+        </td>
+      </tr>
+      <tr>
+        <div ng-show='dog.editing'>
+          <div class='form-group'>
+            <label class='form-control-label'>Dogs Name:</label>
+            <input type='text' ng-model='dog.name' class='form-control'>
+          </div>
+
+          <div class='form-group'>
+            <label class='form-control-label'>Dogs Breed:</label>
+            <select ng-options='items for items in form.breeds' class='form-control' ng-model='dog.breed'>
+              <option value='' selected disabled>Please Choose...</option>
+            </select>
+          </div>
+
+          <div class='form-group'>
+            <label class='form-control-label'>State:</label>
+            <select ng-options='item for item in form.states' class='form-control' ng-model='dog.state'>
+              <option value='' selected disabled>Please Choose...</option>
+            </select>
+          </div>
+
+          <div class='form-group'>
+            <label class='form-control-label'>Email:</label>
+            <input type='email' placeholder='Email' ng-model='dog.email' class='form-control'>
+          </div>
+
+          <div class='form-group'>
+            <label class='form-control-label'>What Color is your Dog:</label>
+            <input type='text' ng-model='dog.color' class='form-control' placeholder='Color'>
+          </div>
+        </div>
+  </table>
+</div>
 <acme-footer></acme-footer>

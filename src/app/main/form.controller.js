@@ -39,7 +39,8 @@
           humanInjury:'Never',
           animalServices:'No',
           deployed:'No',
-          adopted:'No'
+          adopted:'No',
+          editing:false
         },
         {
           id:2,
@@ -67,7 +68,8 @@
           humanInjury:'Never',
           animalServices:'No',
           deployed:'No',
-          adopted:'No'
+          adopted:'No',
+          editing: false
         },
         {
           id:3,
@@ -95,7 +97,8 @@
           humanInjury:'Never',
           animalServices:'No',
           deployed:'No',
-          adopted:'No'
+          adopted:'No',
+          editing:false
         }
       ],
       selected:{}
@@ -155,16 +158,18 @@
     };
 
     vm.EditDog = function(dog) {
-      vm.doggie.selected = angular.copy(dog);
-      vm.getTemplate(dog);
+      dog.editing = true;
+      dog.backupName = angular.copy(dog);
+      $log.log(dog);
     };
 
     vm.Cancel = function(){
       vm.doggie.selected = {};
     };
 
-    vm.Save = function(idx){
-      vm.doggie.dogs[idx] = angular.copy(vm.doggie.selected);
+    vm.Save = function(dog){
+      // vm.doggie.dogs[idx] = angular.copy(vm.doggie.selected);
+      $log.log(dog);
     }
   }
 })();
