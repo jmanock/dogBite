@@ -161,8 +161,11 @@
 
     vm.Cancel = function(){
       vm.doggie.selected = {};
-    }
+    };
 
+    vm.Save = function(idx){
+      vm.doggie.dogs[idx] = angular.copy(vm.doggie.selected);
+    }
   }
 })();
 

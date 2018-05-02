@@ -395,6 +395,7 @@
   <td>{{dog.email}}</td>
   <td>
     <button type='button' class='btn btn-success' ng-click='form.EditDog(dog)'>Edit</button>
+    <button type='button' ng-click='form.RemoveDog(form.dog.selected.name)' class='btn btn-danger'>Delete</button>
   </td>
 </script>
 <script type='text/ng-template' id='edit'>
@@ -650,9 +651,9 @@
       </select>
     </div>
     <div class='form-group'>
-      <button type='button' ng-click='form.SaveContact($index)' class='btn btn-default'>Save</button>
+      <button type='button' ng-click='form.Save($index)' class='btn btn-default'>Save</button>
       <button type='button' ng-click='form.Cancel()' class='btn btn-secondary'>Cancle</button>
-      <button type='button' ng-click='form.RemoveDog(form.dog.selected.name)' class='btn btn-danger'>Delete</button>
+
     </div>
   </td>
 </script>
