@@ -168,9 +168,9 @@
     };
 
     vm.Save = function(dog){
-      // vm.doggie.dogs[idx] = angular.copy(vm.doggie.selected);
-      $log.log(dog);
-    }
+
+    };
+    vm.hideform = true;
   }
 })();
 
