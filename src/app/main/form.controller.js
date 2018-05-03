@@ -170,33 +170,6 @@
     vm.Save = function(dog){
 
     };
-    vm.hideform = true;
-    vm.edit = true;
-    vm.error = false;
-    vm.incomplete = false;
-    vm.editDog = function(id){
-      $log.log(id);
-      vm.hideform = false;
-      // if(id === 'new'){
-      //   vm.edit = true;
-      //   vm.incomplete = true;
-      //   vm.name = ' ';
-      //   vm.email = ' ';
-      // }else{
-      //   vm.edit = false;
-      //   vm.name = vm.dogs[id-1].name;
-      //   vm.email = vm.dogs[id-1].email;
-      // }
-    };
-    $scope.$watch('name', function(){
-      vm.test();
-    });
-    $scope.$watch('email', function(){
-      vm.test();
-    });
-    vm.test = function(){
-
-    }
   }
 })();
 
