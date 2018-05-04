@@ -120,7 +120,8 @@
     };
 
     vm.AddDog = function(){
-      $log.log('New Dog');
+      vm.editForm = true;
+      vm.addTitle = true;
     };
 
     vm.EditDog = function(id){
@@ -132,6 +133,7 @@
 
     vm.edit = function(id){
       vm.editForm = true;
+      vm.editTitle = true;
       vm.objectIndex = id;
       vm.userObject = angular.copy(vm.dogs[id]);
       $log.log(vm.objectIndex);
