@@ -128,18 +128,12 @@
     };
 
     vm.objectIndex = '';
-    vm.userList =[
-      {Name:'Steve', Age:28},
-      {Name:'Brit', Age:40},
-      {Name:'Peez', Age:18},
-      {Name:'Bogie', Age:12},
-      {Name:'Sam', Age:5},
-      {Name:'Woodie', Age:8}
-    ];
+
 
     vm.edit = function(id){
+      vm.editForm = true;
       vm.objectIndex = id;
-      vm.userObject = angular.copy(vm.userList[id]);
+      vm.userObject = angular.copy(vm.dogs[id]);
       $log.log(vm.objectIndex);
     }
 

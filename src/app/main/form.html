@@ -375,21 +375,28 @@
 <table class='table table-striped table-bordered'>
   <thead>
     <tr>
-      <th>Sr</th>
+      <th>Index</th>
       <th>Name</th>
-      <th>Age</th>
-      <th>Action</th>
+      <th>Breed</th>
+      <th>Eligaible</th>
+      <th>Email</th>
     </thead>
     <tbody>
-      <tr ng-repeat='user in form.userList track by $index'>
+      <tr ng-repeat='dog in form.dogs track by $index'>
         <td>
           {{$index+1}}
         </td>
         <td>
-          {{user.Name}}
+          {{dog.name}}
         </td>
         <td>
-          {{user.Age}}
+          {{dog.breed}}
+        </td>
+        <td>
+          Please calculate to determin eligibility
+        </td>
+        <td>
+          {{dog.email}}
         </td>
         <td>
           <div class='btn-group'>
@@ -400,24 +407,60 @@
       </tr>
     </tbody>
   </table>
-    <div class=''>
-      <form class='form-horizontal'>
-        <div class='form-group col-sm-4'>
-          <label for='name' class='col-sm-2 control-label'>Name</label>
-          <div class='col-sm-10'>
-            <input type='text' class='form-control' id='name' placeholder='Name' ng-model='form.userObject.Name'>
-          </div>
-        </div>
-        <div class='form-group col-sm-4'>
-          <label class='col-sm-2 control-label' for='age'>Age</label>
-          <div class='col-sm-10'>
-            <input type='text' class='form-control' id='age' placeholder='Age' ng-model='form.userObject.Age'>
-          </div>
-        </div>
-        <input type='hidden' ng-model='vm.objectIndex' class='ng-valid'>
-        <div class='btn-group col-sm-2'>
-          <button type='button' class='btn btn-primary btn' ng-click='save()'>Save</button>
-        </div>
-      </form>
+  <form>
+    <div ng-show='form.editForm'>
+      <h1>Edit {{form.userObject.name}}</h1>
     </div>
+    <div ng-show='form.addForm'>
+      <h1>New Dog Form</h1>
+    </div>
+    <div class='form-row'>
+      <div class='form-group col-md-4'>
+        <label>Email</label>
+        <input type='email' class='form-control' placeholder='Email' ng-model='form.userObject.email'>
+      </div>
+      <div class='from-group col-md-4'>
+        <label>Name</label>
+        <input type='text' class='form-control' placeholder='Name' ng-model='form.userObject.name'>
+      </div>
+      <div class='form-group col-md-4'>
+        <label>Breed</label>
+        <select ng-options='items for items in form.breeds' class='form-control' ng-model='form.userObject.breeds'>
+          <option value='' selected disabled>Please Choose...</option>
+        </select>
+      </div>
+    </div>
+    <div class='form-row'>
+      <div class='from-group col-md-4'>
+        <label>State</label>
+        <select ng-options='item for item in form.states' class='form-control' ng-model='form.userObject.state'>
+          <option value='' selected disabled>Please Choose...</option>
+        </select>
+      </div>
+      <div class='form-group col-md-4'>
+        <label>What Color is your Dog:</label>
+        <input type='text' class='form-control' placeholder='Color' ng-model='form.userObject.color'>
+      </div>
+      <div class='form-group col-md-4'>
+        <label>What is the Weight of your Dog:</label>
+        <div class='input-group'>
+          <input type='number' class='form-control' aria-label='Dogs Weight' aria-describeby='basic' ng-model='form.userObject.weight'>
+          <div class='input-group-append'>
+            <span class='input-group-text' id='basic'>LBs</span>
+          </div>
+        </div>
+      </div>
+      <div class='form-group col-md-4'>
+        <label>Where does your Dog go for Relef/Potty most of the time:</label>
+        <select class='form-control' ng-model='form.userObject.bathroom'>
+          <option value='' selected disabled>Please Choose...</option>
+          <option value='Inside Fenced'>Inside completely enclosed fenced area</option>
+          <option value='Underground Containment'>Undergroud electric dog containment system</option>
+          <option value='Outside Loose'>Outside loose in unfenced yard</option>
+          <option value='Permanentyl Tied'>Permanently Tied/Teathered Outside</option>
+          <option value='Leash'>Leashed Walked</option>
+        </select>
+      </div>
+    </div>
+  </form>
 <acme-footer></acme-footer>
