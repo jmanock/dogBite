@@ -85,3 +85,8 @@ h5{
   height: 18px;
   width: 18px;
 }
+.form-control-label{
+  /* color:#33b5e5; */
+  color:#0099cc;
+  font-weight:400;
+}
