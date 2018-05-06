@@ -46,7 +46,7 @@
         breed:'Black n White',
         color:'Black',
         weight:7,
-        bathroom:'Outside',
+        bathroom:'Outside Loose',
         gender:'Male',
         sleep:'Inside',
         vaccinations:'Yes',
@@ -72,7 +72,7 @@
         breed:'Normal',
         color:'Red',
         weight:7,
-        bathroom:'Inside',
+        bathroom:'Inside Fenced',
         gender:'Male',
         sleep:'Inside',
         vaccinations:'Yes',
@@ -119,6 +119,7 @@
       }
     };
 
+    vm.summaryDog = true;
     vm.AddDog = function(){
       vm.editForm = true;
       vm.addTitle = true;
