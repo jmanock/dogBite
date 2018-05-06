@@ -475,13 +475,13 @@
           </select>
         </div>
         <div class='form-group col-md-4'>
-          <label class='form-control-label'>Are there children, under the age of 16, living with you the majority of the time:</label>
-          <select class='form-control' ng-model='form.userObject.children'>
+          <label class='form-control-label'>Has your Dog ever been involved with Animal Services:</label>
+          <select class='form-control' ng-model='form.userObject.animalServices'>
             <option value='' selected disabled>Please Choose...</option>
             <option value='No'>No</option>
-            <option value='Yes'>Yes</option>
-            <option value='Daycare'>Daycare or babysitting service in the home</option>
-            <option value='Foster'>Forster children in the home</option>
+            <option value='Once'>Once for breaking the law - no injuries</option>
+            <option value='Confiscated'>Confiscated and/or fines were issued</option>
+            <option value='Labeled'>Been labeled dangerous or vicious</option>
           </select>
         </div>
       </div>
@@ -524,7 +524,7 @@
           </select>
         </div>
         <div class='form-group col-md-4'>
-          <label class='form-control-label'>Is your Dog involved or integral in your work as a Teacher, Therapist, Counselor, or similar:</label>
+          <label class='form-control-label'>Is your Dog involved or integral in your work as a Teacher, Therapist, Counselor, or other similar work:</label>
           <select class='form-control' ng-model='form.userObject.involvedWork'>
             <option value='' selected disabled>Please Choose...</option>
             <option value='Yes'>Yes</option>
@@ -536,13 +536,13 @@
           </div>
         </div>
         <div class='form-group col-md-4'>
-          <label class='form-control-label'>Has your Dog ever been involved with Animal Services:</label>
-          <select class='form-control' ng-model='form.userObject.animalServices'>
+          <label class='form-control-label'>Are there any children, that are under the age of 16, living with you the majority of the time:</label>
+          <select class='form-control' ng-model='form.userObject.children'>
             <option value='' selected disabled>Please Choose...</option>
             <option value='No'>No</option>
-            <option value='Once'>Once for breaking the law - no injuries</option>
-            <option value='Confiscated'>Confiscated and/or fines were issued</option>
-            <option value='Labeled'>Been labeled dangerous or vicious</option>
+            <option value='Yes'>Yes</option>
+            <option value='Daycare'>Daycare or babysitting service in the home</option>
+            <option value='Foster'>Forster children in the home</option>
           </select>
         </div>
       </div>
@@ -618,9 +618,8 @@
           </div>
         </div>
       </div>
+      <button type='button' class='btn btn-success' ng-click='form.save()'>Save</button>
     </form>
   </div>
 </section>
-
-
 <acme-footer></acme-footer>

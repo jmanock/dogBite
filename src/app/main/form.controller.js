@@ -123,19 +123,15 @@
     };
 
     vm.summaryDog = true;
+
     vm.AddDog = function(){
       vm.editForm = true;
       vm.addTitle = true;
       vm.editTitle = false;
-    };
-
-    vm.EditDog = function(id){
-
-      vm.edit = true;
+      vm.userObject = {};
     };
 
     vm.objectIndex = '';
-
 
     vm.edit = function(id){
       vm.editForm = true;
@@ -144,7 +140,18 @@
       vm.objectIndex = id;
       vm.userObject = angular.copy(vm.dogs[id]);
       $log.log(vm.objectIndex);
-    }
+    };
+
+    vm.save = function(){
+      $log.log(vm.objectIndex);
+      if(vm.dogs[vm.objectIndex] == null){
+        vm.dogs.push(vm.userObject);
+      } else {
+        vm.dogs[vm.objectIndex] = vm.userObject;
+      }
+      vm.userObject = {};
+      vm.objectIndex = '';
+    };
 
   }
 })();
