@@ -151,6 +151,7 @@
       }
       vm.userObject = {};
       vm.objectIndex = '';
+      vm.editForm = false;
     };
 
   }
