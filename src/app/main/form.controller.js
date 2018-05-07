@@ -142,6 +142,11 @@
       $log.log(vm.objectIndex);
     };
 
+    vm.delete = function(id){
+      $log.log(vm.dogs[id]);
+      vm.dogs.splice(id,1);
+    };
+
     vm.save = function(){
       $log.log(vm.objectIndex);
       if(vm.dogs[vm.objectIndex] == null){

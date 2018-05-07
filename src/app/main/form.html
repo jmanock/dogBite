@@ -348,11 +348,13 @@
           <td>{{dog.breed}}</td>
           <td>Please calculate to determin eligibility</td>
           <td>
-            <button type='button' class='btn btn-danger' ng-click='form.delete()'>Delete</button>
+            <button type='button' class='btn btn-danger' ng-click='form.delete($index)'>Delete</button>
           </td>
         </tr>
       </tbody>
     </table>
+
+    <button type='button' class='btn btn-success' ng-click='form.calculate()'>Calculate</button>
     <form ng-show='form.editForm'>
       <h1 ng-show='form.editTitle'>Edit {{form.userObject.name}}</h1>
       <h1 ng-show='form.addTitle'>Add New Dog</h1>
