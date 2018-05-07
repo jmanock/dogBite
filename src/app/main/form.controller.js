@@ -154,6 +154,9 @@
       vm.editForm = false;
     };
 
+    vm.cancle = function(){
+      vm.editForm = false;
+    };
   }
 })();
 
