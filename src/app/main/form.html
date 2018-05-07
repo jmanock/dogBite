@@ -340,7 +340,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr ng-repeat='dog in form.dogs track by $index'>
+        <tr ng-repeat='dog in form.policy.info track by $index'>
           <td>
             <button type='button' class='btn btn-success' ng-click='form.edit($index)'>Edit</button>
           </td>
@@ -356,7 +356,7 @@
     <div class='form-group'>
       <h4>Additional Insureds ($50 each)</h4>
       <label class='form-control-label'>Select the Total Number of Additional Insureds: <span title='If you rent, the owners and/or property manager may request to be added as an additional insured. If your dog injures a person or animal then the defence costs are covered. More towns and cities are requiring insurance to provide medical care of their citizens' class='fa fa-question'></span></label>
-      <select class='form-control'>
+      <select class='form-control' ng-model='form.policy.addInsured'>
         <option value='' selected disabled>Please Choose...</option>
         <option value='0'>0</option>
         <option value='1'>1</option>
@@ -366,7 +366,7 @@
         <option value='5'>5</option>
       </select>
     </div>
-    <button type='button' class='btn btn-success' ng-click='form.calculate()'>Calculate</button>
+    <button type='button' class='btn btn-success' ng-click='form.calculate(form.policy)'>Calculate</button>
     <form ng-show='form.editForm'>
       <h1 ng-show='form.editTitle'>Edit {{form.userObject.name}}</h1>
       <h1 ng-show='form.addTitle'>Add New Dog</h1>

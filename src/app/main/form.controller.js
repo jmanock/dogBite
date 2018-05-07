@@ -11,90 +11,147 @@
 
     vm.states = states;
     vm.breeds = breeds;
-
-    vm.dogs = [
-      {
-        name:'Sam',
-        state:'Florida',
-        email:'Sam@gmail.com',
-        breed:'Ultra Mix',
-        color:'Brown',
-        weight:9,
-        bathroom:'Leash',
-        gender:'Female',
-        sleep:'Inside',
-        vaccinations:'Yes',
-        parks:'No',
-        veterinarian:'Annually',
-        training:'None',
-        area:'City',
-        doesBreed:'No',
-        children:'No',
-        abuse:'No',
-        dogsHome:'1',
-        animalServices:'No',
-        work:'No',
-        involvedWork:'No',
-        animalInjury:'Never',
-        humanInjury:'Never',
-        deployed:'No',
-        adopted:'No'
-      },
-      {
-        name:'Bogie',
-        state:'Illinois',
-        email:'Bogie@gmail.com',
-        breed:'Black n White',
-        color:'Black',
-        weight:7,
-        bathroom:'Outside Loose',
-        gender:'Male',
-        sleep:'Inside',
-        vaccinations:'Yes',
-        parks:'No',
-        veterinarian:'Annually',
-        training:'None',
-        area:'City',
-        doesBreed:'No',
-        children:'No',
-        abuse:'No',
-        dogsHome:'1',
-        work:'No',
-        involvedWork:'No',
-        animalServices:'Once',
-        animalInjury:'Never',
-        humanInjury:'Never',
-        deployed:'No',
-        adopted:'No'
-      },
-      {
-        name:'Woodie',
-        state:'New York',
-        email:'Woodie@gmail.com',
-        breed:'Normal',
-        color:'Red',
-        weight:7,
-        bathroom:'Inside Fenced',
-        gender:'Male',
-        sleep:'Inside',
-        vaccinations:'Yes',
-        parks:'No',
-        veterinarian:'Annually',
-        training:'None',
-        area:'City',
-        doesBreed:'No',
-        children:'No',
-        abuse:'No',
-        dogsHome:'1',
-        animalServices:'No',
-        work:'No',
-        involvedWork:'No',
-        animalInjury:'Never',
-        humanInjury:'Never',
-        deployed:'No',
-        adopted:'No'
-      }
-    ]
+    vm.policy = {
+      info:[
+        {
+          name:'Sam',
+          state:'Georgia',
+          emai:'sam@gmail.com',
+          breed:'Pit Bull',
+          color:'Brown',
+          weight:10,
+          bathroom:'Leash',
+          gender:'Female',
+          sleep:'Inside',
+          vaccinations:'Yes',
+          parks:'No',
+          veterinarian:'Annually',
+          training:'Advcanced',
+          area:'City',
+          doesBreed:'No',
+          children:'No',
+          abuse:'No',
+          dogsHome:'1',
+          animalServices:'No',
+          work:'No',
+          involvedWork:'No',
+          animalInjury:'Never',
+          humanInjury:'Never',
+          deployed:'No',
+          adopted:'No'
+        },
+        {
+          name:'Bogie',
+          state:'Illinois',
+          email:'bogie@gmail.com',
+          breed:'Black n White',
+          color:'Mix',
+          weight:6,
+          bathroom:'Outside Loose',
+          gender:'Male',
+          sleep:'Inside',
+          vaccinations:'Yes',
+          parks:'No',
+          veterinarian:'Never',
+          training:'None',
+          area:'City',
+          doesBreed:'No',
+          children:'No',
+          abuse:'No',
+          dogsHome:'1',
+          animalServices:'No',
+          work:'No',
+          involvedWork:'No',
+          animalInjury:'Never',
+          humanInjury:'Never',
+          deployed:'No',
+          adopted:'No'
+        },
+        {
+          name:'Woodie',
+          state:'Florida',
+          email:'woodie@test.com',
+          breed:'Skiny',
+          color:'Brown',
+          weight:8,
+          bathroom:'Leash',
+          gender:'Female',
+          sleep:'Inside',
+          vaccinations:'Yes',
+          parks:'No',
+          veterinarian:'Annually',
+          training:'Intermediate',
+          area:'Country',
+          doesBreed:'No',
+          children:'No',
+          abuse:'No',
+          dogsHome:'1',
+          animalService:'No',
+          work:'No',
+          involvedWork:'No',
+          animalInjury:'Never',
+          humanInjury:'Never',
+          deployed:'No',
+          adopted:'No'
+        }
+      ]
+    };
+    // vm.dogs = [
+    //   {
+    //     name:'Bogie',
+    //     state:'Illinois',
+    //     email:'Bogie@gmail.com',
+    //     breed:'Black n White',
+    //     color:'Black',
+    //     weight:7,
+    //     bathroom:'Outside Loose',
+    //     gender:'Male',
+    //     sleep:'Inside',
+    //     vaccinations:'Yes',
+    //     parks:'No',
+    //     veterinarian:'Annually',
+    //     training:'None',
+    //     area:'City',
+    //     doesBreed:'No',
+    //     children:'No',
+    //     abuse:'No',
+    //     dogsHome:'1',
+    //     work:'No',
+    //     involvedWork:'No',
+    //     animalServices:'Once',
+    //     animalInjury:'Never',
+    //     humanInjury:'Never',
+    //     deployed:'No',
+    //     adopted:'No'
+    //   },
+    //   {
+    //     name:'Woodie',
+    //     state:'New York',
+    //     email:'Woodie@gmail.com',
+    //     breed:'Normal',
+    //     color:'Red',
+    //     weight:7,
+    //     bathroom:'Inside Fenced',
+    //     gender:'Male',
+    //     sleep:'Inside',
+    //     vaccinations:'Yes',
+    //     parks:'No',
+    //     veterinarian:'Annually',
+    //     training:'None',
+    //     area:'City',
+    //     doesBreed:'No',
+    //     children:'No',
+    //     abuse:'No',
+    //     dogsHome:'1',
+    //     animalServices:'No',
+    //     work:'No',
+    //     involvedWork:'No',
+    //     animalInjury:'Never',
+    //     humanInjury:'Never',
+    //     deployed:'No',
+    //     adopted:'No'
+    //   }
+    // ]
 
     vm.Next = function(Dog, x){
       if (x === 'dg') {
@@ -138,21 +195,21 @@
       vm.editTitle = true;
       vm.addTitle = false;
       vm.objectIndex = id;
-      vm.userObject = angular.copy(vm.dogs[id]);
+      vm.userObject = angular.copy(vm.policy.info[id]);
       $log.log(vm.objectIndex);
     };
 
     vm.delete = function(id){
-      $log.log(vm.dogs[id]);
-      vm.dogs.splice(id,1);
+      $log.log(vm.policy.info[id]);
+      vm.policy.info.splice(id,1);
     };
 
     vm.save = function(){
       $log.log(vm.objectIndex);
-      if(vm.dogs[vm.objectIndex] == null){
-        vm.dogs.push(vm.userObject);
+      if(vm.policy.info[vm.objectIndex] == null){
+        vm.policy.info.push(vm.userObject);
       } else {
-        vm.dogs[vm.objectIndex] = vm.userObject;
+        vm.policy.info[vm.objectIndex] = vm.userObject;
       }
       vm.userObject = {};
       vm.objectIndex = '';
@@ -162,6 +219,10 @@
     vm.cancle = function(){
       vm.editForm = false;
     };
+
+    vm.calculate = function(x){
+      $log.log(x)
+    }
   }
 })();
 
