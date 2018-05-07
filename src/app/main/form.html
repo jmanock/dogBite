@@ -365,6 +365,20 @@
         <option value='4'>4</option>
         <option value='5'>5</option>
       </select>
+      <div ng-if='form.policy.addInsured === "1" ? true : false'>
+        <div class='form-group'>
+          <label class='form-control-label'>Name:</label>
+          <input type='text' class='form-control' ng-model='form.policy.addInsured.name'>
+        </div>
+        <div class='form-group'>
+          <label class='form-control-label'>Email:</label>
+          <input type='email' class='form-control' ng-model='form.policy.addInsured.email'>
+        </div>
+        <div class='form-group'>
+          <label class='form-control-label'>Phone #:</label>
+          <input type='number' class='form-control' ng-model='form.policy.addInsured.phoneNumber'>
+        </div>
+      </div>
     </div>
     <button type='button' class='btn btn-success' ng-click='form.calculate(form.policy)'>Calculate</button>
     <form ng-show='form.editForm'>
@@ -638,8 +652,8 @@
   </div>
 </section>
 <section ng-hide='form.calculate'>
-  <div ng-repeat='dog in form.policy.info'>
-    {{dog.name}}
+  <div ng-repeat='dog in form.policy.addInsured'>
+     {{dog}}
   </div>
 </section>
 <acme-footer></acme-footer>

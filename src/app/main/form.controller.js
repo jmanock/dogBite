@@ -96,62 +96,6 @@
         }
       ]
     };
-    // vm.dogs = [
-    //   {
-    //     name:'Bogie',
-    //     state:'Illinois',
-    //     email:'Bogie@gmail.com',
-    //     breed:'Black n White',
-    //     color:'Black',
-    //     weight:7,
-    //     bathroom:'Outside Loose',
-    //     gender:'Male',
-    //     sleep:'Inside',
-    //     vaccinations:'Yes',
-    //     parks:'No',
-    //     veterinarian:'Annually',
-    //     training:'None',
-    //     area:'City',
-    //     doesBreed:'No',
-    //     children:'No',
-    //     abuse:'No',
-    //     dogsHome:'1',
-    //     work:'No',
-    //     involvedWork:'No',
-    //     animalServices:'Once',
-    //     animalInjury:'Never',
-    //     humanInjury:'Never',
-    //     deployed:'No',
-    //     adopted:'No'
-    //   },
-    //   {
-    //     name:'Woodie',
-    //     state:'New York',
-    //     email:'Woodie@gmail.com',
-    //     breed:'Normal',
-    //     color:'Red',
-    //     weight:7,
-    //     bathroom:'Inside Fenced',
-    //     gender:'Male',
-    //     sleep:'Inside',
-    //     vaccinations:'Yes',
-    //     parks:'No',
-    //     veterinarian:'Annually',
-    //     training:'None',
-    //     area:'City',
-    //     doesBreed:'No',
-    //     children:'No',
-    //     abuse:'No',
-    //     dogsHome:'1',
-    //     animalServices:'No',
-    //     work:'No',
-    //     involvedWork:'No',
-    //     animalInjury:'Never',
-    //     humanInjury:'Never',
-    //     deployed:'No',
-    //     adopted:'No'
-    //   }
-    // ]
 
     vm.Next = function(Dog, x){
       if (x === 'dg') {
@@ -223,6 +167,7 @@
     vm.calculate = function(x){
       vm.calculate = false;
       vm.summaryDog = false;
+      $log.log(x);
     }
   }
 })();
