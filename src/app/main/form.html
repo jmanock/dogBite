@@ -353,7 +353,19 @@
         </tr>
       </tbody>
     </table>
-
+    <div class='form-group'>
+      <h4>Additional Insureds ($50 each)</h4>
+      <label class='form-control-label'>Select the Total Number of Additional Insureds: <span title='If you rent, the owners and/or property manager may request to be added as an additional insured. If your dog injures a person or animal then the defence costs are covered. More towns and cities are requiring insurance to provide medical care of their citizens' class='fa fa-question'></span></label>
+      <select class='form-control'>
+        <option value='' selected disabled>Please Choose...</option>
+        <option value='0'>0</option>
+        <option value='1'>1</option>
+        <option value='2'>2</option>
+        <option value='3'>3</option>
+        <option value='4'>4</option>
+        <option value='5'>5</option>
+      </select>
+    </div>
     <button type='button' class='btn btn-success' ng-click='form.calculate()'>Calculate</button>
     <form ng-show='form.editForm'>
       <h1 ng-show='form.editTitle'>Edit {{form.userObject.name}}</h1>
