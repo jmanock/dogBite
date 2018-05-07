@@ -221,7 +221,8 @@
     };
 
     vm.calculate = function(x){
-      $log.log(x)
+      vm.calculate = false;
+      vm.summaryDog = false;
     }
   }
 })();

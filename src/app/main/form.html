@@ -637,4 +637,9 @@
     </form>
   </div>
 </section>
+<section ng-hide='form.calculate'>
+  <div ng-repeat='dog in form.policy.info'>
+    {{dog.name}}
+  </div>
+</section>
 <acme-footer></acme-footer>
