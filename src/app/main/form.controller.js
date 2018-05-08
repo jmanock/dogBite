@@ -17,35 +17,11 @@
       if(x === 'di'){
         vm.personInfo = true;
         vm.dogInfo = true;
+      } else {
+        vm.dogInfo = false;
+        vm.summaryDog = true;
       }
-      
-    }
-
-    // vm.Next = function(Dog, x){
-    //   if (x === 'dg') {
-    //     vm.personInfo = true;
-    //     vm.dogInfo = true;
-    //
-    //   } else if (x === 'hi') {
-    //     vm.dogInfo = false;
-    //     vm.homeInfo = true;
-    //     $window.scrollTo(0,0);
-    //     if(Dog.gender === 'Male'){
-    //       Dog.hisHers = 'him';
-    //       Dog.heShe = 'he';
-    //     } else{
-    //       Dog.hisHers = 'her';
-    //       Dog.heShe = 'she';
-    //     }
-    //   } else {
-    //     vm.homeInfo = false;
-    //     vm.summaryDog = true;
-    //     var dogs = angular.copy(Dog);
-    //     doggie.push(dogs);
-    //     vm.doggie = doggie;
-    //     //$log.log(doggie);
-    //   }
-    // };
+    };
 
     vm.AddDog = function(){
       vm.editForm = true;
@@ -61,7 +37,7 @@
       vm.editTitle = true;
       vm.addTitle = false;
       vm.objectIndex = id;
-      vm.doggie = angular.copy(vm.doggie[id]);
+      
       $log.log(vm.objectIndex);
     };
 

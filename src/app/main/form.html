@@ -10,7 +10,7 @@
         </div>
         <div class='form-group'>
           <label class='form-control-label'>Email:</label>
-          <input type='email' class='form-control' placeholder='Email' ng-model='policy.email'>
+          <input type='email' class='form-control' placeholder='Email' ng-model='policy.dog.email'>
         </div>
         <div class='form-group'>
           <label class='form-control-label'>State: <span title='All Dogs must reside in the same state. If you have dogs taht reside in different states please complete seprate quotes' class='fa fa-question'></span></label>
@@ -256,8 +256,104 @@
           </div>
         </div>
       </div>
-      <button type='button' class='btn btn-default' ng-click='Next(policy, "sum")'>Next</button>
+      <button type='button' class='btn btn-default' ng-click='form.Next(policy, "sum")'>Next</button>
     </section>
+  </form>
+  <section ng-show='form.summaryDog'>
+    <button type='button' class='btn btn-secondary' ng-click='form.AddDog()'>Add Dog</button>
+    <table class='table table-striped table-bordered'>
+      <thead>
+        <tr>
+          <th>Edit</th>
+          <th>Name</th>
+          <th>Breed</th>
+          <th>Eligaible</th>
+          <th>Remove</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat='d in policy'>
+          <td>
+            <button type='button' class='btn btn-success' ng-click='form.edit($index)'>Edit</button>
+          </td>
+          <td>{{d.name}}</td>
+          <td>{{d.breed}}</td>
+          <td>Please calculate to determin eligibility</td>
+          <td>
+            <button type='button' class='btn btn-danger' ng-click='form.deleteDog($index)'>Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class='form-group'>
+      <h4>Additional Insureds ($50 each)</h4>
+      <small>Examples Include: Landlord, Employers, and Governmental Entity</small>
+      <label class='form-control-label'>Select the Total Number of Additional Insureds: <span title='If you rent, the owners and/or property manager may request to be added as an additional insured. If your dog injures a person or animal then the defence costs are covered. More towns and cities are requiring insurance to provide medical care of their citizens' class='fa fa-question'></span></label>
+      <select class='form-control' ng-model='policy.addInsur'>
+        <option value='' selected disabled>Please Choose...</option>
+        <option value='0'>0</option>
+        <option value='1'>1</option>
+        <option value='2'>2</option>
+        <option value='3'>3</option>
+        <option value='4'>4</option>
+        <option value='5'>5</option>
+      </select>
+    </div>
+  </section>
+  <section ng-show='form.viewQuote'>
+  </section>
+  <form ng-show='form.editForm'>
+    <h1 ng-show='form.editTitle'>Edit {{policy.dog.name | uppercase}}</h1>
+    <h1 ng-show='form.addTitle'>Add New Dog</h1>
+    <div class='form-row'>
+      <div class='form-group col-md-4'>
+        <label class='form-control-label'>Dogs Name:</label>
+        <input type='text' class='form-control' placeholder='Dogs Name' ng-model='policy.dog.name'>
+      </div>
+      <div class='form-group col-md-4'>
+        <label class='form-control-label'>Email:</label>
+        <input type='email' class='form-control' placeholder='Email' ng-model='policy.dog.email'>
+      </div>
+      <div class='form-group col-md-4'>
+        <label class='form-control-label'>State:</label>
+        <select class='form-control' ng-model='policy.dog.state' ng-options='items for items in form.states'>
+          <option value='' selected disabled>Please Choose...</option>
+        </select>
+      </div>
+    </div>
+    <div class='form-row'>
+      <div class='form-group col-md-4'>
+        <label class='form-control-label'>What Color is your Dog:</label>
+        <input type='text' class='form-control' ng-model='policy.dog.color'>
+      </div>
+      <div class='form-group col-md-4'>
+        <label class='form-control-label'>What Breed is your Dog:</label>
+        <select class='form-control' ng-model='policy.dog.breed' ng-options='item for item in form.breeds'>
+          <option value='' selected disabled>Please Choose...</option>
+        </select>
+      </div>
+      <div class='form-group col-md-4'>
+        <label class='form-control-label'>What is the Weight of your Dog:</label>
+        <div class='input-group'>
+          <input type='number' class='form-control' aria-label='Dogs Weight' aria-describeby='basic' ng-model='policy.dog.weight'>
+          <div class='input-group-append'>
+            <span class='input-group-text' id='basic'>LBs</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='form-row'>
+      <div class='form-group col-md-4'>
+        <label class='form-control-label'>Where does your Dog go for Relef/Potty most of the time:</label>
+        <select class='form-control' ng-model='policy.dog.bathroom'>
+          <option value='' selected disabled>Please Choose...</option>
+          <option value='Inside Fenced'>Inside completely enclosed fenced area</option>
+          <option value='Underground Containment'>Underground electric dog containment system</option>
+          <option value='Outside Loose'>Outside loose in unfenced yard</option>
+          <option value='Permanently Tied'>Permanently Tied/Teathered Outside</option>
+          <option value='Leash'>Leashed Walked</option>
+        </select>
+      </div>
   </form>
 </div>
 <acme-footer></acme-footer>
