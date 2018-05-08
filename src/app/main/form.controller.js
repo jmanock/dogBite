@@ -11,125 +11,41 @@
 
     vm.states = states;
     vm.breeds = breeds;
-    vm.policy = {
-      info:[
-        {
-          name:'Sam',
-          state:'Georgia',
-          emai:'sam@gmail.com',
-          breed:'Pit Bull',
-          color:'Brown',
-          weight:10,
-          bathroom:'Leash',
-          gender:'Female',
-          sleep:'Inside',
-          vaccinations:'Yes',
-          parks:'No',
-          veterinarian:'Annually',
-          training:'Advcanced',
-          area:'City',
-          doesBreed:'No',
-          children:'No',
-          abuse:'No',
-          dogsHome:'1',
-          animalServices:'No',
-          work:'No',
-          involvedWork:'No',
-          animalInjury:'Never',
-          humanInjury:'Never',
-          deployed:'No',
-          adopted:'No'
-        },
-        {
-          name:'Bogie',
-          state:'Illinois',
-          email:'bogie@gmail.com',
-          breed:'Black n White',
-          color:'Mix',
-          weight:6,
-          bathroom:'Outside Loose',
-          gender:'Male',
-          sleep:'Inside',
-          vaccinations:'Yes',
-          parks:'No',
-          veterinarian:'Never',
-          training:'None',
-          area:'City',
-          doesBreed:'No',
-          children:'No',
-          abuse:'No',
-          dogsHome:'1',
-          animalServices:'No',
-          work:'No',
-          involvedWork:'No',
-          animalInjury:'Never',
-          humanInjury:'Never',
-          deployed:'No',
-          adopted:'No'
-        },
-        {
-          name:'Woodie',
-          state:'Florida',
-          email:'woodie@test.com',
-          breed:'Skiny',
-          color:'Brown',
-          weight:8,
-          bathroom:'Leash',
-          gender:'Female',
-          sleep:'Inside',
-          vaccinations:'Yes',
-          parks:'No',
-          veterinarian:'Annually',
-          training:'Intermediate',
-          area:'Country',
-          doesBreed:'No',
-          children:'No',
-          abuse:'No',
-          dogsHome:'1',
-          animalService:'No',
-          work:'No',
-          involvedWork:'No',
-          animalInjury:'Never',
-          humanInjury:'Never',
-          deployed:'No',
-          adopted:'No'
-        }
-      ],
-      addInsured:[
-        //{name:'Peez', email:'peez@gmail.com', phone:'1234567'},
-        // {name:'Beez', email:'beez@gmail.com', phone:'2345678'},
-        // {name:'Sam', email:'sam@gmail.com', phone:'3456789'}
-      ]
-
-    };
 
     vm.Next = function(Dog, x){
-      if (x === 'dg') {
+      $log.log(Dog);
+      if(x === 'di'){
         vm.personInfo = true;
         vm.dogInfo = true;
-
-      } else if (x === 'hi') {
-        vm.dogInfo = false;
-        vm.homeInfo = true;
-        $window.scrollTo(0,0);
-        if(Dog.gender === 'Male'){
-          Dog.hisHers = 'him';
-          Dog.heShe = 'he';
-        } else{
-          Dog.hisHers = 'her';
-          Dog.heShe = 'she';
-        }
-      } else {
-        vm.homeInfo = false;
-        vm.summaryDog = true;
-        var dogs = angular.copy(Dog);
-        doggie.push(dogs);
-        vm.doggie = doggie;
-        //$log.log(doggie);
       }
-    };
+      
+    }
 
-    vm.summaryDog = true;
+    // vm.Next = function(Dog, x){
+    //   if (x === 'dg') {
+    //     vm.personInfo = true;
+    //     vm.dogInfo = true;
+    //
+    //   } else if (x === 'hi') {
+    //     vm.dogInfo = false;
+    //     vm.homeInfo = true;
+    //     $window.scrollTo(0,0);
+    //     if(Dog.gender === 'Male'){
+    //       Dog.hisHers = 'him';
+    //       Dog.heShe = 'he';
+    //     } else{
+    //       Dog.hisHers = 'her';
+    //       Dog.heShe = 'she';
+    //     }
+    //   } else {
+    //     vm.homeInfo = false;
+    //     vm.summaryDog = true;
+    //     var dogs = angular.copy(Dog);
+    //     doggie.push(dogs);
+    //     vm.doggie = doggie;
+    //     //$log.log(doggie);
+    //   }
+    // };
 
     vm.AddDog = function(){
       vm.editForm = true;
@@ -145,7 +61,7 @@
       vm.editTitle = true;
       vm.addTitle = false;
       vm.objectIndex = id;
-      vm.userObject = angular.copy(vm.policy.info[id]);
+      vm.doggie = angular.copy(vm.doggie[id]);
       $log.log(vm.objectIndex);
     };
 
