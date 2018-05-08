@@ -356,7 +356,7 @@
     <div class='form-group'>
       <h4>Additional Insureds ($50 each)</h4>
       <label class='form-control-label'>Select the Total Number of Additional Insureds: <span title='If you rent, the owners and/or property manager may request to be added as an additional insured. If your dog injures a person or animal then the defence costs are covered. More towns and cities are requiring insurance to provide medical care of their citizens' class='fa fa-question'></span></label>
-      <select class='form-control' ng-model='form.policy.addInsured'>
+      <select class='form-control' ng-model='form.policy.addIns'>
         <option value='' selected disabled>Please Choose...</option>
         <option value='0'>0</option>
         <option value='1'>1</option>
@@ -365,21 +365,7 @@
         <option value='4'>4</option>
         <option value='5'>5</option>
       </select>
-      <div ng-if='form.policy.addInsured >= "1" ? true : false' class='form-row'>
-        <div class='form-group col-md-4'>
-          <label class='form-control-label'>Name:</label>
-          <input type='text' class='form-control' ng-model='form.policy.addInsured.name'>
-        </div>
-        <div class='form-group col-md-4'>
-          <label class='form-control-label'>Email:</label>
-          <input type='email' class='form-control' ng-model='form.policy.addInsured.email'>
-        </div>
-        <div class='form-group col-md-4'>
-          <label class='form-control-label'>Phone:</label>
-          <input type='number' class='form-control' ng-model='form.policy.addInsured.phoneNumber'>
-        </div>
-      </div>
-      <div ng-if='form.policy.addInsured >= "2" ? true : false' class='form-row'>
+      <div ng-if='form.policy.addIns >= "1" ? true : false' class='form-row'>
         <div class='form-group col-md-4'>
           <label class='form-control-label'>Name:</label>
           <input type='text' class='form-control' ng-model='form.policy.addInsured.name'>
@@ -393,7 +379,21 @@
           <input type='number' class='form-control' ng-model='form.policy.addInsured.phone'>
         </div>
       </div>
-      <div class='form-row' ng-if='form.policy.addInsured >= "3" ? true : false'>
+      <div ng-if='form.policy.addIns >= "2" ? true : false' class='form-row'>
+        <div class='form-group col-md-4'>
+          <label class='form-control-label'>Name:</label>
+          <input type='text' class='form-control' ng-model='form.policy.addInsured.name[1]'>
+        </div>
+        <div class='form-group col-md-4'>
+          <label class='form-control-label'>Email:</label>
+          <input type='email' class='form-control' ng-model='form.policy.addInsured.email[1]'>
+        </div>
+        <div class='form-group col-md-4'>
+          <label class='form-control-label'>Phone:</label>
+          <input type='number' class='form-control' ng-model='form.policy.addInsured.phone[1]'>
+        </div>
+      </div>
+      <div class='form-row' ng-if='form.policy.addIns >= "3" ? true : false'>
         <div class='form-group col-md-4'>
           <label class='form-control-label'>Name:</label>
           <input type='text' class='form-control' ng-model='form.policy.addInsured.name'>
@@ -407,7 +407,7 @@
           <input class='form-control' type='number' ng-model='form.policy.addInsured.phone'>
         </div>
       </div>
-      <div ng-if='form.policy.addInsured >= "4" ? true : false' class='form-row'>
+      <div ng-if='form.policy.addIns >= "4" ? true : false' class='form-row'>
         <div class='form-group col-md-4'>
           <label class='form-control-label'>Name:</label>
           <input class='form-control' type='text' ng-model='form.policy.addInsured.name'>
@@ -421,7 +421,7 @@
           <input type='number' class='form-control' ng-model='form.policy.addInsured.phone'>
         </div>
       </div>
-      <div ng-if='form.policy.addInsured >= "5" ? true : false' class='form-row'>
+      <div ng-if='form.policy.addIns >= "5" ? true : false' class='form-row'>
         <div class='form-group col-md-4'>
           <label class='form-control-label'>Name:</label>
           <input type='text' class='form-control' ng-model='form.policy.addInsured.name'>

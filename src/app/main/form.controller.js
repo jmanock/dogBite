@@ -94,7 +94,13 @@
           deployed:'No',
           adopted:'No'
         }
+      ],
+      addInsured:[
+        //{name:'Peez', email:'peez@gmail.com', phone:'1234567'},
+        // {name:'Beez', email:'beez@gmail.com', phone:'2345678'},
+        // {name:'Sam', email:'sam@gmail.com', phone:'3456789'}
       ]
+
     };
 
     vm.Next = function(Dog, x){
@@ -167,6 +173,7 @@
     vm.calculate = function(x){
       vm.calculate = false;
       vm.summaryDog = false;
+      vm.userObject = angular.copy(vm.policy.addInsured);
       $log.log(x);
     }
   }
