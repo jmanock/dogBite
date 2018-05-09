@@ -13,7 +13,6 @@
     vm.breeds = breeds;
 
     vm.Next = function(Dog, x){
-      $log.log(Dog);
       if(x === 'di'){
         vm.personInfo = true;
         vm.dogInfo = true;
@@ -27,18 +26,17 @@
       vm.editForm = true;
       vm.addTitle = true;
       vm.editTitle = false;
-      vm.userObject = {};
+
+      //vm.policy.push(vm.policy.dog);
     };
 
-    vm.objectIndex = '';
-
-    vm.edit = function(id){
+    vm.edit = function(id, Dog){
       vm.editForm = true;
       vm.editTitle = true;
       vm.addTitle = false;
-      vm.objectIndex = id;
-      
-      $log.log(vm.objectIndex);
+
+      vm.userObject = angular.copy(Dog);
+      $log.log(vm.userObject);
     };
 
     vm.delete = function(id){
@@ -48,10 +46,10 @@
 
     vm.save = function(){
       $log.log(vm.objectIndex);
-      if(vm.policy.info[vm.objectIndex] == null){
-        vm.policy.info.push(vm.userObject);
+      if(vm.policy.dog[vm.objectIndex] == null){
+        vm.policy.dog.push(vm.userObject);
       } else {
-        vm.policy.info[vm.objectIndex] = vm.userObject;
+        vm.policy.dog[vm.objectIndex] = vm.userObject;
       }
       vm.userObject = {};
       vm.objectIndex = '';
