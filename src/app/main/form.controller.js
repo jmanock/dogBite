@@ -17,9 +17,11 @@
       if(x === 'di'){
         vm.personInfo = true;
         vm.dogInfo = true;
+        $log.log(Dog);
       } else {
         vm.dogInfo = false;
         vm.summaryDog = true;
+        
       }
     };
 
@@ -37,23 +39,28 @@
       vm.addTitle = false;
       vm.objectIndex = id;
       vm.userObject = angular.copy(Dog);
+      vm.policy = Dog;
       $log.log(vm.userObject);
     };
 
     vm.delete = function(id){
-      $log.log(vm.policy.info[id]);
-      vm.policy.info.splice(id,1);
+
     };
 
     vm.save = function(){
-      $log.log(vm.objectIndex);
+      //$log.log(vm.policy);
       if(vm.policy[vm.objectIndex] == null){
-        //vm.policy.push(vm.userObject);
-        $log('HelloFriend');
-      }else{
-        //vm.policy[vm.objectIndex] = vm.userObject;
-        $log('Another Hello');
+        $log.log(vm.policy[vm.objectIndex]);
+      } else {
+        $log.log('Knot Knew');
       }
+      // if(vm.policy[vm.objectIndex] == null){
+      //   //vm.policy.push(vm.userObject);
+      //   $log('HelloFriend');
+      // }else{
+      //   //vm.policy[vm.objectIndex] = vm.userObject;
+      //   $log('Another Hello');
+      // }
       //vm.userObject = {};
       //vm.objectIndex = '';
       vm.editForm = false;
