@@ -12,6 +12,9 @@
     vm.states = states;
     vm.breeds = breeds;
     vm.objectIndex = '';
+    vm.policy = [
+
+    ];
 
     vm.Next = function(Dog, x){
       if(x === 'di'){
@@ -21,7 +24,8 @@
       } else {
         vm.dogInfo = false;
         vm.summaryDog = true;
-        
+        //vm.policy = angular.copy(Dog);
+        vm.policy.push(Dog);
       }
     };
 

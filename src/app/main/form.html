@@ -1,6 +1,9 @@
 <acme-navbar></acme-navbar>
 <div class='container'>
   <h1>New Quote</h1>
+  <div ng-repeat='dog in form.Dog'>
+    <p>{{dog.name}}</p>
+  </div>
   <form name='DogForm' class='form-horizontal' id='DogForm' nonvalidate>
     <div class='row'>
       <section class='col-md-9' ng-hide='form.personInfo'>
@@ -278,12 +281,12 @@
         </tr>
       </thead>
       <tbody>
-        <tr ng-repeat='dog in policy'>
+        <tr ng-repeat='dog in form.policy'>
           <td>
             <button type='button' class='btn btn-success' ng-click='form.edit($index, policy)'>Edit</button>
           </td>
-          <td>{{d.name}}</td>
-          <td>{{d.breed}}</td>
+          <td>{{dog.name}}</td>
+          <td>{{dog.breed}}</td>
           <td>Please calculate to determin eligibility</td>
           <td>
             <button type='button' class='btn btn-danger' ng-click='form.deleteDog($index)'>Delete</button>
