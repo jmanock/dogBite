@@ -20,7 +20,6 @@
       if(x === 'di'){
         vm.personInfo = true;
         vm.dogInfo = true;
-        $log.log(Dog);
       } else {
         vm.dogInfo = false;
         vm.summaryDog = true;
@@ -29,11 +28,12 @@
       }
     };
 
-    vm.AddDog = function(){
+    vm.AddDog = function(id){
       vm.editForm = true;
       vm.addTitle = true;
       vm.editTitle = false;
-
+      vm.policy.push({});
+      $log.log(vm.policy);
       //vm.policy.push(vm.policy.dog);
     };
 
@@ -42,9 +42,9 @@
       vm.editTitle = true;
       vm.addTitle = false;
       vm.objectIndex = id;
-      vm.userObject = angular.copy(Dog);
+      //vm.userObject = angular.copy(Dog);
       vm.policy = Dog;
-      $log.log(vm.userObject);
+      // $log.log(vm.objectIndex);
     };
 
     vm.delete = function(id){
@@ -52,22 +52,11 @@
     };
 
     vm.save = function(){
-      //$log.log(vm.policy);
-      if(vm.policy[vm.objectIndex] == null){
-        $log.log(vm.policy[vm.objectIndex]);
-      } else {
-        $log.log('Knot Knew');
-      }
-      // if(vm.policy[vm.objectIndex] == null){
-      //   //vm.policy.push(vm.userObject);
-      //   $log('HelloFriend');
-      // }else{
-      //   //vm.policy[vm.objectIndex] = vm.userObject;
-      //   $log('Another Hello');
+      // vm.editForm = false;
+      // if(vm.policy[vm.objectIndex] === null){
+      //   $log.log('Winner Winner');
       // }
-      //vm.userObject = {};
-      //vm.objectIndex = '';
-      vm.editForm = false;
+      $log.log(vm.policy[vm.objectIndex]);
     };
 
     vm.cancle = function(){
