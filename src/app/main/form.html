@@ -79,6 +79,45 @@
           <select class='form-control' ng-model='form.dog.animalServices'>
             <option value='' selected disabled>Please Choose...</option>
             <option value='Never'>Never</option>
+            <option value='Once'>Once for breaking the law no injuries</option>
+            <option value='Confiscated'>Confiscated and/or fines where issued</option>
+            <option value='Labled'>Been labled dangerous or vicious</option>
+          </select>
+        </div>
+        <div class='form-group col-md-5'>
+          <label class='form-control-label'>Do you take {{form.dog.name | uppercase}} to off Leash Dog Parks:</label>
+          <select ng-model='form.dog.parks' class='form-control'>
+            <option value='' selected disabeld>Please Choose...</option>
+            <option value='Yes'>Yes</option>
+            <option value='No'>No</option>
+          </select>
+        </div>
+        <div class='form-group col-md-5'>
+          <label class='form-control-label'>Do you take {{form.dog.name | uppercase}} to a Veterinarian:</label>
+          <select ng-model='form.dog.veterinarian' class='form-control'>
+            <option value='' selected disabled>Please Choose...</option>
+            <option value='Annually'>Annually and would treat for illness</option>
+            <option value='Required'>Only as required by law</option>
+            <option value='Never'>Never</option>
+          </select>
+        </div>
+        <div class='form-group col-md-5'>
+          <label class='form-control-label'>What type of Training or Work does {{form.dog.name | uppercase}} have: <span title='Therapy Dogs, are dogs that do volunteer visits at hospitals, classrooms or other facilities. The handler is not paid and does not work at the facility.' class='fa fa-question'></span></label>
+          <select ng-model='form.dog.training' class='form-control'>
+            <option value='' selected disabled>Please Choose...</option>
+            <option value='None'>None or Basic</option>
+            <option value='Intermediate'>Intermediate</option>
+            <option value='Advanced'>Advanced</option>
+            <option value='Therapy'>Therapy Dog</option>
+            <option value='Hunting'>Hunting, Gun, Sporting off Leash, Farm, Hearding</option>
+            <option value='Sled'>Sled dog racing, Musing for hire, Freighting</option>
+            <option value='War'>War or Police Service dog, Professionally trained Personal Protection or Professional Trained Guard Dog</option>
+          </select>
+        </div>
+      </div>
+      <div class='form-row'>
+        <div class='form-group col-md-5'>
+          <label class='form-control-label'>
     </section>
   </form>
 </div>
