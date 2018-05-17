@@ -117,7 +117,33 @@
       </div>
       <div class='form-row'>
         <div class='form-group col-md-5'>
-          <label class='form-control-label'>
+          <label class='form-control-label'>What area do you live in:</label>
+          <select class='form-control' ng-model='form.dog.area'>
+            <option value='' selected disabled>Please Choose...</option>
+            <option value='City'>City, Town, Suburb, Campus</option>
+            <option value='Country'>Country and/or your dog travels with you</option>
+          </select>
+        </div>
+        <div class='form-group col-md-5'>
+          <label class='form-control-label'>Do you Breed {{form.dog.name | uppercase}}:</label>
+          <select class='form-control' ng-model='form.dog.doesBreed'>
+            <option value='' selected disabled>Please Choose...</option>
+            <option value='No'>No</option>
+            <option value='Stud'>Stud Only</option>
+            <option value='1 Annually'>1 litter annually</option>
+            <option value='2 Annually'>2 litters annually</option>
+          </select>
+        </div>
+        <div class='form-group col-md-5'>
+          <label class='form-control-label'>Are there children, under the age of 16 living with you the majority of the time:</label>
+          <select class='form-control' ng-model='form.dog.children'>
+            <option value='' selected disabled>Please Choose...</option>
+            <option value='Yes'>Yes</option>
+            <option value='No'>No</option>
+            <option value='Daycare'>Daycare or babysitting service in the home</option>
+            <option value='Foster'>Foster Children in the home</option>
+          </select>
+        </div>
     </section>
   </form>
 </div>
