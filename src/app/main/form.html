@@ -18,7 +18,7 @@
             <option value='' selected disabled>Please Choose...</option>
           </select>
         </div>
-        <button class='btn btn-default' ng-click='form.Next(dog, "di")'>Next</button>
+        <button class='btn btn-default' ng-click='form.Next()'>Next</button>
       </section>
     </div>
     <section ng-show='form.dogInfo'>
@@ -274,11 +274,13 @@
           </div>
         </div>
       </div>
-      <button class='btn btn-default' ng-click='form.Next()'>Next</button>
+      <button class='btn btn-default' ng-click='form.Summary(form.dog)'>Next</button>
     </section>
   </form>
+
+  <section ng-show='form.summary'>
   <button class='btn btn-success' ng-click='form.AddDog()'>Add Dog</button>
-  <table class='table' ng-show='form.summary'>
+  <table class='table'>
     <thead>
       <tr>
         <th>Edit</th>

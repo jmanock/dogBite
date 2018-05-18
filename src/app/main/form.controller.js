@@ -11,64 +11,70 @@
 
     vm.states = states;
     vm.breeds = breeds;
-    vm.objectIndex = '';
-    vm.policy = [
 
-    ];
+    vm.doglist = [];
 
-    vm.Next = function(Dog, x){
-      if(x === 'di'){
-        vm.personInfo = true;
-        vm.dogInfo = true;
-      } else {
-        vm.dogInfo = false;
-        vm.summaryDog = true;
-        //vm.policy = angular.copy(Dog);
-        vm.policy.push(Dog);
-      }
+    vm.Next = function(){
+      vm.dogInfo = true;
+      vm.personInfo = true;
     };
 
-    vm.AddDog = function(id){
-      vm.editForm = true;
-      vm.addTitle = true;
-      vm.editTitle = false;
-      vm.policy.push({});
-      $log.log(vm.policy);
-      //vm.policy.push(vm.policy.dog);
+    vm.Summary = function(){
+      vm.dogInfo = false;
+      vm.summary = true;
+      vm.doglist.push(
+        {
+          abuse:vm.dog.abuse,
+          adopted:vm.dog.adopted,
+          age:vm.dog.age,
+          animalInjury:vm.dog.animalInjury,
+          animalServices:vm.dog.animalServices,
+          area:vm.dog.area,
+          bathroom:vm.dog.bathroom,
+          breed:vm.dog.breed,
+          children:vm.dog.children,
+          color:vm.dog.color,
+          deployed:vm.dog.deployed,
+          doesBreed:vm.dog.doesBreed,
+          dogsHome:vm.dog.dogsHome,
+          email:vm.dog.email,
+          gender:vm.dog.gender,
+          humanInjury:vm.dog.humanInjury,
+          involvedWork:vm.dog.involvedWork,
+          name:vm.dog.name,
+          parks:vm.dog.parks,
+          reproductive:vm.dog.reproductive,
+          sleep:vm.dog.sleep,
+          state:vm.dog.state,
+          training:vm.dog.training,
+          vaccinations:vm.dog.vaccinations,
+          veterinarian:vm.dog.veterinarian,
+          weight:vm.dog.weight,
+          work:vm.dog.work
+        }
+      );
+      vm.dog = '';
+      $log.log(vm.doglist);
     };
 
-    vm.edit = function(id, Dog){
-      vm.editForm = true;
-      vm.editTitle = true;
-      vm.addTitle = false;
-      vm.objectIndex = id;
-      //vm.userObject = angular.copy(Dog);
-      vm.policy = Dog;
-      // $log.log(vm.objectIndex);
+    vm.Remove = function(index){
+      $log.log(index);
+      vm.doglist.splice(index, 1);
     };
 
-    vm.delete = function(id){
+    vm.Edit = function(dog){
+      vm.dogs = dog;
+    };
+
+    vm.AddDog = function(){
+      vm.summary = false;
+      vm.personInfo = false;
+    };
+
+    vm.Save = function(){
 
     };
 
-    vm.save = function(){
-      // vm.editForm = false;
-      // if(vm.policy[vm.objectIndex] === null){
-      //   $log.log('Winner Winner');
-      // }
-      $log.log(vm.policy[vm.objectIndex]);
-    };
-
-    vm.cancle = function(){
-      vm.editForm = false;
-    };
-
-    vm.calculate = function(x){
-      vm.calculate = false;
-      vm.summaryDog = false;
-      vm.userObject = angular.copy(vm.policy.addInsured);
-      $log.log(x);
-    }
   }
 })();
 
