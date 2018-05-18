@@ -64,6 +64,7 @@
 
     vm.Edit = function(dog){
       vm.dogs = dog;
+      vm.edits = true;
     };
 
     vm.AddDog = function(){
