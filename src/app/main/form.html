@@ -277,5 +277,31 @@
       <button class='btn btn-default' ng-click='form.Next()'>Next</button>
     </section>
   </form>
+  <button class='btn btn-success' ng-click='form.AddDog()'>Add Dog</button>
+  <table class='table' ng-show='form.summary'>
+    <thead>
+      <tr>
+        <th>Edit</th>
+        <th>Dog's Name</th>
+        <th>Breed</th>
+        <th>Eligible</th>
+        <th>Remove</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat='dogs in form.doglist'>
+        <td>
+          <button ng-click='form.Edit()' class='btn btn-success'>Edit</button>
+        </td>
+        <td>{{dogs.name}}</td>
+        <td>{{dogs.breed}}</td>
+        <td>Please calculate to determine eligibility</td>
+        <td>
+          <button ng-click='form.Remove()' class='btn btn-danger'>Remove</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div ng-show='form.edits'>
 </div>
 <acme-footer></acme-footer>
