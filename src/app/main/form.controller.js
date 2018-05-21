@@ -70,6 +70,7 @@
     vm.AddDog = function(){
       vm.summary = false;
       vm.personInfo = false;
+      vm.edits = false;
     };
 
     vm.Save = function(){
