@@ -344,14 +344,10 @@
         </select>
       </div>
       <div class='form-group col-md-4'>
-        <label class='form-control-label'>Where does {{form.dogs.name | uppercase}} go for relef/potty most of the time:</label>
-        <select class='form-control' ng-model='form.dogs.bathroom'>
-          <option value='Inside Fenced'>Inside a completely fenced yard of kennel</option>
-          <option value='Underground System'>Underground electric dog containment system</option>
-          <option value='Outside Loose'>Outside loose in unfenced yard</option>
-          <option value='Permanently Tied'>Permanently Tied/teathered outside</option>
-          <option value='Line'>On tie line 1 hour or less at a time</option>
-          <option value='Leashed Walked'>Leashed Walked</option>
+        <label class='form-control-label'>Do you take {{form.dogs.name | uppercase}} to off leash dog Parks:</label>
+        <select ng-model='form.dogs.parks' class='form-control'>
+          <option value='Yes'>Yes</option>
+          <option value='No'>No</option>
         </select>
       </div>
       <div class='form-group col-md-4'>
@@ -373,18 +369,14 @@
         </select>
       </div>
       <div class='form-group col-md-4'>
-        <label class='form-control-label'>Do you take {{form.dogs.name | uppercase}} to off leash dog Parks:</label>
-        <select ng-model='form.dogs.parks' class='form-control'>
-          <option value='Yes'>Yes</option>
-          <option value='No'>No</option>
-        </select>
-      </div>
-      <div class='form-group col-md-4'>
-        <label class='form-control-label'>Do you take {{form.dogs.name | uppercase}} to a Veterinarian:</label>
-        <select class='form-control' ng-model='form.dogs.veterinarian'>
-          <option value='Annually'>Annually and would treat for illness</option>
-          <option value='Required'>Only as required by law</option>
-          <option value='Never'>Never</option>
+        <label class='form-control-label'>Where does {{form.dogs.name | uppercase}} go for relef/potty most of the time:</label>
+        <select class='form-control' ng-model='form.dogs.bathroom'>
+          <option value='Inside Fenced'>Inside a completely fenced yard of kennel</option>
+          <option value='Underground System'>Underground electric dog containment system</option>
+          <option value='Outside Loose'>Outside loose in unfenced yard</option>
+          <option value='Permanently Tied'>Permanently Tied/teathered outside</option>
+          <option value='Line'>On tie line 1 hour or less at a time</option>
+          <option value='Leashed Walked'>Leashed Walked</option>
         </select>
       </div>
       <div class='form-group col-md-4'>
@@ -397,6 +389,14 @@
           <option value='Hunting'>Hunting, Gun, Sporting off Leash, Farm, Hearding</option>
           <option value='Sled'>Sled dog racing, Musing for hire, Freighting</option>
           <option value='War'>War or Police Service dog, Professional Trained personal Protection or Professional Trained Guard Dog</option>
+        </select>
+      </div>
+      <div class='form-group col-md-4'>
+        <label class='form-control-label'>Do you take {{form.dogs.name | uppercase}} to a Veterinarian:</label>
+        <select class='form-control' ng-model='form.dogs.veterinarian'>
+          <option value='Annually'>Annually and would treat for illness</option>
+          <option value='Required'>Only as required by law</option>
+          <option value='Never'>Never</option>
         </select>
       </div>
       <div class='form-group col-md-4'>
@@ -432,23 +432,6 @@
         </select>
       </div>
       <div class='form-group col-md-4'>
-        <label class='form-control-label'>Total number of Dogs in your home:</label>
-        <select class='form-control' ng-model='form.dogs.dogsHome'>
-          <option value='1'>1</option>
-          <option value='2 to 4'>2 to 4</option>
-          <option value='5 or More'>5 or more</option>
-        </select>
-      </div>
-    </div>
-    <div class='form-row'>
-      <div class='form-group col-md-4'>
-        <label class='form-control-label'>Do you take {{form.dogs.name | uppercase}} to Work regularly:</label>
-        <select class='form-control' ng-model='form.dogs.work'>
-          <option value='Yes'>Yes</option>
-          <option value='No'>No</option>
-        </select>
-      </div>
-      <div class='form-group col-md-4'>
         <label class='form-control-label'>Is {{form.dogs.name | uppercase}} involved or integral in your work as a Therapist, Teacher, Counselor, or other similar:</label>
         <select class='form-control' ng-model='form.dogs.involvedWork'>
           <option value='Yes'>Yes</option>
@@ -460,6 +443,34 @@
             <input type='text' class='form-control' ng-model='form.dogs.occupation'>
           </div>
         </div>
+      </div>
+    </div>
+    <div class='form-row'>
+      <div class='form-group col-md-4'>
+        <label class='form-control-label'>Do you take {{form.dogs.name | uppercase}} to Work regularly:</label>
+        <select class='form-control' ng-model='form.dogs.work'>
+          <option value='Yes'>Yes</option>
+          <option value='No'>No</option>
+        </select>
+      </div>
+      <div class='form-group col-md-4'>
+        <label class='form-control-label'>Total number of Dogs in your home:</label>
+        <select class='form-control' ng-model='form.dogs.dogsHome'>
+          <option value='1'>1</option>
+          <option value='2 to 4'>2 to 4</option>
+          <option value='5 or More'>5 or more</option>
+        </select>
+      </div>
+      <div class='form-group col-md-4'>
+        <label class='form-control-label'>Where does {{form.dogs.name | uppercase}} Sleep:</label>
+        <select class='form-control' ng-model='form.dogs.sleep'>
+          <option value='Inside'>Inside</option>
+          <option value='Garage'>Garage</option>
+          <option value='Loosed Fenced'>Outside loose in fenced yard</option>
+          <option value='Without Restraints'>Outside without any restraints</option>
+          <option value='Permanent Outside'>Permanent outside kennel</option>
+          <option value='Tied Out'>Tied Out</option>
+        </select>
       </div>
       <div class='form-group col-md-4'>
         <label class='form-control-label'>Is {{form.dogs.name | uppercase}} current on licenses, vaccinations and other such requirments in your area:</label>
@@ -482,17 +493,7 @@
           <option value='No'>No</option>
         </select>
       </div>
-      <div class='form-group col-md-4'>
-        <label class='form-control-label'>Where does {{form.dogs.name | uppercase}} Sleep:</label>
-        <select class='form-control' ng-model='form.dogs.sleep'>
-          <option value='Inside'>Inside</option>
-          <option value='Garage'>Garage</option>
-          <option value='Loosed Fenced'>Outside loose in fenced yard</option>
-          <option value='Without Restraints'>Outside without any restraints</option>
-          <option value='Permanent Outside'>Permanent outside kennel</option>
-          <option value='Tied Out'>Tied Out</option>
-        </select>
-      </div>
+
       <div class='form-group col-md-4'>
         <label class='form-control-label'>What is {{form.dogs.name | uppercase}} Reproductive status:</label>
         <select ng-model='form.dogs.reproductive' class='form-control'>
@@ -555,8 +556,8 @@
       </div>
     </div>
   </form>
-  <button class='btn btn-default' ng-click='form.save(form.dogs)'>Save</button>
-  <button class='btn btn-danger' ng-click='form.cancel()'>Cancle</button>
+  <button class='btn btn-default' ng-click='form.Save(form.dogs)'>Save</button>
+  <button class='btn btn-danger' ng-click='form.Cancel()'>Cancle</button>
 </section>
 </div>
 <acme-footer></acme-footer>

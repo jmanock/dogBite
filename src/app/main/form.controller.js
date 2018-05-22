@@ -65,6 +65,7 @@
     vm.Edit = function(dog){
       vm.dogs = dog;
       vm.edits = true;
+      vm.summary = false;
     };
 
     vm.AddDog = function(){
@@ -73,9 +74,16 @@
       vm.edits = false;
     };
 
-    vm.Save = function(){
-
+    vm.Save = function(dog){
+      vm.edits = false;
+      vm.dogs = dog;
+      vm.summary = true;
     };
+
+    vm.Cancel = function(){
+      vm.edits = false;
+      vm.summary = true;
+    }
 
   }
 })();
