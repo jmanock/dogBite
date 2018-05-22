@@ -501,6 +501,62 @@
           <option value='Spayed'>Spayed Female</option>
         </select>
       </div>
+      <div class='form-group col-md-4'>
+        <label class='form-control-label'>Has {{form.dogs.name | uppercase}} ever injured another Animal:</label>
+        <select ng-model='form.dogs.animalInjury' class='form-control'>
+          <option value='Never'>Never</option>
+          <option value='Injured Animal'>Injured another animal</option>
+          <option value='Killed Animal'>Killed another animal</option>
+          <option value='Injured More'>Injured more than one animal</option>
+          <option value='Killed More'>Killed more than one animal</option>
+        </select>
+        <div ng-if='form.dogs.animalInjury === "Injured More" || form.dogs.animalInjury === "Killed More" ? true : false'>
+          <div class='form-group'>
+            <label class='form-control-label'>Please describe each event in detail:</label>
+            <textarea class='form-control' rows='10' cols='30' ng-model='form.dogs.describeAnimalInjury'></textarea>
+          </div>
+          <div class='form-group'>
+            <label class='form-control-label'>What fines, restrictions, specific requierments were mandated as a result of each event:</label>
+            <textarea class='form-control' ng-model='form.dogs.finesAnimalInjury' rows='10' cols='30'></textarea>
+          </div>
+          <div class='form-group'>
+            <label class='form-control-label'>What changes have you made to prevent similar events:</label>
+            <textarea class='form-control' ng-model='form.dogs.changesAnimalInjury' rows='10' cols='30'></textarea>
+          </div>
+        </div>
+      </div>
+      <div class='form-group col-md-4'>
+        <label class='form-control-label'>Has {{form.dogs.name | uppercase}} ever injured a Human:</label>
+        <select class='form-control' ng-model='form.dogs.humanInjury'>
+          <option value='Never'>Never</option>
+          <option value='Injured Child'>Injured a child - leaving minor brusing, scratching but no broken skin - one time</option>
+          <option value='Injured Adult'>Injured an adult - leaving minor brusing, scratching but no broken skin - one time</option>
+          <option value='Child Breaking Skin'>Injured a child - breaking skin, no permanent scarring</option>
+          <option value='Adult Breaking Skin'>Injured an adult - breaking skin, no permanent scarring</option>
+          <option value='Child Medical Attention'>Injured a child requiring medical attention and/or stitches</option>
+          <option value='Adult Medical Attention'>Injured an adult requiring medical attention and/or stitches</option>
+          <option value='Child More'>Injured a child more than once</option>
+          <option value='Adult More'>Injured an adult more than once</option>
+        </select>
+        <div ng-if='form.dogs.humanInjury === "Child Medical Attention" || form.dogs.humanInjury === "Adult Medical Attention" ? true : false'>
+          <div class='form-group'>
+            <label class='form-control-label'>Please describe each event in detail:</label>
+            <textarea class='form-control' ng-model='form.dogs.describeHumanInjury' rows='10' cols='30'></textarea>
+          </div>
+          <div class='form-group'>
+            <label class='form-control-label'>What fines, restrictions, specific requierments were mandated as a result of each event:</label>
+            <textarea class='form-control' ng-model='form.dogs.finesHumanInjury' rows='10' cols='30'></textarea>
+          </div>
+          <div class='form-group'>
+            <label class='form-control-label'>What changes have you made to prevent similar events:</label>
+            <textarea class='form-control' ng-model='form.dogs.changesHumanInjury' rows='10' cols='30'></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+  <button class='btn btn-default' ng-click='form.save(form.dogs)'>Save</button>
+  <button class='btn btn-danger' ng-click='form.cancel()'>Cancle</button>
 </section>
 </div>
 <acme-footer></acme-footer>
