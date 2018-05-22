@@ -482,7 +482,25 @@
           <option value='No'>No</option>
         </select>
       </div>
-      
+      <div class='form-group col-md-4'>
+        <label class='form-control-label'>Where does {{form.dogs.name | uppercase}} Sleep:</label>
+        <select class='form-control' ng-model='form.dogs.sleep'>
+          <option value='Inside'>Inside</option>
+          <option value='Garage'>Garage</option>
+          <option value='Loosed Fenced'>Outside loose in fenced yard</option>
+          <option value='Without Restraints'>Outside without any restraints</option>
+          <option value='Permanent Outside'>Permanent outside kennel</option>
+          <option value='Tied Out'>Tied Out</option>
+        </select>
+      </div>
+      <div class='form-group col-md-4'>
+        <label class='form-control-label'>What is {{form.dogs.name | uppercase}} Reproductive status:</label>
+        <select ng-model='form.dogs.reproductive' class='form-control'>
+          <option value='Intact'>Intact</option>
+          <option value='Neutered'>Neutered Male</option>
+          <option value='Spayed'>Spayed Female</option>
+        </select>
+      </div>
 </section>
 </div>
 <acme-footer></acme-footer>
