@@ -2,6 +2,8 @@
 body{
   font-family:'Montserrat';
   font-weight:400;
+  /* background-color:#81d4fa; */
+  background-color:#e1f5fe;
 }
 h1{
   color:#0099cc;
@@ -60,33 +62,27 @@ footer h6{
 h5{
   text-align:center;
 }
-.something input{
-  padding-right:15px;
-}
-.something:after{
-  content:'LBS';
-}
-.autocomplete-custom-template li {
-  border-bottom: 1px solid #ccc;
-  height: auto;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  white-space: normal;
-}
-.autocomplete-custom-template li:last-child {
-  border-bottom-width: 0;
-}
-.autocomplete-custom-template .item-title,
-.autocomplete-custom-template .item-metadata {
-  display: block;
-  line-height: 2;
-}
-.autocomplete-custom-template .item-title md-icon {
-  height: 18px;
-  width: 18px;
-}
 .form-control-label{
   /* color:#33b5e5; */
   color:#0099cc;
   font-weight:400;
 }
+.main{
+  margin-top:10%;
+  border:1px solid gray;
+  padding:10px;
+  box-shadow:5px 10px 8px #888888;
+}
+.main button{
+
+}
+.container{
+  background-color:#fff;
+}
+/* .form{
+  margin-top:10%;
+  margin-bottom:10%;
+  border:1px solid #888888;
+  padding:10px;
+  box-shadow:5px 10px 8px 10px #888888;
+} */
