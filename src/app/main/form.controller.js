@@ -80,11 +80,6 @@
       vm.summary = true;
     };
 
-    vm.Cancel = function(){
-      vm.edits = false;
-      vm.summary = true;
-    }
-
   }
 })();
 
