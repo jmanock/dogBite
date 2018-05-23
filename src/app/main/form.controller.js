@@ -9,6 +9,8 @@
   function FormController($log, $window, $scope) {
     var vm = this;
 
+    vm.currentPercentage = 0;
+
     vm.states = states;
     vm.breeds = breeds;
 
@@ -17,6 +19,7 @@
     vm.Next = function(){
       vm.dogInfo = true;
       vm.personInfo = true;
+      vm.currentPercentage = 25;
     };
 
     vm.Summary = function(){
@@ -54,6 +57,7 @@
         }
       );
       vm.dog = '';
+      vm.currentPercentage = 50;
       $log.log(vm.doglist);
     };
 
