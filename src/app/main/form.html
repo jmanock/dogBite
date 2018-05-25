@@ -227,7 +227,20 @@
             <option value='Neutered'>Neutered - Male</option>
             <option value='Spayed'>Spayed - Female</option>
           </select>
-        </div> 
+        </div>
+        <div class='form-group col-md-6'>
+          <label class='form-control-label'>Has {{form.dog.name}} ever injured another Animal:</label>
+          <select ng-model='form.dog.animalInjury' class='form-control'>
+            <option value='' selected disabled>Please Choose...</option>
+            <option value='Never'>Never</option>
+            <option value='Injured Animal'>Injured another animal</option>
+            <option value='Killed Animal'>Killed another animal</option>
+            <option value='Injured More'>Injured more than one animal</option>
+            <option value='Killed More'>Killed more than one animal</option>
+          </select>
+          <div ng-if='form.dog.animalInjury === "Injured More" || form.dog.animalInjury === "Kille More" ? true : false'>
+            <div class='form-group'>
+              <label class='form-control-label'>
   </form>
 
 
