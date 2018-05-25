@@ -12,7 +12,7 @@
       <section class='col-md-10' ng-hide='form.personInfo'>
         <div class='form-group'>
           <label class='form-control-label'>Dog's Name:</label>
-          <input type='text' class='form-control' ng-model='form.dog.name'>
+          <input type='text' class='form-control' ng-model='form.dog.name' autofocus>
         </div>
         <div class='form-group'>
           <label class='form-control-label'>Email:</label>
@@ -229,7 +229,7 @@
           </select>
         </div>
         <div class='form-group col-md-6'>
-          <label class='form-control-label'>Has {{form.dog.name}} ever injured another Animal:</label>
+          <label class='form-control-label'>Has {{form.dog.name | uppercase}} ever injured another Animal:</label>
           <select ng-model='form.dog.animalInjury' class='form-control'>
             <option value='' selected disabled>Please Choose...</option>
             <option value='Never'>Never</option>
@@ -240,9 +240,52 @@
           </select>
           <div ng-if='form.dog.animalInjury === "Injured More" || form.dog.animalInjury === "Kille More" ? true : false'>
             <div class='form-group'>
-              <label class='form-control-label'>
+              <label class='form-control-label'>Please describe each event in detail:</label>
+              <textarea class='form-control' ng-model='form.dog.describeAnimalInjury' rows='10' cols='30'></textarea>
+            </div>
+            <div class='form-group'>
+              <label class='form-control-label'>What fines, restrictions, specific requierments were mandated as a result of each event:</label>
+              <textarea class='form-control' ng-model='form.dog.finesAnimalInjury' rows='10' cols='30'></textarea>
+            </div>
+            <div class='form-group'>
+              <label class='form-control-label'>What changes have you made to prevent similar events:</label>
+              <textarea class='form-control' ng-model='form.dog.changesAnimalInjury' rows='10' cols='30'></textarea>
+            </div>
+          </div>
+        </div>
+        <div class='form-group col-md-6'>
+          <label class='form-control-label'>Has {{form.dog.name | uppercase}} ever injured a human:</label>
+          <select class='form-control' ng-model='form.dog.humanInjury'>
+            <option value='' selected disabled>Please Chooose...</option>
+            <option value='Never'>Never</option>
+            <option value='Injured Child'>Injured a child - leaving minor brusing, scratching but no broken skin - one time</option>
+            <option value='Injured Adult'>Injured an adult - leaving minor brusing, scratching but no broken skin - one time</option>
+            <option value='Child Breaking Skin'>Injured a child - breaking skin, no permanent scarring</option>
+            <option value='Adult Breaking Skin'>Injured an adult - breaking skin, no permanent scarring</option>
+            <option value='Child Medical Attention'>Injured a child requiring medical attention and/or stitches</option>
+            <option value='Adult Medical Attention'>Injured an adult requiring medical attention and/or stitches</option>
+            <option value='Child More'>Injured a child more than once</option>
+            <option value='Adult More'>Injured an adult more than once</option>
+          </select>
+          <div ng-if='form.dog.humanInjury === "Child Medical Attention" || form.dog.humanInjury === Adult Medical Attention ? true : false'>
+            <div class='form-group'>
+              <label class='form-control-label'>Please describe each event in detail:</label>
+              <textarea class='form-control' ng-model='form.dog.describeHumanInjury' rows='10' cols='30'></textarea>
+            </div>
+            <div class='form-group'>
+              <label class='form-control-label'>What fines, restrictions, specific requierments were mandated as a result of each event:</label>
+              <textarea class='form-control' ng-model='form.dog.finesHumanInjury' rows='10' cols='30'></textarea>
+            </div>
+            <div class='form-group'>
+              <label class='form-control-label'>What changes have you made to prevent similar events:</label>
+              <textarea class='form-control' ng-model='form.dog.changesHumanInjury' rows='10' cols='30'></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class='btn btn-default' ng-click='form.Summary(form.dog)'>Next</button>
+    </section>
   </form>
-
 
   <section ng-show='form.summary'>
     <button class='btn btn-success' ng-click='form.AddDog()'><span class='fa fa-plus-circle'></span> Add Dog</button>
@@ -291,6 +334,237 @@
   <section ng-show='form.edits'>
     <form class='form-horizontal'>
       <div class='form-row'>
+        <div class='form-group col-md-4'>
+          <label class='form-control-label'>Dog's name:</label>
+          <input class='form-control' ng-model='form.dogs.name' type='text'>
+        </div>
+        <div class='form-group col-md-4'>
+          <label class='form-control-label'>Email:</label>
+          <input class='form-control' ng-model='form.dogs.email' type='email'>
+        </div>
+        <div class='form-group col-md-4'>
+          <label class='form-control-label'>What color is {{form.dogs.name | uppercase}}:</label>
+          <input type='text' ng-model='form.dogs.color' class='form-control'>
+        </div>
+        <div class='form-group col-md-4'>
+          <label class='form-control-label'>How old is {{form.dogs.name | uppercase}}:</label>
+          <input type='number' ng-model='form.dogs.age' class='form-control'>
+        </div>
+        <div class='form-group col-md-4'>
+          <label class='form-control-label'>What is {{form.dogs.name | uppercase}}'s weight:</label>
+          <div class='input-group'>
+            <input type='number' ng-model='form.dogs.weight' class='form-control' aria-label='Dogs Weight' aria-describeby='basic'>
+            <div class='input-group-append'>
+              <span class='input-group-text' id='basic'>LBs</span>
+            </div>
+          </div>
+        </div>
+        <div class='form-group col-md-4'>
+          <label class='form-control-label'>What breed is {{form.dogs.name | uppercase}}:</label>
+          <select class='form-control' ng-model='form.dogs.breed' ng-options='items for items in form.breeds'></select>
+        </div>
+        <div class='form-group col-md-4'>
+          <label class='form-control-label'>State:</label>
+          <select class='form-control' ng-model='form.dogs.state' ng-options='item for item in form.states'></select>
+        </div>
+        <div class='form-group col-md-4'>
+          <label class='form-control-label'>Do you take {{form.dogs.name | uppercase}} to off leash dog parks:</label>
+          <select ng-model='form.dogs.parks' class='form-control'>
+            <option value='Yes'>Yes</option>
+            <option value='No'>No</option>
+          </select>
+        </div>
+        <div class='form-group col-md-4'>
+          <label class='form-control-label'>What gender is {{form.dogs.name | uppercase}}:</label>
+          <select ng-model='form.dogs.gender' class='form-control'>
+            <option value='Male'>Male</option>
+            <option value='Female'>Female</option>
+          </select>
+        </div>
+      </div>
+
+      <div class='form-row'>
+        <div class='form-group col-md-4'>
+          <label class='form-control-label'>Has {{form.dogs.name | uppercase}} ever been involved with Animal Service:</label>
+          <select ng-model='form.dogs.animalService' class='form-control'>
+            <option value='Never'>Never</option>
+            <option value='Once'>Once for breaking the law - no injuries</option>
+            <option value='Confiscated'>Confiscated and/or fines were issued</option>
+            <option value='Labled'>Been labled dangerous or vicious</option>
+          </select>
+        </div>
+        <div class='form-group col-md-4'>
+          <label class='form-control-label'>Where does {{form.dogs.name | uppercase}} go for relef/potty most of the time:</label>
+          <select class='form-control' ng-model='form.dogs.bathroom'>
+            <option value='Inside Fenced'>Inside a completely fenced yard of kennel</option>
+            <option value='Underground System'>Underground electric dog containment system</option>
+            <option value='Outside Loose'>Outside loose in unfenced yard</option>
+            <option value='Permanently Tied'>Permanently tied/teathered outside</option>
+            <option value='Line'>On tie line 1 hour or less at a time</option>
+            <option value='Leashed Walked'>Leashed walked</option>
+          </select>
+        </div>
+        <div class='form-group col-md-4'>
+          <label class='form-control-label'>What type of training or work does {{form.dogs.name | uppercase}} have:</label>
+          <select class='form-control' ng-model='form.dogs.training'>
+            <option value='None'>None or basic</option>
+            <option value='Intermediate'>Intermediate</option>
+            <option value='Advanced'>Avanced</option>
+            <option value='Therapy'>Therapy Dog</option>
+            <option value='Hunting'>Hunting, gun, sporting off leash, farm, hearding</option>
+            <option value='Sled'>Sled dog racing, musing for hire, freighting</option>
+            <option value='War'>War or police service dog, professional trained personal protection or professional trained guard dog</option>
+          </select>
+        </div>
+        <div class='form-group col-md-4'>
+          <label class='form-control-label'>Do you take {{form.dogs.name | uppercase}} to a veterinarian:</label>
+          <select class='form-control' ng-model='form.dogs.veterinarian'>
+            <option value='Annually'>Annually and would treat for illness</option>
+            <option value='Required'>Only as required by law</option>
+            <option value='Never'>Never</option>
+          </select>
+        </div>
+        <div class='form-group col-md-4'>
+          <label class='form-control-label'>What area do you live in:</label>
+          <select class='form-control' ng-model='form.dogs.area'>
+            <option value='City'>City, town, suburb, campus</option>
+            <option value='Country'>Country and/or your dog travels with you</option>
+          </select>
+        </div>
+        <div class='form-group col-md-4'>
+          <label class='form-control-label'>Do you breed {{form.dogs.name | uppercase}}</label>
+          <select class='form-control' ng-model='form.dogs.doesBreed'>
+            <option value='No'>No</option>
+            <option value='Stud'>Stud only</option>
+            <option value='1 Annually'>1 litter annually</option>
+            <option value='2 Annually'>2 litters annually</option>
+          </select>
+        </div>
+        <div class='form-group col-md-4'>
+          <label class='form-control-label'>Are there children, under the age of 16 living with you the majority of the time:</label>
+          <select class='form-control' ng-model='form.dogs.children'>
+            <option value='No'>No</option>
+            <option value='Yes'>Yes</option>
+            <option value='Daycare'>Daycare or babysitting service in the home</option>
+            <option value='Foster'>Foster children in the home</option>
+          </select>
+        </div>
+        <div class='form-group col-md-4'>
+          <label class='form-control-label'>Have any residents of your household been convicted of animal or domestic abuse in the last 5 years:</label>
+          <select class='form-control' ng-model='form.dogs.abuse'>
+            <option value='Yes'>Yes</option>
+            <option value='No'>No</option>
+          </select>
+        </div>
+        <div class='form-group col-md-4'>
+          <label class='form-control-label'>Is {{form.dogs.name | uppercase}} involved or integral in your work as a therapist, teacher, counselor, or other similar:</label>
+          <select class='form-control' ng-model='form.dogs.involvedWork'>
+            <option value='Yes'>Yes</option>
+            <option value='No'>No</option>
+          </select>
+          <div ng-if='form.dogs.involvedWork === "Yes" ? true :false'>
+            <div class='form-group'>
+              <label class='form-control-label'>What is your occupation:</label>
+              <input type='text' class='form-control' ng-model='form.dogs.occupation'>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class='form-row'>
+        <div class='form-group col-md-4'>
+          <label class='form-control-label'>Do you take {{form.dogs.name | uppercase}} to work regularly:</label>
+          <select class='form-control' ng-model='form.dogs.work'>
+            <option value='Yes'>Yes</option>
+            <option value='No'>No</option>
+          </select>
+        </div>
+        <div class='form-group col-md-4'>
+          <label class='form-control-label'>Total number of dog's in your home:</label>
+          <select class='form-control' ng-model='form.dogs.dogsHome'>
+            <option value='1'>1</option>
+            <option value='2 to 4'>2 to 4</option>
+            <option value='5 or More'>5 or more</option>
+          </select>
+        </div>
+        <div class='form-group col-md-4'>
+          <label class='form-control-label'>Where does {{form.dogs.name | uppercase}} sleep:</label>
+          <select class='from-control' ng-model='form.dogs.sleep'>
+            <option value='Inside'>Inside</option>
+            <option value='Garage'>Garage</option>
+            <option value='Loose Fenced'>Outside loose in fenced yard</option>
+            <option value='Without Restraints'>Outside without any restraints</option>
+            <option value='Permanent Outside'>Permanent outside kennel</option>
+            <option value='Tied Out'>Tied out</option>
+          </select>
+        </div>
+        <div class='form-group col-md-4'>
+          <label class='form-control-label'>Is {{form.dogs.name | uppercase}} current on licenses, vaccinations and other such requirments in your area:</label>
+          <select class='form-control' ng-model='form.dogs.vaccinations'>
+            <option value='Yes'>Yes</option>
+            <option value='No'>No</option>
+          </select>
+        </div>
+        <div class='form-group col-md-4'>
+          <label class='form-control-label'>Is {{form.dogs.name | uppercase}} in a foster arrangement where the owner has been deployed:</label>
+          <select class='form-control' ng-model='form.dogs.foster'>
+            <option value='Yes'>Yes</option>
+            <option value='No'>No</option>
+          </select>
+        </div>
+        <div class='form-group col-md-4'>
+          <label class='form-control-label'>Is {{form.dogs.name | uppercase}} in your home with the intent that he/she will be adopted:</label>
+          <select class='form-control' ng-model='form.dogs.adopted'>
+            <option value='Yes'>Yes</option>
+            <option value='No'>No</option>
+          </select>
+        </div>
+        <div class='form-group col-md-4'>
+          <label class='form-control-label'>What is {{form.dogs.name | uppercase}} reproductive status:</label>
+          <select class='form-control' ng-model='form.dogs.reproductive'>
+            <option value='Intact'>Intact</option>
+            <option value='Neutered'>Netered - male</option>
+            <option value='Spayed'>Spayed - female</option>
+          </select>
+        </div>
+        <div class='form-group col-md-4'>
+          <label class='form-control-label'>Has {{form.dogs.name | uppercase}} ever injured another animal:</label>
+          <select class='form-control' ng-model='form.dogs.animalInjury'>
+            <option value='Never'>Never</option>
+            <option value='Injured Animal'>Injured another animal</option>
+            <option value='Killed Animal'>Killed another animal</option>
+            <option value='Injured More'>Injured more than one animal</option>
+            <option value='Killed More'>Killed more than on animal</option>
+          </select>
+          <div ng-if='form.dogs.animalInjury === "Injured More" || form.dogs.animalInjury === "Killed More" ? true : false'>
+            <div class='form-group'>
+              <label class='form-control-label'>Please describe each event in detail:</label>
+              <textarea class='form-control' ng-model='form.dogs.describeAnimalInjury' rows='10' cols='30'></textarea>
+            </div>
+            <div class='form-group'>
+              <label class='form-control-label'>What fines, restrictions, specific requierments were mandated as a result of each event:</label>
+              <textarea class='form-control' ng-model='form.dogs.finesAnimalInjury' rows='10' cols='30'></textarea>
+            </div>
+            <div class='form-group'>
+              <label class='form-control-label'>What changes have you made to prevent similar events:</label>
+              <textarea class='form-control' ng-model='form.dogs.changesAnimalInjury' rows='10' cols='30'></textarea>
+            </div>
+          </div>
+        </div>
+        <div class='form-group col-md-4'>
+          <label class='form-control-label'>Has {{form.dogs.name | uppercase}} ever injured a human:</label>
+          <select class='form-control' ng-model='form.dogs.humanInjury'>
+            <option value='Never'>Never</option>
+            <option value='Injured Child'></option>
+            <option value='Injured Adult'></option>
+            <option value='Child Breaking Skin'></option>
+            <option value='Adult Breaking Skin'></option>
+            <option value='Child Medical Attention'></option>
+            <option value='Adult Medical Attention'></option>
+            <option value='Child More'></option>
+            <option value='Adult More'>Injured an adult more than once</option>
+          </select>
+        </div>
+    </form>
   </section>
 </div>
 <acme-footer></acme-footer>
