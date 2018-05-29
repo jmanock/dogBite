@@ -145,7 +145,8 @@
             <option value='Foster'>Foster children in the home</option>
           </select>
         </div>
-        <div class='form-group col-md-6'>Have any residents of your household been convicted of animal or domestic abuse in the last 5 years:</label>
+        <div class='form-group col-md-6'>
+          <label class='form-control-label'>Have any residents of your household been convicted of animal or domestic abuse in the last 5 years:</label>
           <select class='form-control' ng-model='form.dog.abuse'>
             <option value='' selected disabled>Please Choose...</option>
             <option value='Yes'>Yes</option>
@@ -488,7 +489,7 @@
         </div>
         <div class='form-group col-md-4'>
           <label class='form-control-label'>Where does {{form.dogs.name | uppercase}} sleep:</label>
-          <select class='from-control' ng-model='form.dogs.sleep'>
+          <select class='form-control' ng-model='form.dogs.sleep'>
             <option value='Inside'>Inside</option>
             <option value='Garage'>Garage</option>
             <option value='Loose Fenced'>Outside loose in fenced yard</option>
@@ -563,8 +564,24 @@
             <option value='Child More'>Injured a child more than once</option>
             <option value='Adult More'>Injured an adult more than once</option>
           </select>
+          <div ng-if='form.dogs.humanInjury === "Child Medical Attention" || form.dogs.humanInjury === "Adult Medical Attenthin" ? true : false'>
+            <div class='form-group'>
+              <label class='form-control-label'>Please describe each event in detail:</label>
+              <textarea class='form-control' ng-model='form.dogs.describeHumanInjury' rows='10' cols='30'></textarea>
+            </div>
+            <div class='form-group'>
+              <label class='form-control-label'>What fines, restrictions, specific requierments were mandated as a result of each event:</label>
+              <textarea class='form-control' ng-model='form.dogs.finesHumanInjury' rows='10' cols='30'></textarea>
+            </div>
+            <div class='form-group'>
+              <label class='form-control-label'>What changes have you made to prevent similar events:</label>
+              <textarea class='form-control' ng-model='form.dogs.changesHumanInjury' rows='10' cols='30'></textarea>
+            </div>
+          </div>
         </div>
+      </div>
     </form>
+    <button class='btn btn-default' ng-click='form.Save(form.dogs)'>Save</button>
   </section>
 </div>
 <acme-footer></acme-footer>
