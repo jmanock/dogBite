@@ -84,6 +84,12 @@
       vm.summary = true;
     };
 
+    vm.calculate = function(dog){
+      vm.calculate = true;
+      vm.summary = false;
+      vm.dogs = dog;
+    };
+
   }
 })();
 
