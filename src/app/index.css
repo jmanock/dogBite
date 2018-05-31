@@ -79,6 +79,9 @@ h5{
 .container{
   background-color:#fff;
 }
+.progress{
+  margin-bottom:20px;
+}
 /* .form{
   margin-top:10%;
   margin-bottom:10%;

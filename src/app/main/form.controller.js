@@ -10,6 +10,7 @@
     var vm = this;
 
     vm.currentPercentage = 0;
+    vm.title = 'New Quote';
     vm.states = states;
     vm.breeds = breeds;
 
