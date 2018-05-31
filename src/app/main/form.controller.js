@@ -26,10 +26,62 @@
       vm.summary = true;
       vm.doglist.push(
         {
-          
+          abuse: vm.dog.abuse,
+          adopted: vm.dog.adopted,
+          age: vm.dog.age,
+          animalInjury: vm.dog.animalInjury,
+          animalServices: vm.dog.animalServices,
+          area: vm.dog.area,
+          bathroom: vm.dog.bathroom,
+          breed: vm.dog.breed,
+          children: vm.dog.children,
+          color: vm.dog.color,
+          deployed: vm.dog.deployed,
+          doesBreed: vm.dog.doesBreed,
+          dogsHome: vm.dog.dogsHome,
+          email: vm.dog.email,
+          gender: vm.dog.gender,
+          humanInjury: vm.dog.humanInjury,
+          involvedWork: vm.dog.involvedWork,
+          name: vm.dog.name,
+          parks: vm.dog.parks,
+          reproductive: vm.dog.reproductive,
+          sleep: vm.dog.sleep,
+          state: vm.dog.state,
+          training: vm.dog.training,
+          vaccinations: vm.dog.vaccinations,
+          veterinarian: vm.dog.veterinarian,
+          weight: vm.dog.weight,
+          work: vm.dog.work
         }
-      )
-    }
+      );
+      vm.dog = '';
+      vm.currentPercentage = 50;
+    };
+
+    vm.Remove = function(index){
+      vm.doglist.splice(index, 1);
+    };
+
+    vm.Edit = function(dog){
+      vm.dogs = dog;
+      vm.edits = true;
+      vm.summary = false;
+    };
+
+    vm.AddDog = function(){
+      vm.summary = false;
+      vm.personInfo = false;
+      vm.edits = false;
+    };
+
+    vm.Save = function(dog){
+      vm.edits = false;
+      vm.dogs = dog;
+      vm.summary = true;
+    };
+
+    
   }
 })();
 

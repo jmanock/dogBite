@@ -268,7 +268,7 @@
             <option value='Child More'>Injured a child more than once</option>
             <option value='Adult More'>Injured an adult more than once</option>
           </select>
-          <div ng-if='form.dog.humanInjury === "Child Medical Attention" || form.dog.humanInjury === Adult Medical Attention ? true : false'>
+          <div ng-if='form.dog.humanInjury === "Child Medical Attention" || form.dog.humanInjury === "Adult Medical Attention" ? true : false'>
             <div class='form-group'>
               <label class='form-control-label'>Please describe each event in detail:</label>
               <textarea class='form-control' ng-model='form.dog.describeHumanInjury' rows='10' cols='30'></textarea>
@@ -564,7 +564,7 @@
             <option value='Child More'>Injured a child more than once</option>
             <option value='Adult More'>Injured an adult more than once</option>
           </select>
-          <div ng-if='form.dogs.humanInjury === "Child Medical Attention" || form.dogs.humanInjury === "Adult Medical Attenthin" ? true : false'>
+          <div ng-if='form.dogs.humanInjury === "Child Medical Attention" || form.dogs.humanInjury === "Adult Medical Attention" ? true : false'>
             <div class='form-group'>
               <label class='form-control-label'>Please describe each event in detail:</label>
               <textarea class='form-control' ng-model='form.dogs.describeHumanInjury' rows='10' cols='30'></textarea>
@@ -610,6 +610,8 @@
         <tr>
           <td>$300,000</td>
         </tr>
+      </tbody>
+    </table>
   </section>
 </div>
 <acme-footer></acme-footer>
