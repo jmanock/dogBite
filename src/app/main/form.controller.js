@@ -96,8 +96,10 @@
       ];
     };
 
-    vm.Total = function(index){
-      $log.log(index);
+    vm.Total = function(index, something){
+      //doglist shows up
+      // vm.dogs is additionalInsureds
+      vm.total = [];
     };
 
   }

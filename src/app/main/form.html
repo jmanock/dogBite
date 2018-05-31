@@ -45,8 +45,8 @@
           </div>
         </div>
         <div class='form-group col-md-6'>
-          <label class='form-control-label'>How old is {{form.dog.name | uppercase}}:</label>
-          <input type='number' class='form-control' ng-model='form.dog.age'>
+          <label class='form-control-label'>How old is {{form.dog.name | uppercase}}:<span title='If dog is less than 1 enter 1' class='fa fa-question'></span></label>
+          <input type='number' class='form-control' ng-model='form.dog.age' min='1'>
         </div>
         <div class='form-group col-md-6'>
           <label class='form-control-label'>What Breed is {{form.dog.name | uppercase}}:</label>
@@ -71,7 +71,7 @@
           </select>
         </div>
         <div class='form-group col-md-6'>
-          <label class='form-control-label'>Has {{form.dog.name | uppercase}} ever been involved with Animal Services:</label>
+          <label class='form-control-label'>Has {{form.dog.name | uppercase}} ever been involved with Animal Services:<span title='Such as animal control, dog catcher, law enforcement, dog warden, officer, city, town, or any other government official' class='fa fa-question'></span></label>
           <select class='form-control' ng-model='form.dog.animalServices'>
             <option value='' selected disabled>Please Choose...</option>
             <option value='Never'>Never</option>
@@ -92,7 +92,7 @@
           </select>
         </div>
         <div class='form-group col-md-6'>
-          <label class='form-control-label'>What type of training or work does {{form.dog.name | uppercase}} have:</label>
+          <label class='form-control-label'>What type of training or work does {{form.dog.name | uppercase}} have:<span title='Therapy dog, are dogs that do volunteer visits at hospitals, classrooms or other facilities the handler is not paid and does not work at the facility' class='fa fa-question'></span></label>
           <select class='form-control' ng-model='form.dog.training'>
             <option value='' selected disabled>Please Choose...</option>
             <option value='None'>None or basic</option>
@@ -197,7 +197,7 @@
           </select>
         </div>
         <div class='form-group col-md-6'>
-          <label class='form-control-label'>Is {{form.dog.name | uppercase}} current on licenses, vaccinations and other such requirments in your area:</label>
+          <label class='form-control-label'>Is {{form.dog.name | uppercase}} current on licenses, vaccinations and other such requirments in your area:<span title='These are laws where you live that require certain vaccinations, tags, or registration. If compliance depends on this insurance check yes' class='fa fa-question'></span></label>
           <select class='form-control' ng-model='form.dog.vaccinations'>
             <option value='' selected disabled>Please Choose...</option>
             <option value='Yes'>Yes</option>
@@ -205,7 +205,7 @@
           </select>
         </div>
         <div class='form-group col-md-6'>
-          <label class='form-control-label'>Is {{form.dog.name | uppercase}} in a foster arrangement where the owner has been deployed:</label>
+          <label class='form-control-label'>Is {{form.dog.name | uppercase}} in a foster arrangement where the owner has been deployed:<span title='When you foster, you agree to take a homeless dog into your home and give him or her love, care and attention, either for a predetermined period of time or until the dog is adopted.' class='fa fa-question'></span></label>
           <select class='form-control' ng-model='form.dog.foster'>
             <option value='' selected disabled>Please Choose...</option>
             <option value='Yes'>Yes</option>
@@ -607,10 +607,25 @@
           <td>{{install.installmentAmount | currency}}</td>
           <td>{{install.firstBill}}</td>
           <td>
-            <button class='btn btn-success' ng-click='form.Total($index)'>Buy</button>
+            <button class='btn btn-success' ng-click='form.Total($index, install)'>Buy</button>
           </td>
         </tr>
       </tbody>
+    </table>
+  </section>
+  <section ng-show='form.total'>
+    <table class='table'>
+      <thead>
+        <tr>
+          <th>Name</th>
+        </tr>
+        <tr>
+          <th></th>
+      </thead>
+      <tbody>
+        <tr>
+          <td></td>
+        </tr>
     </table>
   </section>
 </div>
