@@ -584,7 +584,8 @@
     <button class='btn btn-default' ng-click='form.Save(form.dogs)'>Save</button>
   </section>
   <section ng-show='form.calculate'>
-    <h1>Calculate</h1>
+    <h1>Please choose your coverage limit, premium for your annual policy</h1>
+    <small>NOTE: Installments are always billed on the 3rd day of the month.</small>
     <table class='table'>
       <thead>
         <tr>
@@ -598,17 +599,16 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>$25,000</td>
-        </tr>
-        <tr>
-          <td>$50,000</td>
-        </tr>
-        <tr>
-          <td>$100,000</td>
-        </tr>
-        <tr>
-          <td>$300,000</td>
+        <tr ng-repeat='install in form.Coverage'>
+          <td>{{install.limit}}</td>
+          <td>{{install.total | currency}}</td>
+          <td>{{install.installments}}</td>
+          <td>{{install.downPayment | currency}}</td>
+          <td>{{install.installmentAmount | currency}}</td>
+          <td>{{install.firstBill}}</td>
+          <td>
+            <button class='btn btn-success' ng-click='form.Total'>Buy</button>
+          </td>
         </tr>
       </tbody>
     </table>
