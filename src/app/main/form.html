@@ -600,14 +600,14 @@
       </thead>
       <tbody>
         <tr ng-repeat='install in form.Coverage'>
-          <td>{{install.limit}}</td>
+          <td>{{install.limit | currency}}</td>
           <td>{{install.total | currency}}</td>
           <td>{{install.installments}}</td>
           <td>{{install.downPayment | currency}}</td>
           <td>{{install.installmentAmount | currency}}</td>
           <td>{{install.firstBill}}</td>
           <td>
-            <button class='btn btn-success' ng-click='form.Total'>Buy</button>
+            <button class='btn btn-success' ng-click='form.Total($index)'>Buy</button>
           </td>
         </tr>
       </tbody>

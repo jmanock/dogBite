@@ -6,16 +6,16 @@
     .controller('FormController', FormController);
 
   /** @ngInject */
-  function FormController($log, $window, $scope) {
+  function FormController($log) {
     var vm = this;
 
     vm.currentPercentage = 0;
     vm.states = states;
     vm.breeds = breeds;
 
-    vm.calculate = true;
-    vm.dogInfo = true;
-    vm.personInfo = false;
+    // vm.calculate = true;
+    // vm.dogInfo = true;
+    // vm.personInfo = false;
     vm.doglist = [];
 
     vm.Next = function(){
@@ -87,18 +87,18 @@
     vm.Calculate = function(dog){
       vm.calculate = true;
       vm.summary = false;
-      $log.log(dog.additionalInsureds);
-      additionalInsured = dog.additionalInsureds * 50 + 300;
+      var total = dog.additionalInsureds * 50 + 300;
+      vm.Coverage = [
+        {limit:25000, installments:3, firstBill:'08/03/2018', total:total, downPayment:total/3, installmentAmount:total/3 /3},
+        {limit:50000, installments:3, firstBill:'08/03/2018', total:total * .1 + total, downPayment:(total * .1 + total) /3, installmentAmount:(total *.1+total)/3 /3},
+        {limit:100000, installments:3, firstBill:'08/03/2018', total:total * .2 + total, downPayment:(total * .2 + total) /3, installmentAmount:(total * .2 + total)/3 /3},
+        {limit:300000, installments:3, firstBill:'08/03/2018', total:total * .3 + total, downPayment:(total * .3 + total)/3, installmentAmount:(total * .3 + total)/3 /3}
+      ];
     };
-    var additionalInsured;
-    var total = additionalInsured;
 
-    vm.Coverage = [
-      {limit:'$25,000', installments:3, firstBill:'08/03/2018', total:total, downPayment:total/4, installmentAmount:total/3},
-      {limit:'$50,000', installments:3, firstBill:'08/03/2018', total:total = total* .1 + total, downPayment:total/3, installmentAmount:total/3},
-      {limit:'$100,000', installments:3, firstBill:'08/03/2018', total:total = total * .2 + total, downPayment:total/3, installmentAmount:total/3},
-      {limit:'$300,000', installments:3, firstBill:'08/03/2018', total:total = total * .3 + total, downPayment:total/3, installmentAmount:total/3}
-    ];
+    vm.Total = function(index){
+      $log.log(index);
+    };
 
   }
 })();
