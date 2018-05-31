@@ -87,9 +87,11 @@
     vm.Calculate = function(dog){
       vm.calculate = true;
       vm.summary = false;
+      $log.log(dog.additionalInsureds);
+      additionalInsured = dog.additionalInsureds * 50 + 300;
     };
-
-    var total = 300;
+    var additionalInsured;
+    var total = additionalInsured;
 
     vm.Coverage = [
       {limit:'$25,000', installments:3, firstBill:'08/03/2018', total:total, downPayment:total/4, installmentAmount:total/3},
