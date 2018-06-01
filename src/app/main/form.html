@@ -1,5 +1,5 @@
 <acme-navbar></acme-navbar>
-<div class='container'>
+<div class='container form'>
   <h1>{{form.title}}</h1>
   <form class='form-horizontal'>
     <div class='progress'>
@@ -9,7 +9,7 @@
     </div>
     <div class='form-row'>
 
-      <section class='col-md-10' ng-hide='form.personInfo'>
+      <section class='col-md-12' ng-hide='form.personInfo'>
         <div class='form-group'>
           <label class='form-control-label'>Dog's Name:</label>
           <input type='text' class='form-control' ng-model='form.dog.name' autofocus>
@@ -19,7 +19,7 @@
           <input type='email' class='form-control' ng-model='form.dog.email'>
         </div>
         <div class='form-group'>
-          <label class='form-control-label'>State: <span title='All Dogs must reside in the same state. If you have dogs that reside in different states please complete seperate quotes' class='fa fa-question'></span></label>
+          <label class='form-control-label'>State: <span title='All Dogs must reside in the same state. If you have dogs that reside in different states please complete seperate quotes' class='fa fa-question' ng-click='form.question("All Dogs must reside in the same state. If you have dogs that reside in different states please complete seperate quotes.")'></span></label>
           <select class='form-control' ng-model='form.dog.state' ng-options='items for items in form.states'>
             <option value='' selected disabled>Please Choose...</option>
           </select>
@@ -45,7 +45,7 @@
           </div>
         </div>
         <div class='form-group col-md-6'>
-          <label class='form-control-label'>How old is {{form.dog.name | uppercase}}:<span title='If dog is less than 1 enter 1' class='fa fa-question'></span></label>
+          <label class='form-control-label'>How old is {{form.dog.name | uppercase}}:<span title='If dog is less than 1 enter 1' class='fa fa-question' ng-click='form.question("If dog is less than 1 enter 1")'></span></label>
           <input type='number' class='form-control' ng-model='form.dog.age' min='1'>
         </div>
         <div class='form-group col-md-6'>
@@ -71,7 +71,7 @@
           </select>
         </div>
         <div class='form-group col-md-6'>
-          <label class='form-control-label'>Has {{form.dog.name | uppercase}} ever been involved with Animal Services:<span title='Such as animal control, dog catcher, law enforcement, dog warden, officer, city, town, or any other government official' class='fa fa-question'></span></label>
+          <label class='form-control-label'>Has {{form.dog.name | uppercase}} ever been involved with Animal Services:<span title='Such as animal control, dog catcher, law enforcement, dog warden, officer, city, town, or any other government official' class='fa fa-question' ng-click='form.question("Such as animal control, dog catcher, law enforcement, dog warden, officer, city, town, or any other government official")'></span></label>
           <select class='form-control' ng-model='form.dog.animalServices'>
             <option value='' selected disabled>Please Choose...</option>
             <option value='Never'>Never</option>
@@ -92,7 +92,7 @@
           </select>
         </div>
         <div class='form-group col-md-6'>
-          <label class='form-control-label'>What type of training or work does {{form.dog.name | uppercase}} have:<span title='Therapy dog, are dogs that do volunteer visits at hospitals, classrooms or other facilities the handler is not paid and does not work at the facility' class='fa fa-question'></span></label>
+          <label class='form-control-label'>What type of training or work does {{form.dog.name | uppercase}} have:<span title='Therapy dog, are dogs that do volunteer visits at hospitals, classrooms or other facilities the handler is not paid and does not work at the facility' class='fa fa-question' ng-click='form.question("Therapy dog, are dogs that do volunteer visits at hospitals, classrooms or other facilities the handler is not paid and does not work at the facility")'></span></label>
           <select class='form-control' ng-model='form.dog.training'>
             <option value='' selected disabled>Please Choose...</option>
             <option value='None'>None or basic</option>
@@ -289,7 +289,7 @@
   </form>
 
   <section ng-show='form.summary'>
-    <button class='btn btn-success' ng-click='form.AddDog()'><span class='fa fa-plus-circle'></span> Add Dog</button>
+    <button class='btn btn-success addDog' ng-click='form.AddDog()'><span class='fa fa-plus-circle'></span> Add Dog</button>
     <table class='table'>
       <thead>
         <tr>
@@ -318,7 +318,7 @@
     <small>Examples Include: Landlord, Employer, and Governmental Entity</small>
     <div class='gLine'></div>
     <div class='form-group'>
-      <label class='form-control-label'>Select the Total Number of Additional Insureds: <span title="If you rent, the owners and/or property manager may request to be added as an additional insured. If your dog injures a person or animal then the defense costs are covered.  More towns and cities are requiring insurance to provide medical care of their citizen's" class='fa fa-question'></span></label>
+      <label class='form-control-label'>Select the Total Number of Additional Insureds: <span title="If you rent, the owners and/or property manager may request to be added as an additional insured. If your dog injures a person or animal then the defense costs are covered.  More towns and cities are requiring insurance to provide medical care of their citizen's" class='fa fa-question' ng-click='form.question("If you rent, the owners and/or property manager may request to be added as an additional insured. If your dog injures a person or animal then the defense costs are covered. More towns and cities are requiring insurance to provide medical care of their citizens")'></span></label>
       <select ng-model='form.dogs.additionalInsureds' class='form-control'>
         <option value='' selected disabled>Please Choose...</option>
         <option value='0'>0</option>

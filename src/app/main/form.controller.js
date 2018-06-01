@@ -9,6 +9,10 @@
   function FormController($log, $window) {
     var vm = this;
 
+    vm.question = function(text){
+      alert(text);
+    };
+
     vm.currentPercentage = 0;
 
     vm.title = 'New Quote';

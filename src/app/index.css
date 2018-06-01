@@ -21,6 +21,9 @@ h2{
 .nav-item{
   color:#fff !important;
 }
+.container{
+  background-color:#fff;
+}
 header .fa{
   color:#444;
 }
@@ -34,7 +37,39 @@ input{
   color:#777;
   font-weight:bold;
 }
-
+.form-control-label{
+  color:#0099cc;
+  font-weight:400;
+}
+.main{
+  margin-top:8%;
+  border:1px solid #888888;
+  padding:10px;
+  box-shadow:5px 10px 8px #888888;
+}
+.progress{
+  margin-bottom:20px;
+  /* background-color:#999999; */
+}
+.fa-question{
+  color:#444;
+  cursor:pointer;
+}
+.form{
+  margin-top:3%;
+  border:1px solid #888888;
+  padding:10px;
+  box-shadow:5px 10px 8px #888888;
+  margin-bottom:5%;
+}
+.btn-default{
+  /* background-color:#33b5e5; */
+  background-color:#0099cc;
+  color:#fff;
+}
+.addDog{
+  margin-bottom:2%;
+}
 .shortFooter{
   position:absolute;
   bottom:0;
