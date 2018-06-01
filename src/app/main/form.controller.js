@@ -6,10 +6,11 @@
     .controller('FormController', FormController);
 
   /** @ngInject */
-  function FormController($log) {
+  function FormController($log, $window) {
     var vm = this;
 
     vm.currentPercentage = 0;
+
     vm.title = 'New Quote';
     vm.states = states;
     vm.breeds = breeds;
@@ -19,11 +20,16 @@
     // vm.personInfo = false;
     vm.doglist = [];
 
+    vm.top = function(){
+        $window.scrollTo(0,0);
+    };
+
     vm.Next = function(){
       vm.title = 'Dog Info';
       vm.dogInfo = true;
       vm.personInfo = true;
       vm.currentPercentage = 25;
+      vm.top();
     };
 
     vm.Summary = function(){
@@ -74,6 +80,7 @@
       vm.dogs = dog;
       vm.edits = true;
       vm.summary = false;
+      vm.top();
     };
 
     vm.AddDog = function(){
@@ -101,6 +108,7 @@
         {limit:100000, installments:3, firstBill:'08/03/2018', total:total * .2 + total, downPayment:(total * .2 + total) /3, installmentAmount:(total * .2 + total)/3 /3},
         {limit:300000, installments:3, firstBill:'08/03/2018', total:total * .3 + total, downPayment:(total * .3 + total)/3, installmentAmount:(total * .3 + total)/3 /3}
       ];
+      vm.top();
     };
 
     vm.Total = function(index, something){
