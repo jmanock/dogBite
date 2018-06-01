@@ -20,12 +20,14 @@
     vm.doglist = [];
 
     vm.Next = function(){
+      vm.title = 'Dog Info';
       vm.dogInfo = true;
       vm.personInfo = true;
       vm.currentPercentage = 25;
     };
 
     vm.Summary = function(){
+      vm.title = 'Summary';
       vm.dogInfo = false;
       vm.summary = true;
       vm.doglist.push(
@@ -68,24 +70,28 @@
     };
 
     vm.Edit = function(dog){
+      vm.title = 'Edit';
       vm.dogs = dog;
       vm.edits = true;
       vm.summary = false;
     };
 
     vm.AddDog = function(){
+      vm.title = 'Add Dog';
       vm.summary = false;
       vm.personInfo = false;
       vm.edits = false;
     };
 
     vm.Save = function(dog){
+      vm.title = 'Summary';
       vm.edits = false;
       vm.dogs = dog;
       vm.summary = true;
     };
 
     vm.Calculate = function(dog){
+      vm.title = 'Calculate';
       vm.calculate = true;
       vm.summary = false;
       var total = dog.additionalInsureds * 50 + 300;
@@ -98,6 +104,7 @@
     };
 
     vm.Total = function(index, something){
+      vm.title = 'Buy Policy';
       //doglist shows up
       // vm.dogs is additionalInsureds
       vm.total = [];
