@@ -116,15 +116,15 @@
       vm.top();
     };
 
-    vm.Total = function(index, something){
+    vm.Total = function(index, addIns){
       vm.title = 'Buy Policy';
       //doglist shows up
       // vm.dogs is additionalInsureds
-
+      vm.final = true;
       vm.total.push({
 
       })
-      $log.log(something);
+      $log.log(addIns);
       $log.log(vm.doglist);
     };
 
