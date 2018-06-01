@@ -23,6 +23,7 @@
     // vm.dogInfo = true;
     // vm.personInfo = false;
     vm.doglist = [];
+    vm.total = [];
 
     vm.top = function(){
         $window.scrollTo(0,0);
@@ -119,7 +120,12 @@
       vm.title = 'Buy Policy';
       //doglist shows up
       // vm.dogs is additionalInsureds
-      vm.total = [];
+
+      vm.total.push({
+
+      })
+      $log.log(something);
+      $log.log(vm.doglist);
     };
 
   }

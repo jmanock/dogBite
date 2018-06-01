@@ -620,11 +620,15 @@
           <th>Name</th>
         </tr>
         <tr>
-          <th></th>
+          <th>Policy</th>
+        </tr>
       </thead>
       <tbody>
-        <tr>
-          <td></td>
+        <tr ng-repeat='d in form.doglist'>
+          <td>{{d}}</td>
+        </tr>
+        <tr ng-repeat='p in form.policy'>
+          <td>{{p}}</td>
         </tr>
     </table>
   </section>
