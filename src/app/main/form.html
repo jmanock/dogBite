@@ -617,18 +617,32 @@
     <table class='table'>
       <thead>
         <tr>
-          <th>Name</th>
-        </tr>
-        <tr>
-          <th>Policy</th>
+          <th>Dogs</th>
+          <th>State</th>
         </tr>
       </thead>
       <tbody>
-        <tr ng-repeat='d in form.totalSum'>
-          <td>{{d.dogs}}</td>
+        <tr ng-repeat='d in form.doglist'>
+          <td>{{d.name}}</td>
+          <td>{{d.state}}</td>
         </tr>
+      </tbody>
+    </table>
+    <h2>Additional Insured {{form.addIns.additionalInsureds}}</h2>
+
+    <table class='table'>
+      <thead>
         <tr>
-          <td>{{d.addIns}}</td>
+          <th>Limit</th>
+          <th>Installments</th>
+          <th>First Bill</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{form.insurance.limit}}</td>
+          <td>{{form.insurance.installments}}</td>
+          <td>{{form.insurance.firstBill}}</td>
         </tr>
       </tbody>
     </table>

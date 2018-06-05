@@ -73,6 +73,7 @@
       );
       vm.dog = '';
       vm.currentPercentage = 50;
+      vm.top();
     };
 
     vm.Remove = function(index){
@@ -99,6 +100,7 @@
       vm.edits = false;
       vm.dogs = dog;
       vm.summary = true;
+      vm.top();
     };
 
     vm.Calculate = function(dog){
@@ -115,17 +117,14 @@
       vm.top();
     };
 
-    vm.Total = function(index, addIns){
+    vm.Total = function(index, insurance){
       vm.title = 'Buy Policy';
       //doglist shows up
       // vm.dogs is additionalInsureds
       vm.final = true;
-
-      vm.totalSum.push(
-        {dogs:vm.doglist},
-        {addIns:addIns}
-      )
-      $log.log(vm.totalSum);
+      vm.calculate = false;
+      vm.insurance = insurance;
+      vm.addIns = vm.dogs;
     };
 
   }
