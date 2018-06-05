@@ -127,6 +127,15 @@
       vm.addIns = vm.dogs;
     };
 
+    vm.Buy = function(){
+
+    };
+
+    vm.Back = function(){
+      vm.final = false;
+      vm.calculate = true;
+    };
+
   }
 })();
 

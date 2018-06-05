@@ -50,7 +50,7 @@
         </div>
         <div class='form-group col-md-6'>
           <label class='form-control-label'>What Breed is {{form.dog.name | uppercase}}:</label>
-          <select ng-model='form.dog.breed' class='form-control' ng-options='item for item in form.states'>
+          <select ng-model='form.dog.breed' class='form-control' ng-options='item for item in form.breeds'>
             <option value='' selected disabled>Please Choose...</option>
           </select>
         </div>
@@ -305,7 +305,7 @@
           <td>
             <button ng-click='form.Edit(dogs)' class='btn btn-success'><span class='fa fa-pencil'></span> Edit</button>
           </td>
-          <td>{{dogs.name}}</td>
+          <td>{{dogs.name | uppercase}}</td>
           <td>{{dogs.breed}}</td>
           <td>Please calculate to determine eligibility</td>
           <td>
@@ -623,12 +623,11 @@
       </thead>
       <tbody>
         <tr ng-repeat='d in form.doglist'>
-          <td>{{d.name}}</td>
+          <td>{{d.name | uppercase}}</td>
           <td>{{d.state}}</td>
         </tr>
       </tbody>
     </table>
-    <h2>Additional Insured {{form.addIns.additionalInsureds}}</h2>
 
     <table class='table'>
       <thead>
@@ -646,6 +645,9 @@
         </tr>
       </tbody>
     </table>
+    <h2>Additional Insured {{form.addIns.additionalInsureds}}</h2>
+    <button ng-click='form.Buy()' class='btn btn-success'>Buy</button>
+    <button ng-click='form.Back()' class='btn btn-danger'>Back</button>
   </section>
 </div>
 <acme-footer></acme-footer>
