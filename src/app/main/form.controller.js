@@ -19,11 +19,10 @@
     vm.states = states;
     vm.breeds = breeds;
 
-    // vm.calculate = true;
-    // vm.dogInfo = true;
-    // vm.personInfo = false;
+    vm.final = true;
+
     vm.doglist = [];
-    vm.total = [];
+    vm.totalSum = [];
 
     vm.top = function(){
         $window.scrollTo(0,0);
@@ -121,11 +120,12 @@
       //doglist shows up
       // vm.dogs is additionalInsureds
       vm.final = true;
-      vm.total.push({
 
-      })
-      $log.log(addIns);
-      $log.log(vm.doglist);
+      vm.totalSum.push(
+        {dogs:vm.doglist},
+        {addIns:addIns}
+      )
+      $log.log(vm.totalSum);
     };
 
   }

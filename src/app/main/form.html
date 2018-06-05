@@ -624,12 +624,13 @@
         </tr>
       </thead>
       <tbody>
-        <tr ng-repeat='d in form.doglist'>
-          <td>{{d}}</td>
+        <tr ng-repeat='d in form.totalSum'>
+          <td>{{d.dogs}}</td>
         </tr>
-        <tr ng-repeat='p in form.policy'>
-          <td>{{p}}</td>
+        <tr>
+          <td>{{d.addIns}}</td>
         </tr>
+      </tbody>
     </table>
   </section>
 </div>
