@@ -69,6 +69,7 @@
           work: vm.dog.work
         }
       );
+
       vm.dog = '';
       vm.currentPercentage = 50;
       vm.top();
@@ -115,6 +116,12 @@
       vm.top();
     };
 
+    vm.Additional = function(){
+      vm.insured = true;
+      vm.calculate = false;
+      vm.top();
+    }
+
     vm.Total = function(index, insurance){
       vm.title = 'Buy Policy';
       //doglist shows up
@@ -131,7 +138,6 @@
     };
 
     vm.Back = function(){
-      vm.currentPercentage = 100;
       vm.final = false;
       vm.calculate = true;
     };
