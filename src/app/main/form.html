@@ -613,38 +613,93 @@
       </tbody>
     </table>
   </section>
+  <section ng-show='form.application'>
+    <div class='form-group'>
+      <label class='form-control-label'>Requested Effective Date:</label>
+    </div>
+    <div class='form-group'>
+      <label class='form-control-label'>Applicat's First Name:</label>
+      <input class='form-control' ng-model='form.fName' type='text'>
+    </div>
+    <div class='form-group'>
+      <label class='form-control-label'>Applicant's Last Name:</label>
+      <input type='text' ng-model='form.lName' class='form-control'>
+    </div>
+    <div class='form-group'>
+      <label class='form-control-label'>First Name of your spouse, signifigant other or roommate:</label>
+      <input type='text' class='form-control' ng-model='form.sFirstName'>
+    </div>
+    <div class='form-group'>
+      <label class='form-control-label'>Last Name of your spouse, sigifigant other or roommate:</label>
+      <input type='text' class='form-control' ng-model='form.sLastName'>
+    </div>
+    <div class='form-group'>
+      <label class='form-control-label'>Applicant's Mailing Address:</label>
+      <input type='text' class='form-control' ng-model='form.address'>
+    </div>
+    <div class='form-group'>
+      <label class='form-control-label'>City:</label>
+      <input type='text' class='form-control' ng-model='form.city'>
+    </div>
+    <div class='form-group'>
+      <label class='form-control-label'>State:</label>
+      <select class='form-control' ng-options='item for item in form.states' ng-model='form.state'>
+        <option value='' selected disabled>Please Choose...</option>
+      </select>
+    </div>
+    <div class='form-group'>
+      <label class='form-control-label'>Zip:</label>
+      <input type='number' ng-model='form.zip' class='form-control'>
+    </div>
+    <div class='form-group'>
+      <label class='form-control-label'>Do your dog(s) live at the mailing address: <span title='We must have a physical address other than a P.O. box to file taxes' class='fa fa-question'></span></label>
+      <label class='radio-inline'><input type='radio' name='address' ng-model='form.dogAddressMail'>Yes</label>
+      <label class='radio-inline'><input type='radio' name='address' ng-model='form.dogAddressMail'>No</label>
+      <div ng-if='form.dogAddressMail === "No" ? true : false'>
+        <div class='form-group'>
+          <label class='form-control-label'>Dog's Address:</label>
+          <input type='text' ng-model='form.dogAddress' class='form-control'>
+        </div>
+        <div class='form-group'>
+          <label class='form-control-label'>State:</label>
+          <select class='form-control' ng-options='item for item in form.states' ng-model='form.dogState'>
+            <option value='' selected disabled>Please Choose...</option>
+          </select>
+        </div>
+        <div class='form-group'>
+          <label class='form-control-label'>City:</label>
+          <input type='text' ng-model='form.dogCity' class='form-control'>
+        </div>
+        <div class='form-group'>
+          <label class='form-control-label'>Zip:</label>
+          <input type='number' class='form-control' ng-model='form.dogZip'>
+        </div>
+        <div class='form-group'>
+          <label class='form-control-label'>Please give a reason why the dog(s) do not live at the mailing address:</label>
+          <textarea ng-model='form.dogReason' class='form-control' rows='10' cols='30'></textarea>
+        </div>
+      </div>
+    </div>
+    <div class='form-group'>
+      <label class='form-control-label'>Phone Number:</label>
+      <input type='number' class='form-control' ng-model='form.phone'>
+    </div>
+    <div class='form-group'>
+      <label class='form-control-label'>Fax:</label>
+      <input type='number' class='form-control' ng-model='form.fax'>
+    </div>
+    <
+  </section>
   <section ng-show='form.final'>
-    <table class='table'>
-      <thead>
-        <tr>
-          <th>Dogs</th>
-          <th>State</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr ng-repeat='d in form.doglist'>
-          <td>{{d.name | uppercase}}</td>
-          <td>{{d.state}}</td>
-        </tr>
-      </tbody>
-    </table>
+    <ul class='list-group list-group-flush'>
+      <li class='list-group-item'>Limit: {{form.insurance.limit | currency}}</li>
+      <li class='list-group-item'>Installments: {{form.insurance.installments}}</li>
+      <li class='list-group-item'>First Bill: {{form.insurance.firstBill}}</li>
+      <li class='list-group-item'>Total: {{form.insurance.total | currency}}</li>
+      <li class='list-group-item'>Installment Amount: {{form.insurance.installmentAmount | currency}}</li>
+      <li class='list-group-item'>Down Payment: {{form.insurance.downPayment | currency}}</li>
+    </ul>
 
-    <table class='table'>
-      <thead>
-        <tr>
-          <th>Limit</th>
-          <th>Installments</th>
-          <th>First Bill</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>{{form.insurance.limit}}</td>
-          <td>{{form.insurance.installments}}</td>
-          <td>{{form.insurance.firstBill}}</td>
-        </tr>
-      </tbody>
-    </table>
     <h2>Additional Insured {{form.addIns.additionalInsureds}}</h2>
     <button ng-click='form.Buy()' class='btn btn-success'>Buy</button>
     <button ng-click='form.Back()' class='btn btn-danger'>Back</button>
