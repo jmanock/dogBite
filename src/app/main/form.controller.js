@@ -128,10 +128,12 @@
     };
 
     vm.Buy = function(){
-
+      vm.thankYou = true;
+      vm.final = false;
     };
 
     vm.Back = function(){
+      vm.currentPercentage = 100;
       vm.final = false;
       vm.calculate = true;
     };
