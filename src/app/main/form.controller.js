@@ -19,8 +19,6 @@
     vm.states = states;
     vm.breeds = breeds;
 
-    vm.final = true;
-
     vm.doglist = [];
     vm.totalSum = [];
 
@@ -121,7 +119,7 @@
       vm.title = 'Buy Policy';
       //doglist shows up
       // vm.dogs is additionalInsureds
-      vm.final = true;
+      vm.application = true;
       vm.calculate = false;
       vm.insurance = insurance;
       vm.addIns = vm.dogs;
