@@ -19,7 +19,7 @@
     vm.states = states;
     vm.breeds = breeds;
 
-    vm.doglist = [];
+    
     vm.totalSum = [];
 
     vm.top = function(){

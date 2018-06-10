@@ -37,6 +37,12 @@
       .state('terms', {
         url: '/terms',
         templateUrl: 'app/main/terms.html'
+      })
+      .state('summary', {
+        templateUrl: 'app/main/summary.html',
+        controller: 'SummaryController',
+        controllerAs:'summary',
+        params:{'dogs':null}
       });
 
     $urlRouterProvider.otherwise('/');
