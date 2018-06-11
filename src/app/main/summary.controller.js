@@ -60,40 +60,42 @@
       };
 
       vm.Save = function(dog){
+        if(vm.title === 'Edit Dog'){
+          vm.dogs = dog;
+        }else{
+          vm.dogList.push(
+            {
+              abuse:dog.abuse,
+              adopted:dog.adopted,
+              age:dog.age,
+              animalInjury:dog.animalInjury,
+              animalServices:dog.animalServices,
+              area:dog.area,
+              bathrrom:dog.bathroom,
+              breed:dog.breed,
+              children:dog.children,
+              color:dog.color,
+              deployed:dog.deployed,
+              doesBreed:dog.doesBreed,
+              dogsHome:dog.dogsHome,
+              email:dog.email,
+              gender:dog.gender,
+              humanInjury:dog.humanInjury,
+              involvedWork:dog.involvedWork,
+              name:dog.name,
+              reproductive:dog.reproductive,
+              sleep:dog.sleep,
+              state:dog.state,
+              training:dog.training,
+              vaccinations:dog.vaccinations,
+              weight:dog.weight,
+              work:dog.work
+            }
+          )
+        }
         vm.addEdit = false;
-        vm.dogs = dog;
         vm.summary = false;
-        vm.dogList.push(
-          {
-            abuse:dog.abuse,
-            adopted:dog.adopted,
-            age:dog.age,
-            animalInjury:dog.animalInjury,
-            animalServices:dog.animalServices,
-            area:dog.area,
-            bathroom:dog.bathroom,
-            breed:dog.breed,
-            children:dog.children,
-            color:dog.color,
-            deployed:dog.deployed,
-            doesBreed:dog.doesBreed,
-            dogsHome:dog.dogsHome,
-            email:dog.email,
-            gender:dog.gender,
-            humanInjury:dog.humanInjury,
-            involvedWork:dog.involvedWork,
-            name:dog.name,
-            parks:dog.parks,
-            reproductive:dog.reproductive,
-            sleep:dog.sleep,
-            state:dog.state,
-            training:dog.training,
-            vaccinations:dog.vaccinations,
-            weight:dog.weight,
-            work:dog.work
-          }
-        );
-        $log.log(vm.dogList);
+        vm.title = 'Summary';
       };
 
       vm.Remove = function(index){
