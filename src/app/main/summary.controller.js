@@ -5,7 +5,7 @@
     .module('dogBite')
     .controller('SummaryController', SummaryController);
 
-    function SummaryController($log, $stateParams){
+    function SummaryController($log, $stateParams, $window){
       var vm = this;
 
       vm.title = 'Summary';
@@ -13,7 +13,12 @@
       vm.dogList = [];
       vm.states = states;
       vm.breeds = breeds;
+
       var dog = $stateParams.dogs;
+
+      vm.top = function(){
+          $window.scrollTo(0,0);
+      };
 
       vm.dogList.push(
         {
@@ -57,6 +62,7 @@
         }
         vm.addEdit = true;
         vm.summary = true;
+        vm.top();
       };
 
       vm.Save = function(dog){
@@ -96,11 +102,16 @@
         vm.addEdit = false;
         vm.summary = false;
         vm.title = 'Summary';
+        vm.top();
       };
 
       vm.Remove = function(index){
         vm.dogList.splice(index, 1);
-      }
+      };
+
+      vm.Calculate = function(x,y){
+        $log.log(x,y);
+      };
 
     }
 

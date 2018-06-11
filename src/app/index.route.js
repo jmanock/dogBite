@@ -43,6 +43,12 @@
         controller: 'SummaryController',
         controllerAs:'summary',
         params:{'dogs':null}
+      })
+      .state('insurance', {
+        templateUrl: 'app/main/insurance.html',
+        controller: 'InsuranceController',
+        controllerAs: 'insurance',
+        params:{'dog':null, 'insurance':null}
       });
 
     $urlRouterProvider.otherwise('/');
