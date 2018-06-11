@@ -1,5 +1,11 @@
 <acme-navbar></acme-navbar>
 <div class='container'>
+  <h1>{{summary.title}}</h1>
+  <div class='progress'>
+    <div class='progress-bar progress-bar-striped' ng-style="{'width':summary.currentPercentage + '%'}" role='progressbar'>
+      <span>{{summary.currentPercentage}}% Complete</span>
+    </div>
+  </div>
   <section ng-hide='summary.summary'>
     <button class='btn btn-success addDog' ng-click='summary.Edit("New")'>Add Dog <span class='fa fa-plus-circle'></span></button>
     <table class='table'>
@@ -41,7 +47,7 @@
     </div>
   </section>
   <section ng-show='summary.addEdit'>
-    <form class='form-horizonatal'>
+    <form class='form-horizonatal' >
 
       <div class='form-row'>
         <div class='form-group col-md-4'>
