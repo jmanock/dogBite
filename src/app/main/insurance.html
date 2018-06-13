@@ -36,37 +36,35 @@
       </tbody>
     </table>
   </section>
-  <section ng-show='insurance.application'>
+  <section ng-show='insurance.Application'>
     <form>
       <div class='form-row'>
         <div class='form-group col-md-6'>
-          <label class='form-control-label'>Applicant's First Name:</label>
+          <label class='form-control-label'>Applicant's first name:</label>
           <input type='text' class='form-control' ng-model='insurance.application.fName' placeholder='First Name'>
         </div>
         <div class='form-group col-md-6'>
-          <label class='form-control-label'>Applicant's Last Name:</label>
+          <label class='form-control-label'>Applicant's last name:</label>
           <input type='text' class='form-control' ng-model='insurance.application.lName' placeholder='Last Name'>
         </div>
       </div>
-
       <div class='form-row'>
         <div class='form-group col-md-6'>
-          <label class='form-control-label'>First Name of your spouse, signifigant other or roommate:</label>
-          <input type='text' class='form-control' ng-model='insurance.application.spouseFirst' placeholder='First Name'>
+          <label class='form-control-label'>First name of your spouse, sigifigant other or roommate:</label>
+          <input type='text' class='form-control' ng-model='insurance.application.spouceFirstName' placeholder='First Name'>
         </div>
         <div class='form-group col-md-6'>
-          <label class='form-control-label'>Last Name of your spouse, sigifigant other or roommate:</label>
-          <input type='text' class='form-control' ng-model='insurance.application.spouseLast' placeholder='Last Name'>
+          <label class='form-control-label'>Last name of your spouse, sigifigant other or roommate:</label>
+          <input type='text' class='form-control' ng-model='insurance.application.spouceLastName' placeholder='Last Name'>
         </div>
       </div>
-
       <div class='form-group'>
         <label class='form-control-label'>Address:</label>
-        <input type='text' class='form-control' ng-model='insurance.application.address' placeholder='123 Main St.'>
+        <input type='text' class='form-control' ng-model='insurance.application.address' placeholder='1234 Main St.'>
       </div>
       <div class='form-group'>
         <label class='form-control-label'>Address 2:</label>
-        <input type='text' class='form-control' ng-model='insurance.application.address2' placeholder='Apartment, studio, or floor'>
+        <input type='text' class='form-control' ng-model='insurance.application.address2' placeholder='Apartment, Studio, or Floor'>
       </div>
       <div class='form-row'>
         <div class='form-group col-md-6'>
@@ -81,60 +79,60 @@
         </div>
         <div class='form-group col-md-2'>
           <label class='form-control-label'>Zip:</label>
-          <input type='number' class='form-control' ng-model='form.application.zip'>
+          <input type='number' class='form-control' ng-model='insurance.application.zip'>
         </div>
       </div>
-      <!-- <div class='form-group'>
-        <label class='form-control-label'>Do your dog(s) live at the mailing address? <span title="We must have a physical address other than a P.O. Box to file taxes" class='fa fa-question' ng-click='insurance.alert("We must have a physical address other than a P.O. Box to file taxes")'></span></label>
-        <label class='radio-inline'><input type='radio' name='dogAddressQ' value='Yes' ng-model='insurance.application.dogAddressQ'> Yes</label>
-        <label class='radio-inline'><input type='radio' name='dogAddressQ' value='No' ng-model='insurance.application.dogAddressQ'> No</label>
-      </div> -->
-      <div ng-if='insurance.application.dogMailingAddress === "No" ? true : false'>
+      <div class='form-group'>
+        <label class='form-control-label'>Do your dog(s) live at the mailing address: <span title='We must have a physical address other than a P.O. Box to file taxes' class='fa fa-question' ng-click='insurance.alert("We must have a physical address other than a P.O. Box to file taxes")'></span></label>
+        <label class='radio-inline'><input type='radio' name='dAddress' ng-model='insurance.application.dQuestion' value='Yes'> Yes</label>
+        <label class='radio-inline'><input type='radio' name='dAddress' ng-model='insurance.application.dQuestion' value='No'> No</label>
+      </div>
+      <div ng-if='insurance.application.dQuestion === "No" ? true : false'>
         <div class='form-group'>
-          <label class='form-control-label'>Dog's Address:</label>
+          <label class='form-control-label'>Dog's address:</label>
           <input type='text' class='form-control' ng-model='insurance.application.dogAddress' placeholder='1234 Main St.'>
         </div>
         <div class='form-group'>
-          <label class='form-control-label'>Dog's Address 2:</label>
-          <input type='text' class='form-control' ng-model='insurance.application.dogAddress2' placeholder='Apartment, studio, or floor'>
+          <label class='form-control-label'>Dog's address 2:</label>
+          <input type='text' class='form-control' ng-model='insurance.application.dogAddress2' placeholder='Apartment, Studio, or Floor'>
         </div>
         <div class='form-row'>
           <div class='form-group col-md-6'>
-            <label class='form-control-label'>Dog's City:</label>
+            <label class='form-control-label'>Dog's city:</label>
             <input type='text' class='form-control' ng-model='insurance.application.dogCity'>
           </div>
           <div class='form-group col-md-4'>
-            <label class='form-control-label'>Dog's State:</label>
+            <label class='form-control-label'>Dog's state:</label>
             <select class='form-control' ng-model='insurance.application.dogState' ng-options='item for item in insurance.states'>
               <option value='' selected disabled>Please Choose...</option>
             </select>
           </div>
           <div class='form-group col-md-2'>
-            <label class='form-control-label'>Dog's Zip:</label>
+            <label class='form-control-label'>Dog's zip:</label>
             <input type='number' class='form-control' ng-model='insurance.application.dogZip'>
           </div>
         </div>
         <div class='form-group'>
           <label class='form-control-label'>Please give a reason why the dog(s) do not live at the mailing address:</label>
-          <textarea class='form-control' ng-model='insurance.application.dogReason' rows='10' cols='30'></textarea>
+          <input type='text' ng-model='insurance.application.reason' class='form-control'>
         </div>
       </div>
       <div class='form-row'>
         <div class='form-group col-md-4'>
-          <label class='form-control-label'>Phone Number:</label>
+          <label class='form-control-label'>Phone number:</label>
           <input type='number' class='form-control' ng-model='insurance.application.phone'>
         </div>
         <div class='form-group col-md-4'>
-          <label class='form-control-label'>Fax Number:</label>
+          <label class='form-control-label'>Fax number:</label>
           <input type='number' class='form-control' ng-model='insurance.application.fax'>
         </div>
         <div class='form-group col-md-4'>
-          <label class='form-control-label'>Requested Effective Date:</label>
+          <label class='form-control-label'>Requested effective date:</label>
           <input type='date' class='form-control' ng-model='insurance.application.date'>
         </div>
       </div>
-      <button class='btn btn-default' ui-sref="total({app:insurance.application, ins:install, })">Next</button>
-    </section>
-  </form>
+    </form>
+    <button class='btn btn-default' ui-sref='total({})'>Next &#128062;</button>
+  </section>
 </div>
 <acme-footer></acme-footer>

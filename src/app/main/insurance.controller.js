@@ -22,7 +22,7 @@
     ];
 
     vm.Total = function(index, install){
-      vm.application = true;
+      vm.Application = true;
       vm.calculate = true;
     };
   }
