@@ -1,0 +1,14 @@
+<acme-header></acme-header>
+<div class='container'>
+  <section ng-hide='total.application'>
+    <div class='form-group'>
+      <label class='form-control-label'>Do you have any Additional Insured's ($50 each): <span title='If you rent, the owners and/or property manager may request to be added as an additional insured. If your dog injures a person or animal the defence costs are covered. More towns and cities are requiring insurance to provide medical care of their citizend.' class='fa fa-question' ng-click='total.alert("If you rent, the owners and/or property manager may request to be added as an additional insured. If your dog injures a person or animal the defence costs are covered. More towns and cities are requiring insurance to provide medical care of their citizens.")'></span></label>
+      <label class='radio-inline'><input type='radio' name='additional' value='Yes' ng-model='total.additionalInsured'> Yes</label>
+      <label class='radio-inline'><input type='radio' name='additional' value='No' ng-model='total.additionalInsured'> No</label>
+    </div>
+    <button class='btn btn-success fa fa-plus-circle' ng-click='total.AddInsured'> Add Additional Insured</button>
+  </section>
+  <section ng-show='total.additionalInsuredForm'>
+  </section>
+</div>
+<acme-footer></acme-footer>
