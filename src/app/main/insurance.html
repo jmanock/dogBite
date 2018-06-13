@@ -1,32 +1,4 @@
-<acme-header></acme-header>
-<div class='container'>
-  <h2>Please choose your coverage limit, premium for your annual policy</h2>
-  <small>NOTE: Installments are always billed on the 3rd day of the month.</small>
-  <table class='table'>
-    <thead>
-      <tr>
-        <th>Coverage Limit</th>
-        <th>Total</th>
-        <th># Installments</th>
-        <th>Down Payments</th>
-        <th>Installment Amount</th>
-        <th>First Bill</th>
-        <th>Select coverage</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr ng-repeat='install in insurance.Coverage'>
-        <td>{{install.limit | currency}}</td>
-        <td>{{install.total | currency}}</td>
-        <td>{{install.installments}}</td>
-        <td>{{install.firstBill | currency}}</td>
-        <td>
-          <button class='btn btn-success' ng-click='insurance.Total($index, install)'>Buy</button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+<acme-navbar></acme-navbar>
 <div class='container'>
   <h1>{{insurance.title}}</h1>
   <div class='progress'>
@@ -54,7 +26,7 @@
           <td>{{install.limit | currency}}</td>
           <td>{{install.total | currency}}</td>
           <td>{{install.installments}}</td>
-          <td>{{install.downPayments | currency}}</td>
+          <td>{{install.downPayment | currency}}</td>
           <td>{{install.installmentAmount | currency}}</td>
           <td>{{install.firstBill}}</td>
           <td>
@@ -112,11 +84,11 @@
           <input type='number' class='form-control' ng-model='form.application.zip'>
         </div>
       </div>
-      <div class='form-group'>
+      <!-- <div class='form-group'>
         <label class='form-control-label'>Do your dog(s) live at the mailing address? <span title="We must have a physical address other than a P.O. Box to file taxes" class='fa fa-question' ng-click='insurance.alert("We must have a physical address other than a P.O. Box to file taxes")'></span></label>
-        <label class='radio-inline'><input type='radio' name='dogAddress' value='Yes' ng-model='insurance.application.dogMailingAddress'> Yes</label>
-        <label class='radio-inline'><input type='radio' name='dogAddress' value='No' ng-model='insurance.application.dogMailingAddress'> No</label>
-      </div>
+        <label class='radio-inline'><input type='radio' name='dogAddressQ' value='Yes' ng-model='insurance.application.dogAddressQ'> Yes</label>
+        <label class='radio-inline'><input type='radio' name='dogAddressQ' value='No' ng-model='insurance.application.dogAddressQ'> No</label>
+      </div> -->
       <div ng-if='insurance.application.dogMailingAddress === "No" ? true : false'>
         <div class='form-group'>
           <label class='form-control-label'>Dog's Address:</label>
@@ -161,7 +133,7 @@
           <input type='date' class='form-control' ng-model='insurance.application.date'>
         </div>
       </div>
-      <button class='btn btn-default' ui-sref="total({app:insurance.application, })">Next</button>
+      <button class='btn btn-default' ui-sref="total({app:insurance.application, ins:install, })">Next</button>
     </section>
   </form>
 </div>
