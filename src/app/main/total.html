@@ -9,6 +9,65 @@
     <button class='btn btn-success fa fa-plus-circle' ng-click='total.AddInsured'> Add Additional Insured</button>
   </section>
   <section ng-show='total.additionalInsuredForm'>
+    <div class='form-group'>
+      <label class='form-control-label'>Interest Name:</label>
+      <input type='text' class='form-control' ng-model='total.additionalInsured.interestName' placeholder='Name'>
+    </div>
+    <div class='form-group'>
+      <label class='form-control-label'>Relationship:</label>
+      <select class='form-control' ng-model='total.additionalInsured.relationship'>
+        <option value='' selected disabled>Please Choose...</option>
+        <option value='Landlord'>Landlord</option>
+        <option value='Employer'>Employer</option>
+        <option value='Government'>Governmental Entity</option>
+        <option value='Other'>Other</option>
+      </select>
+    </div>
+    <div class='form-group'>
+      <label class='form-control-label'>Address:</label>
+      <input type='text' class='form-control' ng-model='total.additionalInsured.address' placeholder='1234 Main St.'>
+    </div>
+    <div class='form-group'>
+      <label class='form-control-label'>Address 2:</label>
+      <input type="text" class='form-control' ng-model='total.additionalInsured.address2' placeholder='Apartment, studio, or floor'>
+    </div>
+
+    <div class='form-row'>
+      <div class='form-group col-md-6'>
+        <label class='form-control-label'>City:</label>
+        <input type='text' class='form-control' ng-model='total.additionalInsured.city'>
+      </div>
+      <div class='form-group col-md-4'>
+        <label class='form-control-label'>State:</label>
+        <select class='form-control' ng-model='total.additionalInsured.state' ng-options='item for item in total.states'>
+          <option value='' selected disabled>Please Choose...</option>
+        </select>
+      </div>
+      <div class='form-group col-md-2'>
+        <label class='form-control-label'>Zip:</label>
+        <input type='number' class='form-control' ng-model='total.additionalInsured.zip'>
+      </div>
+    </div>
+
+    <div class='form-row'>
+      <div class='form-group col-md-6'>
+        <label class='form-control-label'>Contact First Name:</label>
+        <input type='text' class='form-control' ng-model='total.additionalInsured.contactFirstName'>
+      </div>
+      <div class='form-group col-md-6'>
+        <label class='form-control-label'>Contact Last Name:</label>
+        <input type='text' class='form-control' ng-model='total.additionalInsured.contactLastName'>
+      </div>
+    </div>
+    <div class='form-group'>
+      <label class='form-control-label'>Contact Phone #:</label>
+      <input type='number' class='form-control' ng-model='total.additionalInsured.contactPhone'>
+    </div>
+    <div class='form-group'>
+      <label class='form-control-label'>Contact Email:</label>
+      <input type='email' class='form-control' ng-model='total.additionalInsured.contactEmail'>
+    </div>
+    <button class='btn btn-default' ng-click='total.()'>Next</button>
   </section>
 </div>
 <acme-footer></acme-footer>
