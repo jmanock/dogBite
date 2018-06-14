@@ -5,10 +5,18 @@
     .module('dogBite')
     .controller('TotalController', TotalController);
 
-  function TotalController(){
+  function TotalController($stateParams, $log){
     var vm = this;
 
     vm.states = states;
+
+    var dog = $stateParams.dog;
+    var insurance = $stateParams.ins;
+
+    $log.log(dog, insurance);
+    vm.AddInsured = function(){
+
+    };
   }
 
 })();

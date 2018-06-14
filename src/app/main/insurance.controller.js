@@ -12,7 +12,7 @@
 
     var dog = $stateParams.dog;
     var ins = $stateParams.insurance;
-
+    
     var total = ins * 50 + 300;
     vm.Coverage = [
       {limit:25000, installments:3, firstBill:'08/03/2018', total:total, downPayment:total/3, installmentAmount:total/3 /3},
