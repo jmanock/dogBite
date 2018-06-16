@@ -13,6 +13,7 @@
     var dog = $stateParams.dog;
     var insurance = $stateParams.ins;
 
+    //vm.dog = dog;
     $log.log(dog, insurance);
     vm.AddInsured = function(){
 
